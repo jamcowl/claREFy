@@ -1,28 +1,41 @@
 #! /usr/bin/env python
 import urllib2, ntpath, re
+import sys
 
 journal_database = {
+                        
+                    'Accounts of Chemical Research' : ['Acc.Chem.Res'],
                     'ACS Nano' : ['ACSNano'],
+                    'Annual Review of Biophysics and Biomolecular Structure' : ['Annu.Rev.Biophys.Biomol.Struct.'],
                     'Angewandte Chemie' : [ 'Angew.Chem.Int.Edit.'],
+                    'ArXiV' : ['arXiv'],
                     'Biophysical Journal' : ['Biophys.J.'],
                     'Biopolymers' : ['Biopolymers'],
-                    'Nano Letters' : ['NanoLett.'],
-                    'Nature' : ['Nature'],
-                    'Nature Communications' : ['Nat.Comm.'],
-                    'Nucleic Acids Research' : ['NucleicAcidRes'],
+                    'Faraday Discussions' : ['FaradayDiscuss'],
+                    'Interdisciplinary Reviews: Computational Molecular Science' : ['Interdisc.Rev.Comput.Mol.Sc.'],
+                    'Journal of Chemical Theory and Computation': ['J.Chem.TheoryComput.'],
                     'Journal of Molecular Biology' : ['J.Mol.Biol.'],
                     'Journal of the American Chemical Society' : ['J.Am.Chem.Soc.'],
                     'Journal of Computational Chemistry' : ['J.Comput.Chem.'],
                     'Journal of Physical Chemistry' : ['J.Phys.Chem.'],
-                    'Journal of Physics: Condensed Matter' : ['J.Phys.:Condens.Matter','Journal of Physics: Condensed Matter'],
+                    'Journal of Physics: Condensed Matter' : ['J.Phys.:Condens.Matter','JournalofPhysics:CondensedMatter'],
                     'The Journal of Chemical Physics' : ['J.Chem.Phys.'],
+                    'Langmuir' : ['Langmuir'],
+                    'Methods' : ['Methods'],
+                    'Nano Letters' : ['NanoLett.'],
+                    'Natural Computing' : ['NaturalComputing'],
+                    'Nature' : ['Nature'],
+                    'Nature Communications' : ['Nat.Comm.'],
+                    'Nature Nano' : ['Nat.Nano'],
+                    'Nucleic Acids Research' : ['NucleicAcidRes','NucleicAcidsRes.'],
                     'Physical Chemistry and Chemical Physics': ['Phys.Chem.Chem.Phys.'],
                     'Physical Review Letters' : ['Phys.Rev.Lett.'],
                     'Polymers' : ['Polymers'],
                     'Proceedings of the national academy of sciences' : ['Proc.Nat.Acad.Sci.','Proc.Natl.Acad.Sci.USA'],
                     'Science' : ['Science'],
                     'Scientific Reports' : ['Sci.Rep'],
-                    'Soft Matter' : ['SoftMatter']}
+                    'Soft Matter' : ['SoftMatter'],
+                    'WIREs Computational Molecular Science ' : ['WIREsComput.Mol.Sci']}
 class Ref:
     '''
     A reference, with the journal (plus pages/volumes etc.), authors, year.
@@ -37,6 +50,7 @@ class Ref:
             print "Warning: don't know the year in string",inner_string
         inner_string = re.sub('\('+self.year+'\)\.','', inner_string)
         self.journal = Ref.get_journal(inner_string)
+        self.set_authors_ids(inner_string)
     @staticmethod
     def get_journal(inner_string):
         for j in journal_database:
@@ -45,6 +59,27 @@ class Ref:
                     return j
         print "Warning: don't know the journal in string",inner_string
         return None
+    def set_authors_ids(self,inner_string):
+        self.ids = []
+        inner_string = inner_string.replace(r'\ufb00','ff')
+        authors = str(inner_string)
+        if 'and' in authors:
+#            print 'starting with',authors
+            authors = [a.strip() for a in inner_string.split('and')]
+#            print 'now have',authors
+            other_things = [a.strip() for a in authors[-1].split(',')[1:]]
+            authors = [a.strip() for a in authors[0].split(',')] + [authors[-1].split(',')[0].strip()]
+            if '' in authors: authors.remove('')
+#            print 'and finally',authors
+        else:
+            other_things = inner_string.split(',')
+            other_things = [ b.strip() for b in other_things]
+            authors = [other_things.pop(0)]
+        for b in other_things:
+            if b.isdigit(): self.ids += [b]
+        self.authors = authors
+#        print authors
+
 
 
 
@@ -79,7 +114,6 @@ def extract_references(paper_txt):
                 i = int(m.group(1))
                 if i in refs.keys():
                     print 'conflict between line',line,' and previous entry',refs[i]
-                    sys.exit()
                 else: refs[i] = re.sub('^'+str(i),'',line.rstrip())
             elif refs != {}:
                 refs[i] += line.rstrip()
@@ -107,6 +141,8 @@ if __name__ == '__main__':
     # pdfx paper_pdf -t > paper_txt
     # extract the references
     refs = extract_references(paper_txt)
+    for i in range(1,10):
+        print refs[i].authors, refs[i].ids, refs[i].string
     
     
 
