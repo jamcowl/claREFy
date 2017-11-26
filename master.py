@@ -1,6 +1,9 @@
 #! /usr/bin/env python
+# -*- coding: utf-8 -*-
+
 import urllib2, ntpath, re
 import sys
+import json
 import subprocess
 import scholar
 
@@ -49,9 +52,10 @@ class Ref:
         year = re.search('\(.*(\d\d\d\d)\).', inner_string)
         if year:
             self.year = year.group(1)
+            inner_string = re.sub('\('+self.year+'\)\.','', inner_string)
         else:
             print "Warning: don't know the year in string",inner_string
-        inner_string = re.sub('\('+self.year+'\)\.','', inner_string)
+            self.year = None
         self.journal = Ref.get_journal(inner_string)
         self.set_authors_ids(inner_string)
         self.num_citations = None
@@ -70,6 +74,9 @@ class Ref:
         inner_string = inner_string.replace(r'\ufb00','ff')
         inner_string = inner_string.replace(r'\ufb01','fi')
         inner_string = inner_string.replace(r'\u02c7','')
+        inner_string = inner_string.replace(r'(cid:32)','')
+        inner_string = inner_string.replace(r'¨','')
+
         authors = str(inner_string)
         if 'and' in authors:
 #            print 'starting with',authors
@@ -97,7 +104,11 @@ class Ref:
         query.set_timeframe(self.year, self.year)
         query.set_pub(self.journal)
         
-        querier.send_query(query)
+        try:
+            querier.send_query(query)
+        except:
+            print 'problem with',self.string
+            raise
         articles = querier.articles
         if len(articles) == 0:
             print 'warning: article from string',self.string,'not found on google scholar'
@@ -161,24 +172,29 @@ Citation project - given a pdf, look up the references and provide:
 '''
 
 if __name__ == '__main__':
+    scholar.ScholarConf.COOKIE_JAR_FILE = 'cookie.blah'
     paper_id = '1504.00821'
     paper_pdf = paper_id+'.pdf'
     paper_txt = paper_id+'.txt'
     # fetch paper from the arxiv
+    print 'getting item from the arxiv'
     #get_pdf_from_url('https://arxiv.org/pdf/'+ paper_pdf)
     # extract the text
+    print 'extracting the text... (might take a while)'
     # pdfx paper_pdf -t > paper_txt
+    #subprocess.call('pdfx '+paper_pdf+' -t > '+paper_txt,shell = True)
     # extract the references
+    print 'extracting the references from the paper...'
     refs = extract_references(paper_txt)
     # for each reference, look it up on google scholar to get the citation
+    print 'looking them up online...'
     querier = scholar.ScholarQuerier()
     settings = scholar.ScholarSettings()
     querier.apply_settings(settings)
-    for i in range(1,10):
+    for i in refs.keys():
         refs[i].get_info_from_scholar(querier)
-
-        
     # find where it's cited
     # pretty print it
+    querier.save_cookies()
 
 
