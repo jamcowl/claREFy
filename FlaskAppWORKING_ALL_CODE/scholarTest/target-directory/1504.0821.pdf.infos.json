@@ -1,0 +1,34 @@
+{
+  "source": {
+    "type": "url", 
+    "location": "https://arxiv.org/pdf/1504.0821.pdf", 
+    "filename": "1504.0821.pdf"
+  }, 
+  "references": {
+    "url": [
+      "http://dx.doi.org/10.1039/C3CP44383C", 
+      "http://dx.doi.org/10.1093/nar/gkj454", 
+      "mailto:jonathan.doye@chem.ox.ac.uk", 
+      "http://dx.doi.org/10.1039/B905313C", 
+      "ox.ac.uk", 
+      "mailto:benedict.snodin@chem.ox.ac.uk", 
+      "http://dx.doi.org/10.1002/jcc.23763", 
+      "http://stacks.iop.org/0953-8984/26/i=41/a=413101", 
+      "1502.03623", 
+      "dna.physics.ox.ac.uk"
+    ], 
+    "arxiv": [
+      "1408.4401", 
+      "1412.6309"
+    ]
+  }, 
+  "metadata": {
+    "Producer": "pdfTeX-1.40.12", 
+    "PTEX.Fullbanner": "This is pdfTeX, Version 3.1415926-2.3-1.40.12 (TeX Live 2011) kpathsea version 6.0.1", 
+    "Creator": "LaTeX with hyperref package", 
+    "ModDate": "D:20150520020653Z", 
+    "Trapped": "False", 
+    "CreationDate": "D:20150520020653Z", 
+    "Pages": 22
+  }
+}
