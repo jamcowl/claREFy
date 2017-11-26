@@ -1,0 +1,2089 @@
+EUROPEAN ORGANIZATION FOR NUCLEAR RESEARCH (CERN)
+
+CERN-PH-EP/2013-037
+2015/05/04
+
+CMS-SMP-12-027
+
+Measurement of the inclusive 3-jet production differential
+
+cross section in proton-proton collisions at 7 TeV and
+
+determination of the strong coupling constant in the TeV
+
+range
+
+The CMS Collaboration∗
+
+Abstract
+
+This paper presents a measurement of the inclusive 3-jet production differential cross
+section at a proton-proton centre-of-mass energy of 7 TeV using data corresponding
+to an integrated luminosity of 5 fb−1 collected with the CMS detector. The analysis
+is based on the three jets with the highest transverse momenta. The cross section
+is measured as a function of the invariant mass of the three jets in a range of 445–
+3270 GeV and in two bins of the maximum rapidity of the jets up to a value of 2.
+A comparison between the measurement and the prediction from perturbative QCD
+at next-to-leading order is performed. Within uncertainties, data and theory are in
+agreement. The sensitivity of the observable to the strong coupling constant αS is
+studied. A ﬁt to all data points with 3-jet masses larger than 664 GeV gives a value of
+the strong coupling constant of αS(MZ) = 0.1171 ± 0.0013 (exp) +0.0073
+
+−0.0047 (theo).
+
+Published in the European Physical Journal C as doi:10.1140/epjc/s10052-015-3376-y.
+
+5
+1
+0
+2
+
+ 
+
+y
+a
+M
+1
+
+ 
+
+ 
+ 
+]
+x
+e
+-
+p
+e
+h
+[
+ 
+ 
+
+2
+v
+3
+3
+6
+1
+
+.
+
+2
+1
+4
+1
+:
+v
+i
+X
+r
+a
+
+c(cid:13) 2015 CERN for the beneﬁt of the CMS Collaboration. CC-BY-3.0 license
+
+∗See Appendix A for the list of collaboration members
+
+3 = (p1 + p2 + p3)2
+m2
+
+ymax = sgn(cid:0)
+
+(cid:1)
+
+1
+
+1 Introduction
+A key characteristic of highly energetic proton-proton collisions at the LHC is the abundant
+production of multijet events. At high transverse momenta pT, such events are described by
+quantum chromodynamics (QCD) in terms of parton-parton scattering. The simplest jet pro-
+duction process corresponds to a 2 → 2 reaction with the two outgoing partons fragmenting
+into a pair of jets. Two cross sections, for which the leading-order (LO) predictions in per-
+turbative QCD (pQCD) are proportional to the square of the strong coupling constant, α2
+S, are
+conventionally deﬁned: the inclusive single-jet cross section as a function of jet pT and rapidity
+y, and the 2-jet production cross section as a function of the 2-jet invariant mass and a rapidity-
+related kinematic quantity that provides a separation of the phase space into exclusive bins.
+The ATLAS Collaboration usually characterizes the 2-jet system in terms of the rapidity sepa-
+ration of the two jets leading in pT, while CMS employs the larger of the two absolute rapidities
+of the two jets. Corresponding measurements by the ATLAS and CMS Collaborations can be
+found in Refs. [1–6].
+
+In this paper, the inclusive 3-jet production differential cross section is measured as a function
+of the invariant mass m3 of the three jets leading in pT and of their maximum rapidity ymax,
+which are deﬁned as follows:
+
+|max(y1, y2, y3)| − |min(y1, y2, y3)|
+
+· max (|y1|,|y2|,|y3|) ,
+
+(1)
+
+where pi and yi are the four-momentum and rapidity of the ith jet leading in pT. Following
+Ref. [3], ymax is deﬁned as a signed quantity such that the double-differential cross section,
+d2σ/dm3 dymax, can be written in a way similar to the inclusive jet cross section, d2σ/dpT dy,
+including a factor of 2 for rapidity bin widths in terms of |ymax| and |y|, respectively. The
+absolute value of ymax is equal to the maximum |y| of the jets, denoted |y|max. A previous study
+of the 3-jet mass spectra was published by the D0 Collaboration [7]. Very recently, ATLAS
+submitted a 3-jet cross section measurement [8].
+For this cross section, the LO process is proportional to α3
+S and theoretical predictions are avail-
+able up to next-to-leading order (NLO) [9, 10] making precise comparisons to data possible. The
+potential impact of this measurement on the parton distribution functions (PDFs) of the proton
+is studied and the strong coupling constant αS is extracted. In previous publications by CMS,
+the value of αS was determined to αS(MZ) = 0.1148 ± 0.0014 (exp) ± 0.0050 (theo) by investi-
+gating the ratio of inclusive 3-jet to inclusive 2-jet production, R32 [11], and αS(MZ) = 0.1185
+± 0.0019 (exp) +0.0060
+−0.0037 (theo) by ﬁtting the inclusive jet cross section [12]. The ratio R32 beneﬁts
+from uncertainty cancellations, but it is only proportional to αS at LO, leading to a correspond-
+ingly high sensitivity to its experimental uncertainties in ﬁts of αS(MZ). The second observable,
+which is similar to the denominator in R32, is proportional to α2
+S at LO with a sensitivity to ex-
+perimental uncertainties reduced by a factor of 1/2, but without uncertainty cancellations. It
+is interesting to study how ﬁts of αS to the inclusive 3-jet mass cross section, d2σ/dm3 dymax,
+which is a 3-jet observable similar to the numerator of R32, compare to previous results.
+The data analyzed in the following were recorded by the CMS detector at the LHC during the
+2011 data-taking period at a proton-proton centre-of-mass energy of 7 TeV and correspond to
+an integrated luminosity of 5.0 fb−1. Jets are clustered by using the infrared- and collinear-safe
+anti-kT algorithm [13] as implemented in the FASTJET package [14] with a jet size parameter
+of R = 0.7. A smaller jet size parameter of R = 0.5 has been investigated, but was found to
+describe the data less well. Similarly, in Ref. [15] it is shown that the inclusive jet cross section
+is better described by NLO theory for R = 0.7 than for R = 0.5.
+
+2
+
+3 Event selection
+
+Events are studied in which at least three jets are found up to a rapidity of |y| = 3 that are above
+a minimal pT threshold of 100 GeV. The jet yields are corrected for detector effects resulting in
+a ﬁnal measurement phase space of 445 GeV ≤ m3 < 3270 GeV and |y|max < 2. Extension of
+the analysis to larger values of |y|max was not feasible with the available trigger paths.
+This paper is divided into seven parts. Section 2 presents an overview of the CMS detector
+and the event reconstruction. Sections 3 and 4 discuss the event selection and present the
+measurement. Theoretical ingredients are introduced in Section 5 and are applied in Section 6
+to determine αS(MZ) from a ﬁt to the measured 3-jet production cross section. Conclusions are
+presented in Section 7.
+
+2 Apparatus and event reconstruction
+The central feature of the CMS apparatus is a superconducting solenoid of 6 m internal diam-
+eter, providing a magnetic ﬁeld of 3.8 T. Within the superconducting solenoid volume are a
+silicon pixel and strip tracker, a lead tungstate crystal electromagnetic calorimeter (ECAL), and
+a brass and scintillator hadron calorimeter (HCAL), each composed of a barrel and two endcap
+sections. Muons are measured in gas-ionization detectors embedded in the steel ﬂux-return
+yoke outside the solenoid. Extensive forward calorimetry complements the coverage provided
+by the barrel and endcap detectors.
+
+The ﬁrst level (L1) of the CMS trigger system, composed of custom hardware processors, uses
+information from the calorimeters and muon detectors to select the most interesting events
+in a ﬁxed time interval of less than 4 µs. The high level trigger (HLT) processor farm further
+decreases the event rate from around 100 kHz to around 400 Hz, before data storage.
+
+The particle-ﬂow algorithm reconstructs and identiﬁes each particle candidate with an opti-
+mized combination of all subdetector information [16, 17]. For each event, the reconstructed
+particle candidates are clustered into hadronic jets by using the anti-kT algorithm with a jet
+size parameter of R = 0.7. The jet momentum is determined as the vectorial sum of all con-
+stituent momenta in this jet, and is found in the simulation to be within 5% to 10% of the true
+momentum over the whole pT spectrum and detector acceptance. An offset correction is ap-
+plied to take into account the extra energy clustered into jets due to additional proton-proton
+interactions within the same or neighbouring bunch crossings (pileup). Jet energy corrections
+are derived from the simulation, and are conﬁrmed with in situ measurements with the energy
+balance of dijet, photon+jet, and Z+jet events [18, 19]. The jet energy resolution amounts typi-
+cally to 15% at 10 GeV, 8% at 100 GeV, and 4% at 1 TeV. A more detailed description of the CMS
+apparatus can be found in Ref. [20].
+
+3 Event selection
+The data set used for this analysis contains all events that were triggered by any of the single-jet
+triggers. A single-jet trigger accepts events if at least one reconstructed jet surpasses a trans-
+verse momentum threshold. During the 2011 data-taking period, triggers with eight different
+thresholds ranging from 60 GeV to 370 GeV were employed. They are listed in Table 1 with
+the number of events recorded by each trigger and the corresponding turn-on threshold pT,99%,
+where the trigger is more than 99% efﬁcient.
+
+The different triggers are used to measure the 3-jet mass spectrum in mutually exclusive regions
+of the phase space, deﬁned in terms of the pT of the leading jet: the pT interval covered by a
+single-jet trigger starts at the corresponding turn-on threshold pT,99% and ends at the turn-
+
+Table 1: Trigger and turn-on thresholds in leading jet pT, and the number of events recorded
+via the single-jet trigger paths used for this measurement.
+
+3
+
+Trigger threshold Turn-on threshold Recorded events
+
+pT [GeV]
+
+pT,99% [GeV]
+
+60
+80
+110
+150
+190
+240
+300
+370
+
+85
+110
+144
+192
+238
+294
+355
+435
+
+2 591 154
+1 491 011
+2 574 451
+2 572 083
+3 533 874
+3 629 577
+9 785 529
+3 129 458
+
+on threshold of the trigger with the next highest threshold. The ﬁnal 3-jet mass spectrum is
+obtained by summing the spectra measured with the different triggers while taking trigger
+prescale factors into account. Apart from the prescaling, the trigger efﬁciency is more than 99%
+across the entire mass range studied.
+
+In the inner rapidity region, most single-jet triggers contribute up to 50% of the ﬁnal event yield,
+with the exception of the two triggers with the lowest and highest threshold, which contribute
+up to 80% and 100% respectively, depending on m3. In particular, starting at 1100 GeV, the
+majority of the events are taken from the highest unprescaled trigger. In the outer rapidity
+region, each jet trigger contributes over a large range of three-jet masses to the measurement.
+With the exception of the two triggers with the lowest and highest thresholds, each trigger
+contributes around 25% to the ﬁnal event yield.
+
+The recorded events are ﬁltered with tracking-based selections [21] to remove interactions be-
+tween the circulating proton bunches and residual gas particles or the beam collimators. To
+further reject beam backgrounds and off-centre parasitic bunch crossings, standard vertex se-
+lection cuts are applied [21]. To enhance the QCD event purity, events in which the missing
+transverse energy Emiss
+amounts to more than 30% of the measured total transverse energy are
+removed. The missing transverse energy is calculated by requiring momentum conservation
+for the reconstructed particle ﬂow candidates [19].
+
+T
+
+Jet identiﬁcation (jet ID) selection criteria [22] are developed to reject pure noise or noise en-
+hanced jets, while keeping more than 99% of physical jets with transverse momentum above
+10 GeV. In contrast to the previous selection criteria, which reject complete events, the jet ID
+removes only individual jets from the event. The jet ID applied to the particle-ﬂow jets requires
+that each jet should contain at least two particles, one of which is a charged hadron. In addition,
+the jet energy fraction carried by neutral hadrons and photons must be less than 90%. These
+criteria have an efﬁciency greater than 99% for hadronic jets.
+
+4 Measurement and experimental uncertainties
+The double-differential 3-jet production cross section is measured as a function of the invariant
+3-jet mass m3 and the maximum rapidity ymax of the three jets with the highest transverse
+momenta in the event:
+
+d2σ
+
+dm3 dymax
+
+=
+
+1
+L
+
+N
+
+∆m3(2∆|y|max)
+
+.
+
+(2)
+
+4
+
+5 Theoretical predictions and uncertainties
+
+Here, L is the integrated luminosity and N is the number of events. The efﬁciency  is the
+product of the trigger and event selection efﬁciencies, and differs from unity by less than one
+percent for this jet analysis. Differences in the efﬁciency with respect to unity are included in
+a systematic uncertainty. The width of a 3-jet mass bin is based on the 3-jet mass resolution,
+which is derived from a detector simulation. Starting at m3 = 50 GeV, the bin width increases
+progressively with m3. In addition, the phase space is split into an inner, |y|max < 1, and an
+outer, 1 ≤ |y|max < 2, rapidity region. The bin widths in ymax are equal to 2. Events with
+|y|max ≥ 2 are rejected.
+To remove the impact of detector effects from limited acceptance and ﬁnite resolution, the mea-
+surement is corrected with the iterative d’Agostini unfolding algorithm [23] with four itera-
+tions. Response matrices for the unfolding algorithm are derived from detector simulation by
+using the two event generators PYTHIA version 6.4.22 [24] with tune Z2 [25] and HERWIG++
+version 2.4.2 [26] with the default tune. (The PYTHIA 6 Z2 tune is identical to the Z1 tune de-
+scribed in [25] except that Z2 uses the CTEQ6L PDF while Z1 uses CTEQ5L.) Differences in the
+unfolding result are used to evaluate the uncertainties related to assumptions in modelling the
+parton showering [27, 28], hadronization [29–32], and the underlying event [27, 33, 34] in these
+event generators. Additional uncertainties are determined from an ensemble of Monte Carlo
+(MC) experiments, where the data input and the response matrix are varied within the limits of
+their statistical precision before entering the unfolding algorithm. The unfolding result corre-
+sponds to the sample mean, while the statistical uncertainty, which is propagated through the
+unfolding procedure, is given by the sample covariance. The variation of the input data leads
+to the statistical uncertainty in the unfolded cross section, while the variation of the response
+matrix is an additional uncertainty inherent in the unfolding technique because of the limited
+size of simulated samples.
+
+The systematic uncertainty related to the determination of the jet energy scale (JES) is eval-
+uated via 16 independent sources as described in Ref. [3]. The modiﬁed prescription for the
+treatment of correlations as recommended in Ref. [12] is applied. To reduce artifacts caused by
+trigger turn-ons and prescale weights, the JES uncertainty is propagated to the cross section
+measurement by employing an ensemble of MC experiments, where the data input is varied
+within the limits of the systematic uncertainty and where average prescale weights are used.
+The luminosity uncertainty, which is fully correlated across all m3 and ymax bins, is estimated
+to be 2.2% [35].
+
+Residual jet reconstruction and trigger inefﬁciencies are accounted for by an additional uncor-
+related uncertainty of 1% as in Ref. [3].
+
+Figure 1 presents an overview of the experimental uncertainties for the 3-jet mass measure-
+ment. Over a wide range of 3-jet masses, the JES uncertainty represents the largest contribu-
+tion. At the edges of the investigated phase space, i.e. in the low and high 3-jet mass regions,
+statistical and unfolding uncertainties, which are intrinsically linked through the unfolding
+procedure, become major contributors to the total uncertainty.
+
+5 Theoretical predictions and uncertainties
+The theoretical predictions for the 3-jet mass cross sections consist of an NLO QCD calculation
+and a nonperturbative (NP) correction to account for the underlying event modelled by mul-
+tiparton interactions (MPI) and for hadronization effects. Electroweak corrections to inclusive
+and dijet cross sections have been calculated in Ref. [36], where they are found to be limited to
+
+5
+
+Figure 1: Overview of the measurement uncertainties in the inner |y|max < 1 (left) and the
+outer rapidity region 1 ≤ |y|max < 2 (right). All uncertainty components, including the 1%
+uncorrelated residual uncertainty, are added in quadrature to give the total uncertainty.
+
+a few percent at the highest dijet masses accessible with the CMS data at 7 TeV centre-of-mass
+energy. For 3-jet quantities these corrections are not known and hence cannot be considered in
+the present analysis.
+
+The NLO calculations are performed by using the NLOJET++ program version 4.1.3 [9, 10]
+within the framework of the FASTNLO package version 2.1 [37]. The partonic events are sub-
+jected to the same jet algorithm and phase space selections as the data events, where at least
+three jets with |y| ≤ 3 and pT > 100 GeV are required. The number of massless quark ﬂavours,
+Nf , is set to ﬁve. The impact of jet production via massive top-antitop quark pairs is estimated
+to be negligible. The renormalization and factorization scales, µr and µ f , are identiﬁed with
+m3/2. With this choice, which is identical to the jet pT in case of dijet events at central rapidity
+with m2/2 as scale, the NLO corrections to the LO cross sections remain limited between 1.2
+and 1.6. The uncertainty in the predicted cross section associated with the renormalization and
+factorization scale choice is evaluated by varying µr and µ f from the default by the following
+six combinations: (µr/(m3/2), µ f /(m3/2)) = (1/2, 1/2), (1/2, 1), (1, 1/2), (1, 2), (2, 1), and
+(2, 2).
+
+Comparisons to the NLO predictions are performed for ﬁve different PDF sets, each with NLO
+and NNLO PDF evolutions, from the LHAPDF package [38]. They are listed in Table 2 together
+with the corresponding number of active ﬂavours, Nf , the default values of the strong coupling
+constant αS(MZ), and the ranges in αS(MZ) available for ﬁts. All PDF sets include a maximum
+of ﬁve active ﬂavours Nf except for NNPDF2.1, which has Nf ,max = 6. Only the ABM11 PDF
+set employs a ﬁxed-ﬂavour number scheme in contrast to variable-ﬂavour number schemes
+favoured by all other PDF sets. The PDF uncertainties in the cross section predictions are eval-
+uated according to the prescriptions recommended for the respective PDFs. More details are
+available in the references listed in Table 2.
+
+For the NP corrections, the multijet-improved MC event generators SHERPA version 1.4.3 [45]
+and MADGRAPH 5 version 1.5.12 [46] are used to simulate 3-jet events. SHERPA employs a
+dipole formulation for parton showering [47, 48], a cluster model for hadronization [49], and
+an MPI model for the underlying event that is based on independent hard processes similar
+to PYTHIA [33, 45]. In the case of MADGRAPH, the steps of parton showering, hadronization,
+and multiple parton scatterings come from PYTHIA version 6.4.26 with default settings using
+the Lund string model for hadronization [29–31] and a multiple-interaction model for the un-
+derlying event that is interleaved with the parton shower [27]. The 3-jet mass is determined for
+
+50010002000m3[GeV]−40−2002040Relativeexp.uncertainty[%]CMS5.0fb−1(7TeV)Anti-ktR=0.7,|y|max<1TotaluncertaintyUnfolding+stat.uncertaintyJetenergyscaleuncertaintyLuminosityuncertainty50010002000m3[GeV]−40−2002040Relativeexp.uncertainty[%]CMS5.0fb−1(7TeV)Anti-ktR=0.7,1≤|y|max<2TotaluncertaintyUnfolding+stat.uncertaintyJetenergyscaleuncertaintyLuminosityuncertainty6
+
+6 Results and determination of the strong coupling constant
+
+Table 2: The PDF sets used in comparisons to the data together with the evolution order (Evol.),
+the corresponding number of active ﬂavours, Nf , the assumed masses Mt and MZ of the top
+quark and the Z boson, respectively, the default values of αS(MZ), and the range in αS(MZ)
+variation available for ﬁts. For CT10 the updated versions of 2012 are taken.
+αS(MZ)
+
+Nf Mt [GeV ] MZ [GeV ]
+
+αS(MZ) range
+
+Base set
+
+Refs.
+
+Evol.
+
+ABM11
+ABM11
+CT10
+CT10
+HERAPDF1.5
+HERAPDF1.5
+MSTW2008
+MSTW2008
+NNPDF2.1
+NNPDF2.1
+
+[39]
+5
+NLO
+[39]
+5
+NNLO
+[40]
+≤5
+NLO
+[40]
+NNLO ≤5
+[41]
+NLO
+≤5
+[41]
+NNLO ≤5
+[42, 43] NLO
+≤5
+[42, 43] NNLO ≤5
+≤6
+[44]
+NLO
+NNLO ≤6
+[44]
+
+180
+180
+172
+172
+180
+180
+1010
+1010
+175
+175
+
+91.174
+91.174
+91.188
+91.188
+91.187
+91.187
+91.1876
+91.1876
+91.2
+91.2
+
+0.1180
+0.1134
+0.1180
+0.1180
+0.1176
+0.1176
+0.1202
+0.1171
+0.1190
+0.1190
+
+0.110–0.130
+0.104–0.120
+0.112–0.127
+0.110–0.130
+0.114–0.122
+0.114–0.122
+0.110–0.130
+0.107–0.127
+0.114–0.124
+0.114–0.124
+
+Figure 2: Overview of the NP correction factors and their uncertainties in the inner |y|max < 1
+(solid line) and in the outer rapidity region 1 ≤ |y|max < 2 (dashed line).
+a given event before and after the MPI and hadronization phases are performed. This allows
+the derivation of correction factors, which are applied to the theory prediction at NLO. The
+correction factor is deﬁned as the mean of the corrections from the two examined event gen-
+erators and ranges in value from 1.16 for the low mass range to about 1.05 at high 3-jet mass.
+The systematic uncertainty in the NP correction factors is estimated as plus or minus half of the
+spread between the two predictions and amounts to roughly ±2%. The NP correction factors
+and their uncertainties are shown in Fig. 2 for both rapidity bins.
+
+An overview of the different theoretical uncertainties is given in Fig. 3.
+
+6 Results and determination of the strong coupling constant
+Figure 4 compares the measured 3-jet mass spectrum to the Theory prediction. This prediction
+is based on an NLO 3-jet calculation, which employs the CT10-NLO PDF set and is corrected
+for nonperturbative effects. Perturbative QCD describes the 3-jet mass cross section over ﬁve
+orders of magnitude for 3-jet masses up to 3 TeV. The ratios of the measured cross sections to
+
+50010001500200025003000m3[GeV]0.951.001.051.101.151.201.25NonperturbativecorrectionfactorCMSSimulation√s=7TeVAnti-ktR=0.7|y|max<11≤|y|max<27
+
+Figure 3: Overview of the theory uncertainties in the inner |y|max < 1 (left) and in the outer
+rapidity region 1 ≤ |y|max < 2 (right) for the CT10 PDF set with NLO PDF evolution.
+
+Figure 4: Comparison of the measured 3-jet mass cross section with the theory prediction for
+the two regions in |y|max. This prediction is based on an NLO 3-jet calculation, which employs
+the CT10-NLO PDF set and is corrected for nonperturbative effects. The vertical error bars
+represent the total experimental uncertainty, while the horizontal error bars indicate the bin
+widths.
+
+the theory predictions are presented in Fig. 5 to better judge potential differences between data
+and theory. Within uncertainties, most PDF sets are able to describe the data. Some deviations
+are visible for small m3. Signiﬁcant deviations are exhibited when using the ABM11 PDFs,
+which therefore are not considered in our ﬁts of αS(MZ).
+In the following, the PDFs are considered to be an external input such that a value of αS(MZ)
+can be determined. Potential correlations between αS(MZ) and the PDFs are taken into account
+by using PDF sets that include variations in αS(MZ) as listed in Table 2. Figure 6 demonstrates
+for the example of the CT10-NLO PDF set the sensitivity of the theory predictions with respect
+to variations in the value of αS(MZ) in comparison to the data and their total uncertainty.
+A value of αS(MZ) is determined by minimizing the χ2 between the N measurements Di and
+the theoretical predictions Ti. The χ2 is deﬁned as
+
+(3)
+
+χ2 =
+
+N∑
+
+ij
+
+(Di − Ti) C−1
+
+ij
+
+(cid:0)Dj − Tj
+
+(cid:1) ,
+
+50010002000m3[GeV]−40−2002040Relativetheor.uncertainty[%]√s=7TeVAnti-ktR=0.7,|y|max<1CT10-NLOTotaluncertaintyPDFuncertaintyScaleuncertaintyNPuncertainty50010002000m3[GeV]−40−2002040Relativetheor.uncertainty[%]√s=7TeVAnti-ktR=0.7,1≤|y|max<2CT10-NLOTotaluncertaintyPDFuncertaintyScaleuncertaintyNPuncertainty50010002000m3[GeV]10−610−510−410−310−210−1100101d2σ/dm3dymax[pb/GeV]CMS5.0fb−1(7TeV)Anti-ktR=0.7CT10-NLONLO×NP|y|max≤11<|y|max≤28
+
+6 Results and determination of the strong coupling constant
+
+Figure 5: Ratio of the 3-jet mass cross section, divided by NP corrections, to the theory predic-
+tion at NLO with the CT10-NLO (top) or CT10-NNLO PDF set (bottom) for the inner rapidity
+region (left) and for the outer rapidity region (right). The data are shown with error bars rep-
+resenting the statistical uncertainty after unfolding added quadratically to the 1% uncorrelated
+residual uncertainty and gray rectangles for the total correlated systematic uncertainty. The
+light gray (colour version: yellow) band indicates the PDF uncertainty for the CT10 PDF sets
+at 68% conﬁdence level. In addition, the ratios of the NLO predictions are displayed for the
+PDF sets MSTW2008, NNPDF2.1, HERAPDF1.5, and ABM11, also at next-to- (top) and next-
+to-next-to-leading evolution order (bottom).
+
+50010002000m3[GeV]0.00.20.40.60.81.01.21.41.61.8RatiotoNLO(CT10-NLO)CMS5.0fb−1(7TeV)Anti-ktR=0.7,|y|max<1Data/NPCT10-NLO,∆PDFCL68MSTW2008-NLONNPDF2.1-NLOHERAPDF1.5-NLOABM11-NLO50010002000m3[GeV]0.00.20.40.60.81.01.21.41.61.8RatiotoNLO(CT10-NLO)CMS5.0fb−1(7TeV)Anti-ktR=0.7,1≤|y|max<2Data/NPCT10-NLO,∆PDFCL68MSTW2008-NLONNPDF2.1-NLOHERAPDF1.5-NLOABM11-NLO50010002000m3[GeV]0.00.20.40.60.81.01.21.41.61.8RatiotoNLO(CT10-NNLO)CMS5.0fb−1(7TeV)Anti-ktR=0.7,|y|max<1Data/NPCT10-NNLO,∆PDFCL68MSTW2008-NNLONNPDF2.1-NNLOHERAPDF1.5-NNLOABM11-NNLO50010002000m3[GeV]0.00.20.40.60.81.01.21.41.61.8RatiotoNLO(CT10-NNLO)CMS5.0fb−1(7TeV)Anti-ktR=0.7,1≤|y|max<2Data/NPCT10-NNLO,∆PDFCL68MSTW2008-NNLONNPDF2.1-NNLOHERAPDF1.5-NNLOABM11-NNLO9
+
+Figure 6: Ratio of the measured 3-jet mass cross section in the inner rapidity region (left) and
+in the outer rapidity region (right), divided by the NP correction, with respect to the theory
+prediction at NLO while using the CT10-NLO PDF set with the default value of αS(MZ) =
+0.118. In addition, ratios are shown for the theory predictions with CT10-NLO PDFs assuming
+values of αS(MZ) ranging from 0.112 up to 0.127 in steps of 0.001. The error bars represent the
+total uncorrelated uncertainty of the data.
+
+where the covariance matrix Cij is composed of the following terms:
+
+(cid:33)
+
+(cid:32)
+
+∑
+sources
+
+C = covunf+stat + covuncor +
+
+and the terms in the sum represent
+
+covJES
+
++ covlumi + covPDF,
+
+(4)
+
+1. covunf+stat: statistical and unfolding uncertainty including correlations induced through
+
+the unfolding;
+
+2. covuncor: uncorrelated systematic uncertainty summing up small residual effects such as
+trigger and identiﬁcation inefﬁciencies, time dependence of the jet pT resolution, and the
+uncertainty on the trigger prescale factor;
+
+3. covJES,sources: systematic uncertainty for each JES uncertainty source;
+
+4. covlumi: luminosity uncertainty; and
+
+5. covPDF: PDF uncertainties.
+
+The ﬁrst four sources constitute the experimental uncertainty. The JES and luminosity uncer-
+tainty are treated as fully correlated across the m3 and |y|max bins, where for the JES uncertainty
+the procedure recommended in Ref. [12] is applied. The derivation of PDF uncertainties fol-
+lows prescriptions for each individual PDF set. The CT10 and MSTW PDF sets both employ the
+Hessian or eigenvector method [50] with upward and downward variations for each eigenvec-
+tor. As required by the use of covariance matrices, symmetric PDF uncertainties are computed
+following Ref. [51]. For the HERAPDF1.5 PDF set, which employs a Hessian method for the
+experimental uncertainties, complemented with model and parameterization uncertainties, the
+prescription from Ref. [41] is used. The NNPDF2.1 PDF set uses the technique of MC pseudo-
+experiments instead of the eigenvector method to provide PDF uncertainties. The ensemble
+of replicas, whose averaged predictions give the central result, are evaluated following the
+prescription in Ref. [52] to derive the PDF uncertainty for NNPDF. The JES and luminosity
+
+50010002000m3[GeV]0.60.81.01.21.41.6RatiotoNLOwithαs(MZ)=0.118CMS5.0fb−1(7TeV)Anti-ktR=0.7,|y|max<1CT10-NLOαs(MZ)=0.127αs(MZ)=0.118αs(MZ)=0.112Data/NP50010002000m3[GeV]0.60.81.01.21.41.6RatiotoNLOwithαs(MZ)=0.118CMS5.0fb−1(7TeV)Anti-ktR=0.7,1≤|y|max<2CT10-NLOαs(MZ)=0.127αs(MZ)=0.118αs(MZ)=0.112Data/NP10
+
+6 Results and determination of the strong coupling constant
+
+uncertainties are assumed to be multiplicative to avoid the statistical bias that arises from un-
+certainty estimations taken from data [53–55]. The uncertainty in a result for αS(MZ) from a χ2
+ﬁt is obtained from the αS(MZ) values for which the χ2 is increased by one with respect to the
+minimum value.
+The uncertainty in αS(MZ) due to the NP uncertainties is evaluated by looking for maximal
+offsets from a default ﬁt. The theoretical prediction T is varied by the NP uncertainty ∆NP as
+T · NP → T · (NP ± ∆NP). The ﬁtting procedure is repeated for these two variations, and the
+deviation from the central αS(MZ) values is considered as the uncertainty in αS(MZ). Finally,
+the uncertainty due to the µr and µ f scales is evaluated by applying the same method as for the
+NP corrections, varying µr and µ f by the six scale factor combinations as described in Section 5.
+The shape of the predicted 3-jet mass cross section depends on the QCD matrix elements and
+kinematic constraints. Because each of the leading three jets is required to have a pT larger
+than 100 GeV, some event conﬁgurations, possible with respect to the QCD matrix elements,
+are kinematically forbidden at low m3. In the spectra shown in Fig. 4, this fact is visible in the
+form of a maximum in the 3-jet mass cross section, which is shifted to higher m3 values for
+the outer compared to the inner |y|max bin because the larger differences in the jet rapidities
+allow higher m3 to be reached with lower pT jets. For ﬁts of αS(MZ) the m3 region limited
+through kinematical constraints is unsuited, since close to the phase space boundaries ﬁxed-
+order pQCD calculations might be insufﬁcient and resummations might be required. To avoid
+this region of phase space as done in Ref. [11], only m3 bins beyond the maximum of the 3-jet
+mass cross section in the outer |y|max bin are considered. This corresponds to a minimum in
+m3 of 664 GeV. Including one bin more or less induces changes only in the measured αS(MZ)
+below the percent level. To study the running of the strong coupling, the comparison between
+data and theory is also performed in several 3-jet mass regions above 664 GeV as shown in
+Table 3.
+For the evolution of αS(Q) in the ﬁts of αS(MZ), the Gl ¨uck–Reya–Vogt formula [56] is used at
+2-loop order as implemented in FASTNLO. The capability of FASTNLO to replace the αS(Q)
+evolution of a PDF set by such alternative codes is exploited to interpolate cross section pre-
+dictions between the available ﬁxed points of αS(MZ) listed in Table 2. Limited extrapolations
+beyond the lowest or highest values of αS(MZ) provided in a PDF series are accepted if nec-
+essary for uncertainty evaluations, up to a limit of |∆αS(MZ)| = 0.003. This extrapolation
+method can be necessary in some cases to fully evaluate the scale uncertainty. The procedure
+has been cross-checked using the original αS(Q) grid of each PDF within LHAPDF and with
+the evolution code of the HOPPET toolkit [57] and of RUNDEC [58, 59].
+
+The CT10-NLO PDF set is chosen for the main result for two reasons: The range in available
+αS(MZ) values is wide enough to evaluate almost all scale uncertainties within this range and
+the central value of αS(MZ) in this set is rather close to the combined ﬁt result.
+The ﬁt results for αS(MZ) and αS(Q) for all considered m3 ranges are presented in Tables 3
+and 4, respectively. Fits over the total m3 range above 664 GeV are shown for each ymax bin
+separately and for both combined in the bottom three rows of Table 3.
+
+For comparison, the combined ﬁt was also tried for alternative PDF sets listed in Table 5. For
+the ABM11 PDFs, which predict 3-jet mass cross sections that are too small, ﬁts are technically
+possible. However, to compensate for this discrepancy, the αS(MZ) results take unreasonably
+high values that are far outside the αS(MZ) values that are given by the PDF authors. For
+the NNPDF2.1-NLO and HERAPDF1.5-NLO PDF series, a central value for αS(MZ) can be
+calculated, but the range in αS(MZ) values is not sufﬁcient for a reliable determination of un-
+
+11
+
+Table 3: Determinations of αS(MZ) in the considered m3 ranges. The relevant scale in each
+3-jet mass range is calculated from the cross section-weighted average as given by the theory
+prediction using the CT10 PDF set with NLO evolution. The three bottom rows present ﬁts
+using the whole 3-jet mass range above 664 GeV in both rapidity regions either separately or
+combined (last row). Uncertainties are quoted separately for experimental sources, the PDFs,
+the NP corrections, and the scale uncertainty.
+
+m3 [GeV]
+
+664–794
+794–938
+938–1098
+1098–1369
+1369–2172
+2172–2602
+2602–3270
+|y|max < 1
+1 ≤ |y|max < 2
+|y|max < 2
+
+(cid:104)Q(cid:105) [GeV] χ2/ndof
+4.5/3
+7.8/3
+0.6/3
+2.6/5
+8.8/13
+3.6/5
+5.5/7
+10.3/22
+10.6/22
+47.2/45
+
+361
+429
+504
+602
+785
+1164
+1402
+413
+441
+438
+
+αS(MZ) ±(exp) ±(PDF) ±(NP) ±(scale)
++0.0008
++0.0019
++0.0040
++0.0079
+0.1232
+−0.0007
+−0.0016
+−0.0042
+−0.0044
++0.0019
++0.0034
++0.0073
+±0.0008
+0.1143
+−0.0033
+−0.0016
+−0.0042
++0.0033
++0.0068
+0.1171
+±0.0022 ±0.0007
+−0.0034
+−0.0040
++0.0027
++0.0008
++0.0060
+0.1152 ±0.0026
+−0.0007
+−0.0026
+−0.0027
++0.0007
++0.0030
++0.0068
++0.0018
+0.1168
+−0.0006
+−0.0031
+−0.0034
+−0.0019
++0.0040
++0.0037
++0.0065
+0.1167
+±0.0008
+−0.0044
+−0.0044
+−0.0041
++0.0056
++0.0088
++0.0043
+±0.0001
+0.1120
+−0.0050
+−0.0040
+−0.0041
++0.0018
++0.0059
+0.1163
+±0.0027 ±0.0007
+−0.0025
+−0.0019
++0.0018
++0.0067
+0.1179
+±0.0021 ±0.0007
+−0.0037
+−0.0019
++0.0069
+0.1171 ±0.0013 ±0.0024 ±0.0008
+−0.0040
+
+Table 4: Same as Table 3 but showing the ﬁt result in terms of αS(Q) for each range in Q.
+αS(Q) ±(exp) ±(PDF) ±(NP) ±(scale)
++0.0027
++0.0052
+±0.0005
+0.1013
+−0.0028
+−0.0030
++0.0048
+0.0933 ±0.0022
+±0.0005
+−0.0028
++0.0043
+0.0934 ±0.0021 ±0.0014 ±0.0005
+−0.0025
++0.0036
++0.0005
+0.0902 ±0.0016 ±0.0016
+−0.0004
+−0.0017
++0.0038
++0.0004
++0.0017
+0.0885
+−0.0020
+−0.0003
+−0.0018
++0.0034
++0.0020
+±0.0004
+0.0848
+−0.0023
+−0.0021
++0.0044
++0.0028
+0.0807
+±0.0001
+−0.0026
+−0.0021
+
+(cid:104)Q(cid:105) [GeV] χ2/ndof
+4.5/3
+7.8/3
+0.6/3
+2.6/5
+8.8/13
+3.6/5
+5.5/7
+
+361
+429
+504
+602
+785
+1164
+1402
+
+m3 [GeV]
+
+664–794
+794–938
+938–1098
+1098–1369
+1369–2172
+2172–2602
+2602–3270
+
++0.0013
+−0.0011
++0.0012
+−0.0011
+
++0.0010
+−0.0011
++0.0019
+−0.0023
++0.0022
+−0.0021
+
+12
+
+6 Results and determination of the strong coupling constant
+
+Table 5: Determinations of αS(MZ) with different PDF sets using all 3-jet mass points with
+m3 > 664 GeV. Uncertainties are quoted separately for experimental sources, the PDFs, the NP
+corrections, and the scale uncertainty.
+
+PDF set
+
+χ2/ndof
+
+47.2/45
+CT10-NLO
+48.5/45
+CT10-NNLO
+52.8/45
+MSTW2008-NLO
+MSTW2008-NNLO
+53.9/45
+HERAPDF1.5-NNLO 49.9/45
+NNPDF2.1-NNLO
+51.1/45
+
+αS(MZ) ±(exp) ±(PDF) ±(NP) ± (scale)
++0.0069
+0.1171 ±0.0013 ±0.0024 ±0.0008
+−0.0040
++0.0066
++0.0006
++0.0011
+0.1165
+−0.0008
+−0.0034
+−0.0010
++0.0105
++0.0008
++0.0014
+0.1155
+−0.0009
+−0.0029
+−0.0013
++0.0052
++0.0011
++0.0011
+0.1183
+−0.0050
+−0.0019
+−0.0016
++0.0035
++0.0003
+0.1143 ±0.0007
+−0.0027
+−0.0008
++0.0058
++0.0010
+0.1164 ±0.0010
+−0.0009
+−0.0025
+
++0.0022
+−0.0023
++0.0014
+−0.0015
++0.0012
+−0.0023
++0.0020
+−0.0035
++0.0020
+−0.0019
+
+Figure 7: Comparison of the αS(Q) evolution as determined in this analysis from all mea-
+surement bins with m3 > 664 GeV (solid curve with light grey uncertainty band; colour ver-
+sion: red curve with yellow uncertainty band) to the world average (dashed curve with dark
+grey uncertainty band) [60]. The error bars on the data points correspond to the total uncer-
+tainty. In addition, an overview of measurements of the running of the strong coupling αS(Q)
+from electron-positron [65–67], electron-proton [69–72], and proton–(anti)proton collider ex-
+periments [11, 61, 62, 68] is presented. The results of this analysis extend the covered range in
+values of the scale Q up to ≈1.4 TeV.
+certainty estimations. In all other cases the ﬁt results for αS(MZ) are in agreement between the
+investigated PDF sets and PDF evolution orders within uncertainties.
+Figure 7 shows the αS(Q) evolution determined in this analysis with CT10-NLO in comparison
+to the world average of αS(MZ) = 0.1185 ± 0.0006 [60]. The ﬁgure also shows an overview of
+the measurements of the running of the strong coupling from various other experiments [61–
+67] together with recent determinations by CMS [11, 12, 68] and from this analysis. Within
+uncertainties, the new results presented here are in agreement with previous determinations
+and extend the covered range in scale Q up to a value of 1.4 TeV.
+
+101001000Q[GeV]0.050.100.150.200.25αs(Q)αs(MZ)=0.1171±0.00750.0050(3-jetmass)αs(MZ)=0.1185±0.0006(Worldaverage)CMSR32ratioCMSttprod.CMSincl.jetCMS3-jetmassHERALEPPETRASPSTevatron13
+
+7 Summary
+The proton-proton collision data collected by the CMS experiment in 2011 at a centre-of-mass
+energy of 7 TeV were used to measure the double-differential 3-jet production cross section as a
+function of the invariant mass m3 of the three jets leading in pT, and of their maximum rapidity
+ymax. The measurement covers a 3-jet mass range from 445 GeV up to 3270 GeV in two bins
+of rapidity up to |ymax| = 2. Within experimental and theoretical uncertainties, which are of
+comparable size, the data are in agreement with predictions of perturbative QCD at next-to-
+leading order.
+
+The strong coupling constant has been determined in multiple regions of 3-jet mass for values
+of the scale Q between 0.4 and 1.4 TeV from a comparison between data and theory. The results
+are consistent with the evolution of the strong coupling as predicted by the renormalization
+group equation and extend the range in Q where this could be tested up to 1.4 TeV. A combined
+ﬁt of all data points above a 3-jet mass of 664 GeV gives the value of the strong coupling constant
+αS(MZ) = 0.1171 ± 0.0013 (exp) ± 0.0024 (PDF) ± 0.0008 (NP) +0.0069
+This result, achieved with 3-jet production cross sections, is consistent with determinations pre-
+viously reported by CMS using the inclusive jet cross section [12] and the ratio of inclusive 3-jet
+to inclusive 2-jet production cross sections [11]. It is also consistent with a recent determination
+of αS(MZ) by CMS at the top production threshold using theory at NNLO [68] and with the
+latest world average of αS(MZ) = 0.1185 ± 0.0006 [60].
+
+−0.0040 (scale).
+
+Acknowledgments
+We congratulate our colleagues in the CERN accelerator departments for the excellent perfor-
+mance of the LHC and thank the technical and administrative staffs at CERN and at other
+CMS institutes for their contributions to the success of the CMS effort. In addition, we grate-
+fully acknowledge the computing centres and personnel of the Worldwide LHC Computing
+Grid for delivering so effectively the computing infrastructure essential to our analyses. Fi-
+nally, we acknowledge the enduring support for the construction and operation of the LHC
+and the CMS detector provided by the following funding agencies: the Austrian Federal Min-
+istry of Science, Research and Economy and the Austrian Science Fund; the Belgian Fonds de
+la Recherche Scientiﬁque, and Fonds voor Wetenschappelijk Onderzoek; the Brazilian Fund-
+ing Agencies (CNPq, CAPES, FAPERJ, and FAPESP); the Bulgarian Ministry of Education and
+Science; CERN; the Chinese Academy of Sciences, Ministry of Science and Technology, and Na-
+tional Natural Science Foundation of China; the Colombian Funding Agency (COLCIENCIAS);
+the Croatian Ministry of Science, Education and Sport, and the Croatian Science Foundation;
+the Research Promotion Foundation, Cyprus; the Ministry of Education and Research, Esto-
+nian Research Council via IUT23-4 and IUT23-6 and European Regional Development Fund,
+Estonia; the Academy of Finland, Finnish Ministry of Education and Culture, and Helsinki
+Institute of Physics; the Institut National de Physique Nucl´eaire et de Physique des Partic-
+ules / CNRS, and Commissariat `a l’ ´Energie Atomique et aux ´Energies Alternatives / CEA,
+France; the Bundesministerium f ¨ur Bildung und Forschung, Deutsche Forschungsgemeinschaft,
+and Helmholtz-Gemeinschaft Deutscher Forschungszentren, Germany; the General Secretariat
+for Research and Technology, Greece; the National Scientiﬁc Research Foundation, and Na-
+tional Innovation Ofﬁce, Hungary; the Department of Atomic Energy and the Department
+of Science and Technology, India; the Institute for Studies in Theoretical Physics and Mathe-
+matics, Iran; the Science Foundation, Ireland; the Istituto Nazionale di Fisica Nucleare, Italy;
+the Ministry of Science, ICT and Future Planning, and National Research Foundation (NRF),
+
+14
+
+References
+
+Republic of Korea; the Lithuanian Academy of Sciences; the Ministry of Education, and Uni-
+versity of Malaya (Malaysia); the Mexican Funding Agencies (CINVESTAV, CONACYT, SEP,
+and UASLP-FAI); the Ministry of Business, Innovation and Employment, New Zealand; the
+Pakistan Atomic Energy Commission; the Ministry of Science and Higher Education and the
+National Science Centre, Poland; the Fundac¸ ˜ao para a Ciˆencia e a Tecnologia, Portugal; JINR,
+Dubna; the Ministry of Education and Science of the Russian Federation, the Federal Agency of
+Atomic Energy of the Russian Federation, Russian Academy of Sciences, and the Russian Foun-
+dation for Basic Research; the Ministry of Education, Science and Technological Development
+of Serbia; the Secretar´ıa de Estado de Investigaci´on, Desarrollo e Innovaci´on and Programa
+Consolider-Ingenio 2010, Spain; the Swiss Funding Agencies (ETH Board, ETH Zurich, PSI,
+SNF, UniZH, Canton Zurich, and SER); the Ministry of Science and Technology, Taipei; the
+Thailand Center of Excellence in Physics, the Institute for the Promotion of Teaching Science
+and Technology of Thailand, Special Task Force for Activating Research and the National Sci-
+ence and Technology Development Agency of Thailand; the Scientiﬁc and Technical Research
+Council of Turkey, and Turkish Atomic Energy Authority; the National Academy of Sciences
+of Ukraine, and State Fund for Fundamental Researches, Ukraine; the Science and Technology
+Facilities Council, UK; the US Department of Energy, and the US National Science Foundation.
+
+Individuals have received support from the Marie-Curie programme and the European Re-
+search Council and EPLANET (European Union); the Leventis Foundation; the A. P. Sloan
+Foundation; the Alexander von Humboldt Foundation; the Belgian Federal Science Policy Of-
+ﬁce; the Fonds pour la Formation `a la Recherche dans l’Industrie et dans l’Agriculture (FRIA-
+Belgium); the Agentschap voor Innovatie door Wetenschap en Technologie (IWT-Belgium); the
+Ministry of Education, Youth and Sports (MEYS) of the Czech Republic; the Council of Sci-
+ence and Industrial Research, India; the HOMING PLUS programme of Foundation for Polish
+Science, coﬁnanced from European Union, Regional Development Fund; the Compagnia di
+San Paolo (Torino); the Consorzio per la Fisica (Trieste); MIUR project 20108T4XTM (Italy); the
+Thalis and Aristeia programmes coﬁnanced by EU-ESF and the Greek NSRF; and the National
+Priorities Research Program by Qatar National Research Fund.
+
+References
+[1] ATLAS Collaboration, “Measurement of dijet cross sections in pp collisions at 7 TeV
+
+centre-of-mass energy using the ATLAS detector”, JHEP 05 (2014) 059,
+doi:10.1007/JHEP05(2014)059, arXiv:1312.3524.
+
+[2] ATLAS Collaboration, “Measurement of the inclusive jet cross section in pp collisions at
+
+√s=2.76 TeV and comparison to the inclusive jet cross section at √s=7 TeV using the
+ATLAS detector”, Eur. Phys. J. C 73 (2013) 2509,
+doi:10.1140/epjc/s10052-013-2509-4, arXiv:1304.4739.
+
+[3] CMS Collaboration, “Measurements of differential jet cross sections in proton-proton
+
+collisions at √s = 7 TeV with the CMS detector”, Phys. Rev. D 87 (2012) 112002,
+doi:10.1103/PhysRevD.87.112002.
+
+[4] CMS Collaboration, “Measurement of the inclusive jet cross section in pp collisions at
+
+√s = 7 TeV”, Phys. Rev. Lett. 107 (2011) 132001,
+doi:10.1103/PhysRevLett.107.132001.
+
+References
+
+15
+
+[5] CMS Collaboration, “Measurement of the differential dijet production cross section in
+
+proton-proton collisions at √s = 7 TeV”, Phys. Lett. B 700 (2011) 187,
+doi:10.1016/j.physletb.2011.05.027.
+
+[6] ATLAS Collaboration, “Measurement of inclusive jet and dijet cross sections in
+
+proton-proton collisions at 7 TeV centre-of-mass energy with the ATLAS detector”, Eur.
+Phys. J. C 71 (2011) 1512, doi:10.1140/epjc/s10052-010-1512-2,
+arXiv:1009.5908.
+
+[7] D0 Collaboration, “Measurement of three-jet differential cross sections dσ3jet/dM3jet in p ¯p
+
+collisions at √s = 1.96 TeV”, Phys. Lett. B 704 (2011) 434,
+doi:10.1016/j.physletb.2011.09.048, arXiv:1104.1986.
+
+[8] ATLAS Collaboration, “Measurement of three-jet production cross-sections in pp
+
+collisions at 7 TeV centre-of-mass energy using the ATLAS detector”, (2014).
+arXiv:1411.1855. Submitted to Eur. Phys. J. C.
+
+[9] Z. Nagy, “Three-jet cross sections in hadron-hadron collisions at next-to-leading order”,
+
+Phys. Rev. Lett. 88 (2002) 122003, doi:10.1103/PhysRevLett.88.122003,
+arXiv:hep-ph/0110315.
+
+[10] Z. Nagy, “Next-to-leading order calculation of three-jet observables in hadron-hadron
+
+collisions”, Phys. Rev. D 68 (2003) 094002, doi:10.1103/PhysRevD.68.094002,
+arXiv:hep-ph/0307268.
+
+[11] CMS Collaboration, “Measurement of the ratio of the inclusive 3-jet cross section to the
+inclusive 2-jet cross section in pp collisions at √s = 7 TeV and ﬁrst determination of the
+strong coupling constant in the TeV range”, Eur. Phys. J. C 73 (2013) 2604,
+doi:10.1140/epjc/s10052-013-2604-6.
+
+[12] CMS Collaboration, “Constraints on parton distribution functions and extraction of the
+strong coupling constant from the inclusive jet cross section in pp collisions at √s = 7
+TeV”, (2014). arXiv:1410.6765. Submitted to Eur. Phys. J. C.
+
+[13] M. Cacciari, G. P. Salam, and G. Soyez, “The anti-kt jet clustering algorithm”, JHEP 04
+
+(2008) 063, doi:10.1088/1126-6708/2008/04/063, arXiv:0802.1189.
+
+[14] M. Cacciari, G. P. Salam, and G. Soyez, “FastJet user manual”, Eur. Phys. J. C 72 (2012)
+
+1896, doi:10.1140/epjc/s10052-012-1896-2, arXiv:1111.6097.
+
+[15] CMS Collaboration, “Measurement of the ratio of inclusive jet cross sections using the
+
+anti-kT algorithm with radius parameters R = 0.5 and 0.7 in pp collisions at √s = 7 TeV”,
+Phys. Rev. D 90 (2014) 072006, doi:10.1103/PhysRevD.90.072006,
+arXiv:1406.0324.
+
+[16] CMS Collaboration, “Particle–Flow Event Reconstruction in CMS and Performance for
+
+”, CMS Physics Analysis Summary CMS-PAS-PFT-09-001, 2009.
+
+Jets, Taus, and Emiss
+
+T
+
+[17] CMS Collaboration, “Commissioning of the Particle-ﬂow Event Reconstruction with the
+
+ﬁrst LHC collisions recorded in the CMS detector”, CMS Physics Analysis Summary
+CMS-PAS-PFT-10-001, 2010.
+
+[18] CMS Collaboration, “Determination of the Jet Energy Scale in CMS with pp Collisions at
+
+√s = 7 TeV”, CMS Physics Analysis Summary CMS-PAS-JME-10-010, 2010.
+
+16
+
+References
+
+[19] CMS Collaboration, “Determination of jet energy calibration and transverse momentum
+
+resolution in CMS”, J. Instrum. 6 (2011) P11002,
+doi:10.1088/1748-0221/6/11/P11002.
+
+[20] CMS Collaboration, “The CMS experiment at the CERN LHC”, JINST 03 (2008) S08004,
+
+doi:10.1088/1748-0221/3/08/S08004.
+
+[21] CMS Collaboration, “Tracking and Primary Vertex Results in First 7 TeV Collisions”,
+
+CMS Physics Analysis Summary CMS-PAS-TRK-10-005, 2010.
+
+[22] CMS Collaboration, “Calorimeter Jet Quality Criteria for the First CMS Collision Data”,
+
+CMS Physics Analysis Summary CMS-PAS-JME-09-008, 2010.
+
+[23] G. D’Agostini, “A Multidimensional unfolding method based on Bayes’ theorem”, Nucl.
+
+Instrum. Meth. A 362 (1995) 487, doi:10.1016/0168-9002(95)00274-X.
+
+[24] T. Sj¨ostrand, S. Mrenna, and P. Skands, “PYTHIA 6.4 physics and manual”, JHEP 05
+(2006) 026, doi:10.1088/1126-6708/2006/05/026, arXiv:hep-ph/0603175.
+
+[25] R. Field, “Early LHC Underlying Event Data - Findings and Surprises”, in 21st Hadron
+Collider Physics Symposium (HCP 2010). Toronto, Ontario, Canada, August 23-27, 2010.
+arXiv:1010.3558.
+
+[26] M. B¨ahr et al., “Herwig++ physics and manual”, Eur. Phys. J. C 58 (2008) 639,
+
+doi:10.1140/epjc/s10052-008-0798-9, arXiv:0803.0883.
+
+[27] T. Sj¨ostrand and P. Z. Skands, “Transverse-momentum-ordered showers and interleaved
+
+multiple interactions”, Eur. Phys. J. C 39 (2005) 129,
+doi:10.1140/epjc/s2004-02084-y, arXiv:hep-ph/0408302.
+
+[28] S. Gieseke, P. Stephens, and B. Webber, “New formalism for QCD parton showers”, JHEP
+
+12 (2003) 045, doi:10.1088/1126-6708/2003/12/045, arXiv:hep-ph/0310083.
+
+[29] B. Andersson, G. Gustafson, G. Ingelman, and T. Sj¨ostrand, “Parton fragmentation and
+string dynamics”, Phys. Rept. 97 (1983) 31, doi:10.1016/0370-1573(83)90080-7.
+
+[30] B. Andersson, G. Gustafson, and B. S¨oderberg, “A general model for jet fragmentation”,
+
+Z. Phys. C 20 (1983) 317, doi:10.1007/BF01407824.
+
+[31] T. Sj¨ostrand, “The merging of jets”, Phys. Lett. B 142 (1984) 420,
+
+doi:10.1016/0370-2693(84)91354-6.
+
+[32] B. R. Webber, “A QCD model for jet fragmentation including soft gluon interference”,
+
+Nucl. Phys. B 238 (1984) 492, doi:10.1016/0550-3213(84)90333-X.
+
+[33] T. Sj¨ostrand and M. van Zijl, “A multiple-interaction model for the event structure in
+
+hadron collisions”, Phys. Rev. D 36 (1987) 2019, doi:10.1103/PhysRevD.36.2019.
+
+[34] M. B¨ahr, S. Gieseke, and M. H. Seymour, “Simulation of multiple partonic interactions in
+
+Herwig++”, JHEP 07 (2008) 076, doi:10.1088/1126-6708/2008/07/076,
+arXiv:0803.3633.
+
+[35] CMS Collaboration, “Absolute Calibration of the Luminosity Measurement at CMS:
+Winter 2012 Update”, CMS Physics Analysis Summary CMS-PAS-SMP-12-008, 2012.
+
+References
+
+17
+
+[36] S. Dittmaier, A. Huss, and C. Speckner, “Weak radiative corrections to dijet production at
+
+hadron colliders”, JHEP 11 (2012) 095, doi:10.1007/JHEP11(2012)095,
+arXiv:1210.0438.
+
+[37] D. Britzger, K. Rabbertz, F. Stober, and M. Wobisch, “New features in version 2 of the
+fastNLO project”, in 20th International Workshop on Deep-Inelastic Scattering and Related
+Subjects (DIS 2012), p. 217. Bonn, Germany, March 26-30, 2012. arXiv:1208.3641.
+doi:10.3204/DESY-PROC-2012-02/165.
+
+[38] M. R. Whalley, D. Bourilkov, and R. C. Group, “The Les Houches Accord PDFs
+
+(LHAPDF) and LHAGLUE”, (2005). arXiv:hep-ph/0508110.
+
+[39] S. Alekhin, J. Bl ¨umlein, and S. Moch, “Parton distribution functions and benchmark cross
+
+sections at next-to-next-to-leading order”, Phys. Rev. D 86 (2012) 054009,
+doi:10.1103/PhysRevD.86.054009, arXiv:1202.2281.
+
+[40] H.-L. Lai et al., “New parton distributions for collider physics”, Phys. Rev. D 82 (2010)
+
+074024, doi:10.1103/PhysRevD.82.074024, arXiv:1007.2241.
+
+[41] H1 and ZEUS Collaboration, “Combined measurement and QCD analysis of the
+
+inclusive e±p scattering cross sections at HERA”, JHEP 01 (2010) 109,
+doi:10.1007/JHEP01(2010)109, arXiv:0911.0884.
+
+[42] A. D. Martin, W. J. Stirling, R. S. Thorne, and G. Watt, “Parton distributions for the LHC”,
+
+Eur. Phys. J. C 63 (2009) 189, doi:10.1140/epjc/s10052-009-1072-5,
+arXiv:0901.0002.
+
+[43] A. D. Martin, W. J. Stirling, R. S. Thorne, and G. Watt, “Uncertainties on αS in global PDF
+analyses and implications for predicted hadronic cross sections”, Eur. Phys. J. C 64 (2009)
+653, doi:10.1140/epjc/s10052-009-1164-2, arXiv:0905.3531.
+
+[44] NNPDF Collaboration, “Impact of heavy quark masses on parton distributions and LHC
+
+Phenomenology”, Nucl. Phys. B 849 (2011) 296,
+doi:10.1016/j.nuclphysb.2011.03.021, arXiv:1101.1300.
+
+[45] T. Gleisberg et al., “Event generation with SHERPA 1.1”, JHEP 02 (2009) 007,
+
+doi:10.1088/1126-6708/2009/02/007, arXiv:0811.4622.
+
+[46] J. Alwall et al., “MadGraph 5: going beyond”, JHEP 06 (2011) 128,
+
+doi:10.1007/JHEP06(2011)128, arXiv:1106.0522.
+
+[47] J.-C. Winter and F. Krauss, “Initial-state showering based on colour dipoles connected to
+
+incoming parton lines”, JHEP 07 (2008) 040,
+doi:10.1088/1126-6708/2008/07/040, arXiv:0712.3913.
+
+[48] S. Schumann and F. Krauss, “A parton shower algorithm based on Catani-Seymour
+
+dipole factorisation”, JHEP 03 (2008) 038, doi:10.1088/1126-6708/2008/03/038,
+arXiv:0709.1027.
+
+[49] J.-C. Winter, F. Krauss, and G. Soff, “A modiﬁed cluster hadronization model”, Eur. Phys.
+J. C 36 (2004) 381, doi:10.1140/epjc/s2004-01960-8, arXiv:hep-ph/0311085.
+
+[50] J. Pumplin et al., “Uncertainties of predictions from parton distribution functions II: The
+
+Hessian method”, Phys. Rev. D 65 (2001) 014013,
+doi:10.1103/PhysRevD.65.014013, arXiv:hep-ph/0101032.
+
+18
+
+References
+
+[51] J. Pumplin et al., “New generation of parton distributions with uncertainties from global
+
+QCD analysis”, JHEP 07 (2002) 012, doi:10.1088/1126-6708/2002/07/012,
+arXiv:hep-ph/0201195.
+
+[52] NNPDF Collaboration, “A ﬁrst unbiased global NLO determination of parton
+
+distributions and their uncertainties”, Nucl. Phys. B 838 (2010) 136,
+doi:10.1016/j.nuclphysb.2010.05.008, arXiv:1002.4407.
+
+[53] L. Lyons, A. J. Martin, and D. H. Saxon, “On the determination of the B lifetime by
+
+combining the results of different experiments”, Phys. Rev. D 41 (1990) 982,
+doi:10.1103/PhysRevD.41.982.
+
+[54] G. D’Agostini, “Bayesian Reasoning in Data Analysis: A Critical Introduction”. World
+
+Scientiﬁc, Singapore, 2003.
+
+[55] NNPDF Collaboration, “Fitting parton distribution data with multiplicative
+
+normalization uncertainties”, JHEP 05 (2010) 075, doi:10.1007/JHEP05(2010)075,
+arXiv:0912.2276.
+
+[56] M. Gl ¨uck, E. Reya, and A. Vogt, “Dynamical parton distributions revisited”, Eur. Phys. J.
+
+C 5 (1998) 461, doi:10.1007/s100520050289, arXiv:hep-ph/9806404.
+
+[57] G. P. Salam and J. Rojo, “A Higher Order Perturbative Parton Evolution Toolkit
+
+(HOPPET)”, Comput. Phys. Commun. 180 (2009) 120,
+doi:10.1016/j.cpc.2008.08.010, arXiv:0804.3755.
+
+[58] B. Schmidt and M. Steinhauser, “CRunDec: a C++ package for running and decoupling
+
+of the strong coupling and quark masses”, Comput. Phys. Commun. 183 (2012) 1845,
+doi:10.1016/j.cpc.2012.03.023, arXiv:1201.6149.
+
+[59] K. G. Chetyrkin, J. H. Kuhn, and M. Steinhauser, “RunDec: A Mathematica package for
+
+running and decoupling of the strong coupling and quark masses”, Comput. Phys.
+Commun. 133 (2000) 43, doi:10.1016/S0010-4655(00)00155-7,
+arXiv:hep-ph/0004189.
+
+[60] Particle Data Group, K. A. Olive et al., “Review of Particle Physics”, Chin. Phys. C 38
+
+(2014) 090001, doi:10.1088/1674-1137/38/9/090001.
+
+[61] D0 Collaboration, “Determination of the strong coupling constant from the inclusive jet
+
+cross section in p ¯p collisions at √s = 1.96 TeV”, Phys. Rev. D 80 (2009) 111107,
+doi:10.1103/PhysRevD.80.111107, arXiv:0911.2710.
+
+[62] D0 Collaboration, “Measurement of angular correlations of jets at √s = 1.96 TeV and
+determination of the strong coupling at high momentum transfers”, Phys. Lett. B 718
+(2012) 56, doi:10.1016/j.physletb.2012.10.003, arXiv:1207.4957.
+
+[63] ZEUS Collaboration, “Jet-radius dependence of inclusive-jet cross-sections in deep
+
+inelastic scattering at HERA”, Phys. Lett. B 649 (2007) 12,
+doi:10.1016/j.physletb.2007.03.039, arXiv:hep-ex/0701039.
+
+[64] H1 Collaboration, “Deep inelastic inclusive ep scattering at low x and a determination of
+
+αS”, Eur. Phys. J. C 21 (2001) 33, doi:10.1007/s100520100720,
+arXiv:hep-ex/0012053.
+
+References
+
+19
+
+[65] JADE Collaboration, “Measurement of the strong coupling αS from the four-jet rate in
+
+e+e− annihilation using JADE data”, Eur. Phys. J. C 48 (2006) 3,
+doi:10.1140/epjc/s2006-02625-4, arXiv:0707.0392.
+
+[66] DELPHI Collaboration, “The measurement of αS from event shapes with the DELPHI
+
+detector at the highest LEP energies”, Eur. Phys. J. C 37 (2004) 1,
+doi:10.1140/epjc/s2004-01889-x, arXiv:hep-ex/0406011.
+
+[67] S. Mart´ı i Garc´ıa, “Review of αs measurements at LEP 2”, (1997).
+
+arXiv:hep-ex/9704016.
+
+[68] CMS Collaboration, “Determination of the top-quark pole mass and strong coupling
+
+constant from the t¯t production cross section in pp collisions at √s = 7 TeV”, Phys. Lett. B
+728 (2014) 496, doi:10.1016/j.physletb.2013.12.009, arXiv:1307.1907.
+
+[69] H1 Collaboration, “Jet production in ep collisions at high Q2 and determination of αs”,
+
+Eur. Phys. J. C 65 (2010) 363, doi:10.1140/epjc/s10052-009-1208-7,
+arXiv:0904.3870.
+
+[70] H1 Collaboration, “Jet Production in ep Collisions at Low Q2 and Determination of αs”,
+
+Eur. Phys. J. C 67 (2010) 1, doi:10.1140/epjc/s10052-010-1282-x,
+arXiv:0911.5678.
+
+[71] ZEUS Collaboration, “Inclusive-jet photoproduction at HERA and determination of αS”,
+
+Nucl. Phys. B 864 (2012) 1, doi:10.1016/j.nuclphysb.2012.06.006,
+arXiv:1205.6153.
+
+[72] H1 Collaboration, “Measurement of Multijet Production in ep Collisions at High Q2 and
+Determination of the Strong Coupling αs”, (2014). arXiv:1406.4709. Submitted to Eur.
+Phys. J. C.
+
+20
+
+References
+
+21
+
+A The CMS Collaboration
+Yerevan Physics Institute, Yerevan, Armenia
+V. Khachatryan, A.M. Sirunyan, A. Tumasyan
+Institut f ¨ur Hochenergiephysik der OeAW, Wien, Austria
+W. Adam, T. Bergauer, M. Dragicevic, J. Er¨o, C. Fabjan1, M. Friedl, R. Fr ¨uhwirth1, V.M. Ghete,
+C. Hartl, N. H¨ormann, J. Hrubec, M. Jeitler1, W. Kiesenhofer, V. Kn ¨unz, M. Krammer1,
+I. Kr¨atschmer, D. Liko, I. Mikulec, D. Rabady2, B. Rahbaran, H. Rohringer, R. Sch¨ofbeck,
+J. Strauss, A. Taurok, W. Treberer-Treberspurg, W. Waltenberger, C.-E. Wulz1
+National Centre for Particle and High Energy Physics, Minsk, Belarus
+V. Mossolov, N. Shumeiko, J. Suarez Gonzalez
+Universiteit Antwerpen, Antwerpen, Belgium
+S. Alderweireldt, M. Bansal, S. Bansal, T. Cornelis, E.A. De Wolf, X. Janssen, A. Knutsson,
+S. Luyckx, S. Ochesanu, R. Rougny, M. Van De Klundert, H. Van Haevermaet, P. Van Mechelen,
+N. Van Remortel, A. Van Spilbeeck
+Vrije Universiteit Brussel, Brussel, Belgium
+F. Blekman, S. Blyweert, J. D’Hondt, N. Daci, N. Heracleous, J. Keaveney, S. Lowette, M. Maes,
+A. Olbrechts, Q. Python, D. Strom, S. Tavernier, W. Van Doninck, P. Van Mulders, G.P. Van
+Onsem, I. Villella
+Universit´e Libre de Bruxelles, Bruxelles, Belgium
+C. Caillol, B. Clerbaux, G. De Lentdecker, D. Dobur, L. Favart, A.P.R. Gay, A. Grebenyuk,
+A. L´eonard, A. Mohammadi, L. Perni`e2, T. Reis, T. Seva, L. Thomas, C. Vander Velde, P. Vanlaer,
+J. Wang, F. Zenoni
+Ghent University, Ghent, Belgium
+V. Adler, K. Beernaert, L. Benucci, A. Cimmino, S. Costantini, S. Crucy, S. Dildick, A. Fagot,
+G. Garcia, J. Mccartin, A.A. Ocampo Rios, D. Ryckbosch, S. Salva Diblen, M. Sigamani,
+N. Strobbe, F. Thyssen, M. Tytgat, E. Yazgan, N. Zaganidis
+Universit´e Catholique de Louvain, Louvain-la-Neuve, Belgium
+S. Basegmez, C. Belufﬁ3, G. Bruno, R. Castello, A. Caudron, L. Ceard, G.G. Da Silveira,
+C. Delaere, T. du Pree, D. Favart, L. Forthomme, A. Giammanco4, J. Hollar, A. Jafari, P. Jez,
+M. Komm, V. Lemaitre, C. Nuttens, D. Pagano, L. Perrini, A. Pin, K. Piotrzkowski, A. Popov5,
+L. Quertenmont, M. Selvaggi, M. Vidal Marono, J.M. Vizan Garcia
+Universit´e de Mons, Mons, Belgium
+N. Beliy, T. Caebergs, E. Daubie, G.H. Hammad
+Centro Brasileiro de Pesquisas Fisicas, Rio de Janeiro, Brazil
+W.L. Ald´a J ´unior, G.A. Alves, L. Brito, M. Correa Martins Junior, T. Dos Reis Martins, C. Mora
+Herrera, M.E. Pol
+Universidade do Estado do Rio de Janeiro, Rio de Janeiro, Brazil
+W. Carvalho, J. Chinellato6, A. Cust´odio, E.M. Da Costa, D. De Jesus Damiao, C. De Oliveira
+Martins, S. Fonseca De Souza, H. Malbouisson, D. Matos Figueiredo, L. Mundim, H. Nogima,
+W.L. Prado Da Silva, J. Santaolalla, A. Santoro, A. Sznajder, E.J. Tonelli Manganote6, A. Vilela
+Pereira
+
+22
+
+A The CMS Collaboration
+
+Universidade Estadual Paulista a, Universidade Federal do ABC b, S˜ao Paulo, Brazil
+C.A. Bernardesb, S. Dograa, T.R. Fernandez Perez Tomeia, E.M. Gregoresb, P.G. Mercadanteb,
+S.F. Novaesa, Sandra S. Padulaa
+Institute for Nuclear Research and Nuclear Energy, Soﬁa, Bulgaria
+A. Aleksandrov, V. Genchev2, P. Iaydjiev, A. Marinov, S. Piperov, M. Rodozov, S. Stoykova,
+G. Sultanov, V. Tcholakov, M. Vutova
+University of Soﬁa, Soﬁa, Bulgaria
+A. Dimitrov, I. Glushkov, R. Hadjiiska, V. Kozhuharov, L. Litov, B. Pavlov, P. Petkov
+Institute of High Energy Physics, Beijing, China
+J.G. Bian, G.M. Chen, H.S. Chen, M. Chen, R. Du, C.H. Jiang, R. Plestina7, F. Romeo, J. Tao,
+Z. Wang
+State Key Laboratory of Nuclear Physics and Technology, Peking University, Beijing, China
+C. Asawatangtrakuldee, Y. Ban, Q. Li, S. Liu, Y. Mao, S.J. Qian, D. Wang, W. Zou
+Universidad de Los Andes, Bogota, Colombia
+C. Avila, L.F. Chaparro Sierra, C. Florez, J.P. Gomez, B. Gomez Moreno, J.C. Sanabria
+University of Split, Faculty of Electrical Engineering, Mechanical Engineering and Naval
+Architecture, Split, Croatia
+N. Godinovic, D. Lelas, D. Polic, I. Puljak
+University of Split, Faculty of Science, Split, Croatia
+Z. Antunovic, M. Kovac
+Institute Rudjer Boskovic, Zagreb, Croatia
+V. Brigljevic, K. Kadija, J. Luetic, D. Mekterovic, L. Sudic
+University of Cyprus, Nicosia, Cyprus
+A. Attikis, G. Mavromanolakis, J. Mousa, C. Nicolaou, F. Ptochos, P.A. Razis
+Charles University, Prague, Czech Republic
+M. Bodlak, M. Finger, M. Finger Jr.8
+Academy of Scientiﬁc Research and Technology of the Arab Republic of Egypt, Egyptian
+Network of High Energy Physics, Cairo, Egypt
+Y. Assran9, A. Ellithi Kamel10, M.A. Mahmoud11, A. Radi12,13
+National Institute of Chemical Physics and Biophysics, Tallinn, Estonia
+M. Kadastik, M. Murumaa, M. Raidal, A. Tiko
+Department of Physics, University of Helsinki, Helsinki, Finland
+P. Eerola, G. Fedi, M. Voutilainen
+Helsinki Institute of Physics, Helsinki, Finland
+J. H¨ark¨onen, V. Karim¨aki, R. Kinnunen, M.J. Kortelainen, T. Lamp´en, K. Lassila-Perini, S. Lehti,
+T. Lind´en, P. Luukka, T. M¨aenp¨a¨a, T. Peltola, E. Tuominen, J. Tuominiemi, E. Tuovinen,
+L. Wendland
+Lappeenranta University of Technology, Lappeenranta, Finland
+J. Talvitie, T. Tuuva
+DSM/IRFU, CEA/Saclay, Gif-sur-Yvette, France
+M. Besancon, F. Couderc, M. Dejardin, D. Denegri, B. Fabbro, J.L. Faure, C. Favaro, F. Ferri,
+
+23
+
+S. Ganjour, A. Givernaud, P. Gras, G. Hamel de Monchenault, P. Jarry, E. Locci, J. Malcles,
+J. Rander, A. Rosowsky, M. Titov
+Laboratoire Leprince-Ringuet, Ecole Polytechnique, IN2P3-CNRS, Palaiseau, France
+S. Bafﬁoni, F. Beaudette, P. Busson, C. Charlot, T. Dahms, M. Dalchenko, L. Dobrzynski,
+N. Filipovic, A. Florent, R. Granier de Cassagnac, L. Mastrolorenzo, P. Min´e, C. Mironov,
+I.N. Naranjo, M. Nguyen, C. Ochando, P. Paganini, S. Regnard, R. Salerno, J.B. Sauvan, Y. Sirois,
+C. Veelken, Y. Yilmaz, A. Zabi
+Institut Pluridisciplinaire Hubert Curien, Universit´e de Strasbourg, Universit´e de Haute
+Alsace Mulhouse, CNRS/IN2P3, Strasbourg, France
+J.-L. Agram14, J. Andrea, A. Aubin, D. Bloch, J.-M. Brom, E.C. Chabert, C. Collard, E. Conte14,
+J.-C. Fontaine14, D. Gel´e, U. Goerlach, C. Goetzmann, A.-C. Le Bihan, P. Van Hove
+Centre de Calcul de l’Institut National de Physique Nucleaire et de Physique des Particules,
+CNRS/IN2P3, Villeurbanne, France
+S. Gadrat
+Universit´e de Lyon, Universit´e Claude Bernard Lyon 1, CNRS-IN2P3, Institut de Physique
+Nucl´eaire de Lyon, Villeurbanne, France
+S. Beauceron, N. Beaupere, G. Boudoul2, E. Bouvier, S. Brochet, C.A. Carrillo Montoya,
+J. Chasserat, R. Chierici, D. Contardo2, P. Depasse, H. El Mamouni, J. Fan, J. Fay, S. Gascon,
+M. Gouzevitch, B. Ille, T. Kurca, M. Lethuillier, L. Mirabito, S. Perries, J.D. Ruiz Alvarez,
+D. Sabes, L. Sgandurra, V. Sordini, M. Vander Donckt, P. Verdier, S. Viret, H. Xiao
+Institute of High Energy Physics and Informatization, Tbilisi State University, Tbilisi,
+Georgia
+I. Bagaturia15
+RWTH Aachen University, I. Physikalisches Institut, Aachen, Germany
+C. Autermann, S. Beranek, M. Bontenackels, M. Edelhoff, L. Feld, O. Hindrichs, K. Klein,
+A. Ostapchuk, A. Perieanu, F. Raupach, J. Sammet, S. Schael, H. Weber, B. Wittmer, V. Zhukov5
+RWTH Aachen University, III. Physikalisches Institut A, Aachen, Germany
+M. Ata, M. Brodski, E. Dietz-Laursonn, D. Duchardt, M. Erdmann, R. Fischer, A. G ¨uth,
+T. Hebbeker, C. Heidemann, K. Hoepfner, D. Klingebiel, S. Knutzen, P. Kreuzer,
+M. Merschmeyer, A. Meyer, P. Millet, M. Olschewski, K. Padeken, P. Papacz, H. Reithler,
+S.A. Schmitz, L. Sonnenschein, D. Teyssier, S. Th ¨uer, M. Weber
+RWTH Aachen University, III. Physikalisches Institut B, Aachen, Germany
+V. Cherepanov, Y. Erdogan, G. Fl ¨ugge, H. Geenen, M. Geisler, W. Haj Ahmad, A. Heister,
+F. Hoehle, B. Kargoll, T. Kress, Y. Kuessel, A. K ¨unsken, J. Lingemann2, A. Nowack, I.M. Nugent,
+L. Perchalla, O. Pooth, A. Stahl
+Deutsches Elektronen-Synchrotron, Hamburg, Germany
+I. Asin, N. Bartosik, J. Behr, W. Behrenhoff, U. Behrens, A.J. Bell, M. Bergholz16, A. Bethani,
+K. Borras, A. Burgmeier, A. Cakir, L. Calligaris, A. Campbell, S. Choudhury, F. Costanza,
+C. Diez Pardos, S. Dooling, T. Dorland, G. Eckerlin, D. Eckstein, T. Eichhorn, G. Flucke,
+J. Garay Garcia, A. Geiser, P. Gunnellini, J. Hauk, M. Hempel16, D. Horton, H. Jung,
+A. Kalogeropoulos, M. Kasemann, P. Katsas, J. Kieseler, C. Kleinwort, D. Kr ¨ucker, W. Lange,
+J. Leonard, K. Lipka, A. Lobanov, W. Lohmann16, B. Lutz, R. Mankel, I. Marﬁn16, I.-
+A. Melzer-Pellmann, A.B. Meyer, G. Mittag, J. Mnich, A. Mussgiller, S. Naumann-Emme,
+A. Nayak, O. Novgorodova, E. Ntomari, H. Perrey, D. Pitzl, R. Placakyte, A. Raspereza,
+P.M. Ribeiro Cipriano, B. Roland, E. Ron, M. ¨O. Sahin, J. Salfeld-Nebgen, P. Saxena, R. Schmidt16,
+
+24
+
+A The CMS Collaboration
+
+T. Schoerner-Sadenius, M. Schr¨oder, C. Seitz, S. Spannagel, A.D.R. Vargas Trevino, R. Walsh,
+C. Wissing
+University of Hamburg, Hamburg, Germany
+M. Aldaya Martin, V. Blobel, M. Centis Vignali, A.R. Draeger, J. Erﬂe, E. Garutti, K. Goebel,
+M. G¨orner, J. Haller, M. Hoffmann, R.S. H¨oing, H. Kirschenmann, R. Klanner, R. Kogler,
+J. Lange, T. Lapsien, T. Lenz, I. Marchesini, J. Ott, T. Peiffer, N. Pietsch, J. Poehlsen, T. Poehlsen,
+D. Rathjens, C. Sander, H. Schettler, P. Schleper, E. Schlieckau, A. Schmidt, M. Seidel, V. Sola,
+H. Stadie, G. Steinbr ¨uck, D. Troendle, E. Usai, L. Vanelderen, A. Vanhoefer
+Institut f ¨ur Experimentelle Kernphysik, Karlsruhe, Germany
+C. Barth, C. Baus, J. Berger, C. B¨oser, E. Butz, T. Chwalek, W. De Boer, A. Descroix, A. Dierlamm,
+M. Feindt, F. Frensch, M. Giffels, F. Hartmann2, T. Hauth2, U. Husemann, I. Katkov5,
+A. Kornmayer2, E. Kuznetsova, P. Lobelle Pardo, M.U. Mozer, Th. M ¨uller, A. N ¨urnberg,
+G. Quast, K. Rabbertz, F. Ratnikov, S. R¨ocker, G. Sieber, H.J. Simonis, F.M. Stober, R. Ulrich,
+J. Wagner-Kuhr, S. Wayand, T. Weiler, R. Wolf
+Institute of Nuclear and Particle Physics (INPP), NCSR Demokritos, Aghia Paraskevi,
+Greece
+G. Anagnostou, G. Daskalakis, T. Geralis, V.A. Giakoumopoulou, A. Kyriakis, D. Loukas,
+A. Markou, C. Markou, A. Psallidas, I. Topsis-Giotis
+University of Athens, Athens, Greece
+A. Agapitos, S. Kesisoglou, A. Panagiotou, N. Saoulidou, E. Stiliaris
+University of Io´annina, Io´annina, Greece
+X. Aslanoglou, I. Evangelou, G. Flouris, C. Foudas, P. Kokkas, N. Manthos, I. Papadopoulos,
+E. Paradas
+Wigner Research Centre for Physics, Budapest, Hungary
+G. Bencze, C. Hajdu, P. Hidas, D. Horvath17, F. Sikler, V. Veszpremi, G. Vesztergombi18,
+A.J. Zsigmond
+Institute of Nuclear Research ATOMKI, Debrecen, Hungary
+N. Beni, S. Czellar, J. Karancsi19, J. Molnar, J. Palinkas, Z. Szillasi
+University of Debrecen, Debrecen, Hungary
+P. Raics, Z.L. Trocsanyi, B. Ujvari
+National Institute of Science Education and Research, Bhubaneswar, India
+S.K. Swain
+Panjab University, Chandigarh, India
+S.B. Beri, V. Bhatnagar, R. Gupta, U.Bhawandeep, A.K. Kalsi, M. Kaur, R. Kumar, M. Mittal,
+N. Nishu, J.B. Singh
+University of Delhi, Delhi, India
+Ashok Kumar, Arun Kumar, S. Ahuja, A. Bhardwaj, B.C. Choudhary, A. Kumar, S. Malhotra,
+M. Naimuddin, K. Ranjan, V. Sharma
+Saha Institute of Nuclear Physics, Kolkata, India
+S. Banerjee, S. Bhattacharya, K. Chatterjee, S. Dutta, B. Gomber, Sa. Jain, Sh. Jain, R. Khurana,
+A. Modak, S. Mukherjee, D. Roy, S. Sarkar, M. Sharan
+Bhabha Atomic Research Centre, Mumbai, India
+A. Abdulsalam, D. Dutta, S. Kailas, V. Kumar, A.K. Mohanty2, L.M. Pant, P. Shukla, A. Topkar
+
+25
+
+Tata Institute of Fundamental Research, Mumbai, India
+T. Aziz, S. Banerjee, S. Bhowmik20, R.M. Chatterjee, R.K. Dewanjee, S. Dugad, S. Ganguly,
+S. Ghosh, M. Guchait, A. Gurtu21, G. Kole, S. Kumar, M. Maity20, G. Majumder, K. Mazumdar,
+G.B. Mohanty, B. Parida, K. Sudhakar, N. Wickramage22
+Institute for Research in Fundamental Sciences (IPM), Tehran, Iran
+H. Bakhshiansohi, H. Behnamian, S.M. Etesami23, A. Fahim24, R. Goldouzian, M. Khakzad,
+M. Mohammadi Najafabadi, M. Naseri, S. Paktinat Mehdiabadi, F. Rezaei Hosseinabadi,
+B. Safarzadeh25, M. Zeinali
+University College Dublin, Dublin, Ireland
+M. Felcini, M. Grunewald
+INFN Sezione di Bari a, Universit`a di Bari b, Politecnico di Bari c, Bari, Italy
+M. Abbresciaa,b, L. Barbonea,b, C. Calabriaa,b, S.S. Chhibraa,b, A. Colaleoa, D. Creanzaa,c, N. De
+Filippisa,c, M. De Palmaa,b, L. Fiorea, G. Iasellia,c, G. Maggia,c, M. Maggia, S. Mya,c, S. Nuzzoa,b,
+A. Pompilia,b, G. Pugliesea,c, R. Radognaa,b,2, G. Selvaggia,b, L. Silvestrisa,2, R. Vendittia,b,
+G. Zitoa
+INFN Sezione di Bologna a, Universit`a di Bologna b, Bologna, Italy
+G. Abbiendia, A.C. Benvenutia, D. Bonacorsia,b, S. Braibant-Giacomellia,b, L. Brigliadoria,b,
+R. Campaninia,b, P. Capiluppia,b, A. Castroa,b, F.R. Cavalloa, G. Codispotia,b, M. Cufﬁania,b,
+G.M. Dallavallea, F. Fabbria, A. Fanfania,b, D. Fasanellaa,b, P. Giacomellia, C. Grandia,
+L. Guiduccia,b, S. Marcellinia, G. Masettia, A. Montanaria, F.L. Navarriaa,b, A. Perrottaa,
+F. Primaveraa,b, A.M. Rossia,b, T. Rovellia,b, G.P. Sirolia,b, N. Tosia,b, R. Travaglinia,b
+INFN Sezione di Catania a, Universit`a di Catania b, CSFNSM c, Catania, Italy
+S. Albergoa,b, G. Cappelloa, M. Chiorbolia,b, S. Costaa,b, F. Giordanoa,2, R. Potenzaa,b,
+A. Tricomia,b, C. Tuvea,b
+INFN Sezione di Firenze a, Universit`a di Firenze b, Firenze, Italy
+G. Barbaglia, V. Ciullia,b, C. Civininia, R. D’Alessandroa,b, E. Focardia,b, E. Galloa, S. Gonzia,b,
+V. Goria,b,2, P. Lenzia,b, M. Meschinia, S. Paolettia, G. Sguazzonia, A. Tropianoa,b
+INFN Laboratori Nazionali di Frascati, Frascati, Italy
+L. Benussi, S. Bianco, F. Fabbri, D. Piccolo
+INFN Sezione di Genova a, Universit`a di Genova b, Genova, Italy
+R. Ferrettia,b, F. Ferroa, M. Lo Veterea,b, E. Robuttia, S. Tosia,b
+INFN Sezione di Milano-Bicocca a, Universit`a di Milano-Bicocca b, Milano, Italy
+M.E. Dinardoa,b, S. Fiorendia,b,2, S. Gennaia,2, R. Gerosaa,b,2, A. Ghezzia,b, P. Govonia,b,
+M.T. Lucchinia,b,2, S. Malvezzia, R.A. Manzonia,b, A. Martellia,b, B. Marzocchia,b, D. Menascea,
+L. Moronia, M. Paganonia,b, D. Pedrinia, S. Ragazzia,b, N. Redaellia, T. Tabarelli de Fatisa,b
+INFN Sezione di Napoli
+’Federico II’
+Basilicata (Potenza) c, Universit`a G. Marconi (Roma) d, Napoli, Italy
+S. Buontempoa, N. Cavalloa,c, S. Di Guidaa,d,2, F. Fabozzia,c, A.O.M. Iorioa,b, L. Listaa,
+S. Meolaa,d,2, M. Merolaa, P. Paoluccia,2
+INFN Sezione di Padova a, Universit`a di Padova b, Universit`a di Trento (Trento) c, Padova,
+Italy
+P. Azzia, N. Bacchettaa, D. Biselloa,b, A. Brancaa,b, R. Carlina,b, P. Checchiaa, M. Dall’Ossoa,b,
+T. Dorigoa, M. Galantia,b, F. Gasparinia,b, U. Gasparinia,b, P. Giubilatoa,b, A. Gozzelinoa,
+K. Kanishcheva,c, S. Lacapraraa, M. Margonia,b, A.T. Meneguzzoa,b,
+J. Pazzinia,b,
+
+a, Universit`a di Napoli
+
+b, Universit`a della
+
+26
+
+A The CMS Collaboration
+
+N. Pozzobona,b, P. Ronchesea,b, F. Simonettoa,b, E. Torassaa, M. Tosia,b, S. Vaninia,b, S. Venturaa,
+P. Zottoa,b, A. Zucchettaa,b
+INFN Sezione di Pavia a, Universit`a di Pavia b, Pavia, Italy
+M. Gabusia,b, S.P. Rattia,b, V. Rea, C. Riccardia,b, P. Salvinia, P. Vituloa,b
+INFN Sezione di Perugia a, Universit`a di Perugia b, Perugia, Italy
+M. Biasinia,b, G.M. Bileia, D. Ciangottinia,b, L. Fan`oa,b, P. Laricciaa,b, G. Mantovania,b,
+M. Menichellia, A. Sahaa, A. Santocchiaa,b, A. Spieziaa,b,2
+INFN Sezione di Pisa a, Universit`a di Pisa b, Scuola Normale Superiore di Pisa c, Pisa, Italy
+K. Androsova,26, P. Azzurria, G. Bagliesia, J. Bernardinia, T. Boccalia, G. Broccoloa,c, R. Castaldia,
+M.A. Cioccia,26, R. Dell’Orsoa, S. Donatoa,c, F. Fioria,c, L. Fo`aa,c, A. Giassia, M.T. Grippoa,26,
+F. Ligabuea,c, T. Lomtadzea, L. Martinia,b, A. Messineoa,b, C.S. Moona,27, F. Pallaa,2, A. Rizzia,b,
+A. Savoy-Navarroa,28, A.T. Serbana, P. Spagnoloa, P. Squillaciotia,26, R. Tenchinia, G. Tonellia,b,
+A. Venturia, P.G. Verdinia, C. Vernieria,c,2
+INFN Sezione di Roma a, Universit`a di Roma b, Roma, Italy
+L. Baronea,b, F. Cavallaria, G. D’imperioa,b, D. Del Rea,b, M. Diemoza, M. Grassia,b, C. Jordaa,
+E. Longoa,b, F. Margarolia,b, P. Meridiania, F. Michelia,b,2, S. Nourbakhsha,b, G. Organtinia,b,
+R. Paramattia, S. Rahatloua,b, C. Rovellia, F. Santanastasioa,b, L. Sofﬁa,b,2, P. Traczyka,b
+INFN Sezione di Torino a, Universit`a di Torino b, Universit`a del Piemonte Orientale (No-
+vara) c, Torino, Italy
+N. Amapanea,b, R. Arcidiaconoa,c, S. Argiroa,b,2, M. Arneodoa,c, R. Bellana,b, C. Biinoa,
+N. Cartigliaa, S. Casassoa,b,2, M. Costaa,b, A. Deganoa,b, N. Demariaa, L. Fincoa,b, C. Mariottia,
+S. Masellia, E. Migliorea,b, V. Monacoa,b, M. Musicha, M.M. Obertinoa,c,2, G. Ortonaa,b,
+L. Pachera,b, N. Pastronea, M. Pelliccionia, G.L. Pinna Angionia,b, A. Potenzaa,b, A. Romeroa,b,
+M. Ruspaa,c, R. Sacchia,b, A. Solanoa,b, A. Staianoa, U. Tamponia
+INFN Sezione di Trieste a, Universit`a di Trieste b, Trieste, Italy
+S. Belfortea, V. Candelisea,b, M. Casarsaa, F. Cossuttia, G. Della Riccaa,b, B. Gobboa, C. La
+Licataa,b, M. Maronea,b, A. Schizzia,b, T. Umera,b, A. Zanettia
+Kangwon National University, Chunchon, Korea
+S. Chang, A. Kropivnitskaya, S.K. Nam
+Kyungpook National University, Daegu, Korea
+D.H. Kim, G.N. Kim, M.S. Kim, D.J. Kong, S. Lee, Y.D. Oh, H. Park, A. Sakharov, D.C. Son
+Chonbuk National University, Jeonju, Korea
+T.J. Kim
+Chonnam National University, Institute for Universe and Elementary Particles, Kwangju,
+Korea
+J.Y. Kim, S. Song
+Korea University, Seoul, Korea
+S. Choi, D. Gyun, B. Hong, M. Jo, H. Kim, Y. Kim, B. Lee, K.S. Lee, S.K. Park, Y. Roh
+University of Seoul, Seoul, Korea
+M. Choi, J.H. Kim, I.C. Park, G. Ryu, M.S. Ryu
+Sungkyunkwan University, Suwon, Korea
+Y. Choi, Y.K. Choi, J. Goh, D. Kim, E. Kwon, J. Lee, H. Seo, I. Yu
+
+27
+
+Vilnius University, Vilnius, Lithuania
+A. Juodagalvis
+National Centre for Particle Physics, Universiti Malaya, Kuala Lumpur, Malaysia
+J.R. Komaragiri, M.A.B. Md Ali
+Centro de Investigacion y de Estudios Avanzados del IPN, Mexico City, Mexico
+H. Castilla-Valdez, E. De La Cruz-Burelo, I. Heredia-de La Cruz29, A. Hernandez-Almada,
+R. Lopez-Fernandez, A. Sanchez-Hernandez
+Universidad Iberoamericana, Mexico City, Mexico
+S. Carrillo Moreno, F. Vazquez Valencia
+Benemerita Universidad Autonoma de Puebla, Puebla, Mexico
+I. Pedraza, H.A. Salazar Ibarguen
+Universidad Aut´onoma de San Luis Potos´ı, San Luis Potos´ı, Mexico
+E. Casimiro Linares, A. Morelos Pineda
+University of Auckland, Auckland, New Zealand
+D. Krofcheck
+University of Canterbury, Christchurch, New Zealand
+P.H. Butler, S. Reucroft
+National Centre for Physics, Quaid-I-Azam University, Islamabad, Pakistan
+A. Ahmad, M. Ahmad, Q. Hassan, H.R. Hoorani, S. Khalid, W.A. Khan, T. Khurshid,
+M.A. Shah, M. Shoaib
+National Centre for Nuclear Research, Swierk, Poland
+H. Bialkowska, M. Bluj, B. Boimska, T. Frueboes, M. G´orski, M. Kazana, K. Nawrocki,
+K. Romanowska-Rybinska, M. Szleper, P. Zalewski
+Institute of Experimental Physics, Faculty of Physics, University of Warsaw, Warsaw, Poland
+G. Brona, K. Bunkowski, M. Cwiok, W. Dominik, K. Doroba, A. Kalinowski, M. Konecki,
+J. Krolikowski, M. Misiura, M. Olszewski, W. Wolszczak
+Laborat´orio de Instrumenta¸c˜ao e F´ısica Experimental de Part´ıculas, Lisboa, Portugal
+P. Bargassa, C. Beir˜ao Da Cruz E Silva, P. Faccioli, P.G. Ferreira Parracho, M. Gallinaro, L. Lloret
+Iglesias, F. Nguyen, J. Rodrigues Antunes, J. Seixas, J. Varela, P. Vischia
+Joint Institute for Nuclear Research, Dubna, Russia
+S. Afanasiev, P. Bunin, M. Gavrilenko, I. Golutvin, I. Gorbunov, A. Kamenev, V. Karjavin,
+V. Konoplyanikov, A. Lanev, A. Malakhov, V. Matveev30, P. Moisenz, V. Palichik, V. Perelygin,
+S. Shmatov, N. Skatchkov, V. Smirnov, A. Zarubin
+Petersburg Nuclear Physics Institute, Gatchina (St. Petersburg), Russia
+V. Golovtsov, Y. Ivanov, V. Kim31, P. Levchenko, V. Murzin, V. Oreshkin, I. Smirnov, V. Sulimov,
+L. Uvarov, S. Vavilov, A. Vorobyev, An. Vorobyev
+Institute for Nuclear Research, Moscow, Russia
+Yu. Andreev, A. Dermenev, S. Gninenko, N. Golubev, M. Kirsanov, N. Krasnikov, A. Pashenkov,
+D. Tlisov, A. Toropin
+Institute for Theoretical and Experimental Physics, Moscow, Russia
+V. Epshteyn, V. Gavrilov, N. Lychkovskaya, V. Popov, G. Safronov, S. Semenov, A. Spiridonov,
+V. Stolin, E. Vlasov, A. Zhokin
+
+28
+
+A The CMS Collaboration
+
+P.N. Lebedev Physical Institute, Moscow, Russia
+V. Andreev, M. Azarkin, I. Dremin, M. Kirakosyan, A. Leonidov, G. Mesyats, S.V. Rusakov,
+A. Vinogradov
+Skobeltsyn Institute of Nuclear Physics, Lomonosov Moscow State University, Moscow,
+Russia
+A. Belyaev, E. Boos, M. Dubinin32, L. Dudko, A. Ershov, A. Gribushin, V. Klyukhin,
+O. Kodolova, I. Lokhtin, S. Obraztsov, S. Petrushanko, V. Savrin, A. Snigirev
+State Research Center of Russian Federation, Institute for High Energy Physics, Protvino,
+Russia
+I. Azhgirey, I. Bayshev, S. Bitioukov, V. Kachanov, A. Kalinin, D. Konstantinov, V. Krychkine,
+V. Petrov, R. Ryutin, A. Sobol, L. Tourtchanovitch, S. Troshin, N. Tyurin, A. Uzunian, A. Volkov
+University of Belgrade, Faculty of Physics and Vinca Institute of Nuclear Sciences, Belgrade,
+Serbia
+P. Adzic33, M. Ekmedzic, J. Milosevic, V. Rekovic
+Centro de Investigaciones Energ´eticas Medioambientales y Tecnol´ogicas (CIEMAT),
+Madrid, Spain
+J. Alcaraz Maestre, C. Battilana, E. Calvo, M. Cerrada, M. Chamizo Llatas, N. Colino, B. De La
+Cruz, A. Delgado Peris, D. Dom´ınguez V´azquez, A. Escalante Del Valle, C. Fernandez Bedoya,
+J.P. Fern´andez Ramos, J. Flix, M.C. Fouz, P. Garcia-Abia, O. Gonzalez Lopez, S. Goy Lopez,
+J.M. Hernandez, M.I. Josa, E. Navarro De Martino, A. P´erez-Calero Yzquierdo, J. Puerta Pelayo,
+A. Quintario Olmeda, I. Redondo, L. Romero, M.S. Soares
+Universidad Aut´onoma de Madrid, Madrid, Spain
+C. Albajar, J.F. de Troc´oniz, M. Missiroli, D. Moran
+Universidad de Oviedo, Oviedo, Spain
+H. Brun, J. Cuevas, J. Fernandez Menendez, S. Folgueras, I. Gonzalez Caballero
+Instituto de F´ısica de Cantabria (IFCA), CSIC-Universidad de Cantabria, Santander, Spain
+J.A. Brochero Cifuentes, I.J. Cabrillo, A. Calderon, J. Duarte Campderros, M. Fernandez,
+G. Gomez, A. Graziano, A. Lopez Virto, J. Marco, R. Marco, C. Martinez Rivero, F. Matorras,
+F.J. Munoz Sanchez, J. Piedra Gomez, T. Rodrigo, A.Y. Rodr´ıguez-Marrero, A. Ruiz-Jimeno,
+L. Scodellaro, I. Vila, R. Vilar Cortabitarte
+CERN, European Organization for Nuclear Research, Geneva, Switzerland
+D. Abbaneo, E. Auffray, G. Auzinger, M. Bachtis, P. Baillon, A.H. Ball, D. Barney, A. Benaglia,
+J. Bendavid, L. Benhabib, J.F. Benitez, C. Bernet7, G. Bianchi, P. Bloch, A. Bocci, A. Bonato,
+O. Bondu, C. Botta, H. Breuker, T. Camporesi, G. Cerminara, S. Colafranceschi34, M. D’Alfonso,
+D. d’Enterria, A. Dabrowski, A. David, F. De Guio, A. De Roeck, S. De Visscher, E. Di
+Marco, M. Dobson, M. Dordevic, B. Dorney, N. Dupont-Sagorin, A. Elliott-Peisert, J. Eugster,
+G. Franzoni, W. Funk, D. Gigi, K. Gill, D. Giordano, M. Girone, F. Glege, R. Guida,
+S. Gundacker, M. Guthoff, J. Hammer, M. Hansen, P. Harris, J. Hegeman, V. Innocente,
+P. Janot, K. Kousouris, K. Krajczar, P. Lecoq, C. Lourenc¸o, N. Magini, L. Malgeri, M. Mannelli,
+J. Marrouche, L. Masetti, F. Meijers, S. Mersi, E. Meschi, F. Moortgat, S. Morovic, M. Mulders,
+P. Musella, L. Orsini, L. Pape, E. Perez, L. Perrozzi, A. Petrilli, G. Petrucciani, A. Pfeiffer,
+M. Pierini, M. Pimi¨a, D. Piparo, M. Plagge, A. Racz, G. Rolandi35, M. Rovere, H. Sakulin,
+C. Sch¨afer, C. Schwick, A. Sharma, P. Siegrist, P. Silva, M. Simon, P. Sphicas36, D. Spiga,
+J. Steggemann, B. Stieger, M. Stoye, Y. Takahashi, D. Treille, A. Tsirou, G.I. Veres18, N. Wardle,
+H.K. W¨ohri, H. Wollny, W.D. Zeuner
+
+29
+
+Paul Scherrer Institut, Villigen, Switzerland
+W. Bertl, K. Deiters, W. Erdmann, R. Horisberger, Q. Ingram, H.C. Kaestli, D. Kotlinski,
+U. Langenegger, D. Renker, T. Rohe
+Institute for Particle Physics, ETH Zurich, Zurich, Switzerland
+F. Bachmair, L. B¨ani, L. Bianchini, M.A. Buchmann, B. Casal, N. Chanon, G. Dissertori,
+M. Dittmar, M. Doneg`a, M. D ¨unser, P. Eller, C. Grab, D. Hits, J. Hoss, W. Lustermann,
+B. Mangano, A.C. Marini, P. Martinez Ruiz del Arbol, M. Masciovecchio, D. Meister, N. Mohr,
+C. N¨ageli37, F. Nessi-Tedaldi, F. Pandolﬁ, F. Pauss, M. Peruzzi, M. Quittnat, L. Rebane,
+M. Rossini, A. Starodumov38, M. Takahashi, K. Theoﬁlatos, R. Wallny, H.A. Weber
+Universit¨at Z ¨urich, Zurich, Switzerland
+C. Amsler39, M.F. Canelli, V. Chiochia, A. De Cosa, A. Hinzmann, T. Hreus, B. Kilminster,
+C. Lange, B. Millan Mejias, J. Ngadiuba, P. Robmann, F.J. Ronga, S. Taroni, M. Verzetti, Y. Yang
+National Central University, Chung-Li, Taiwan
+M. Cardaci, K.H. Chen, C. Ferro, C.M. Kuo, W. Lin, Y.J. Lu, R. Volpe, S.S. Yu
+National Taiwan University (NTU), Taipei, Taiwan
+P. Chang, Y.H. Chang, Y.W. Chang, Y. Chao, K.F. Chen, P.H. Chen, C. Dietz, U. Grundler, W.-
+S. Hou, K.Y. Kao, Y.J. Lei, Y.F. Liu, R.-S. Lu, D. Majumder, E. Petrakou, Y.M. Tzeng, R. Wilken
+Chulalongkorn University, Faculty of Science, Department of Physics, Bangkok, Thailand
+B. Asavapibhop, G. Singh, N. Srimanobhas, N. Suwonjandee
+Cukurova University, Adana, Turkey
+A. Adiguzel, M.N. Bakirci40, S. Cerci41, C. Dozen, I. Dumanoglu, E. Eskut, S. Girgis,
+G. Gokbulut, E. Gurpinar, I. Hos, E.E. Kangal, A. Kayis Topaksu, G. Onengut42, K. Ozdemir,
+S. Ozturk40, A. Polatoz, D. Sunar Cerci41, B. Tali41, H. Topakli40, M. Vergili
+Middle East Technical University, Physics Department, Ankara, Turkey
+I.V. Akin, B. Bilin, S. Bilmis, H. Gamsizkan43, G. Karapinar44, K. Ocalan45, S. Sekmen, U.E. Surat,
+M. Yalvac, M. Zeyrek
+Bogazici University, Istanbul, Turkey
+E. G ¨ulmez, B. Isildak46, M. Kaya47, O. Kaya48
+Istanbul Technical University, Istanbul, Turkey
+K. Cankocak, F.I. Vardarlı
+National Scientiﬁc Center, Kharkov Institute of Physics and Technology, Kharkov, Ukraine
+L. Levchuk, P. Sorokin
+University of Bristol, Bristol, United Kingdom
+J.J. Brooke, E. Clement, D. Cussans, H. Flacher, J. Goldstein, M. Grimes, G.P. Heath, H.F. Heath,
+J. Jacob, L. Kreczko, C. Lucas, Z. Meng, D.M. Newbold49, S. Paramesvaran, A. Poll, S. Senkin,
+V.J. Smith, T. Williams
+Rutherford Appleton Laboratory, Didcot, United Kingdom
+K.W. Bell, A. Belyaev50, C. Brew, R.M. Brown, D.J.A. Cockerill, J.A. Coughlan, K. Harder,
+S. Harper, E. Olaiya, D. Petyt, C.H. Shepherd-Themistocleous, A. Thea,
+I.R. Tomalin,
+W.J. Womersley, S.D. Worm
+Imperial College, London, United Kingdom
+M. Baber, R. Bainbridge, O. Buchmuller, D. Burton, D. Colling, N. Cripps, M. Cutajar,
+P. Dauncey, G. Davies, M. Della Negra, P. Dunne, W. Ferguson, J. Fulcher, D. Futyan, A. Gilbert,
+
+30
+
+A The CMS Collaboration
+
+G. Hall, G. Iles, M. Jarvis, G. Karapostoli, M. Kenzie, R. Lane, R. Lucas49, L. Lyons, A.-
+M. Magnan, S. Malik, B. Mathias, J. Nash, A. Nikitenko38, J. Pela, M. Pesaresi, K. Petridis,
+D.M. Raymond, S. Rogerson, A. Rose, C. Seez, P. Sharp†, A. Tapper, M. Vazquez Acosta,
+T. Virdee, S.C. Zenz
+Brunel University, Uxbridge, United Kingdom
+J.E. Cole, P.R. Hobson, A. Khan, P. Kyberd, D. Leggat, D. Leslie, W. Martin, I.D. Reid,
+P. Symonds, L. Teodorescu, M. Turner
+Baylor University, Waco, USA
+J. Dittmann, K. Hatakeyama, A. Kasmi, H. Liu, T. Scarborough
+The University of Alabama, Tuscaloosa, USA
+O. Charaf, S.I. Cooper, C. Henderson, P. Rumerio
+Boston University, Boston, USA
+A. Avetisyan, T. Bose, C. Fantasia, P. Lawson, C. Richardson, J. Rohlf, J. St. John, L. Sulak
+Brown University, Providence, USA
+J. Alimena, E. Berry, S. Bhattacharya, G. Christopher, D. Cutts, Z. Demiragli, N. Dhingra,
+A. Ferapontov, A. Garabedian, U. Heintz, G. Kukartsev, E. Laird, G. Landsberg, M. Luk,
+M. Narain, M. Segala, T. Sinthuprasith, T. Speer, J. Swanson
+University of California, Davis, Davis, USA
+R. Breedon, G. Breto, M. Calderon De La Barca Sanchez, S. Chauhan, M. Chertok, J. Conway,
+R. Conway, P.T. Cox, R. Erbacher, M. Gardner, W. Ko, R. Lander, T. Miceli, M. Mulhearn,
+D. Pellett, J. Pilot, F. Ricci-Tam, M. Searle, S. Shalhout, J. Smith, M. Squires, D. Stolp, M. Tripathi,
+S. Wilbur, R. Yohay
+University of California, Los Angeles, USA
+R. Cousins, P. Everaerts, C. Farrell, J. Hauser, M. Ignatenko, G. Rakness, E. Takasugi, V. Valuev,
+M. Weber
+University of California, Riverside, Riverside, USA
+K. Burt, R. Clare, J. Ellison, J.W. Gary, G. Hanson, J. Heilman, M. Ivova Rikova, P. Jandir,
+E. Kennedy, F. Lacroix, O.R. Long, A. Luthra, M. Malberti, H. Nguyen, M. Olmedo Negrete,
+A. Shrinivas, S. Sumowidagdo, S. Wimpenny
+University of California, San Diego, La Jolla, USA
+W. Andrews, J.G. Branson, G.B. Cerati, S. Cittolin, R.T. D’Agnolo, D. Evans, A. Holzner,
+R. Kelley, D. Klein, M. Lebourgeois, J. Letts, I. Macneill, D. Olivito, S. Padhi, C. Palmer, M. Pieri,
+M. Sani, V. Sharma, S. Simon, E. Sudano, M. Tadel, Y. Tu, A. Vartak, C. Welke, F. W ¨urthwein,
+A. Yagil
+University of California, Santa Barbara, Santa Barbara, USA
+D. Barge, J. Bradmiller-Feld, C. Campagnari, T. Danielson, A. Dishaw, K. Flowers, M. Franco
+Sevilla, P. Geffert, C. George, F. Golf, L. Gouskos, J. Incandela, C. Justus, N. Mccoll, J. Richman,
+D. Stuart, W. To, C. West, J. Yoo
+California Institute of Technology, Pasadena, USA
+A. Apresyan, A. Bornheim, J. Bunn, Y. Chen, J. Duarte, A. Mott, H.B. Newman, C. Pena,
+C. Rogan, M. Spiropulu, V. Timciuc, J.R. Vlimant, R. Wilkinson, S. Xie, R.Y. Zhu
+
+31
+
+Carnegie Mellon University, Pittsburgh, USA
+V. Azzolini, A. Calamba, B. Carlson, T. Ferguson, Y. Iiyama, M. Paulini, J. Russ, H. Vogel,
+I. Vorobiev
+University of Colorado at Boulder, Boulder, USA
+J.P. Cumalat, W.T. Ford, A. Gaz, E. Luiggi Lopez, U. Nauenberg, J.G. Smith, K. Stenson,
+K.A. Ulmer, S.R. Wagner
+Cornell University, Ithaca, USA
+J. Alexander, A. Chatterjee, J. Chu, S. Dittmer, N. Eggert, N. Mirman, G. Nicolas Kaufman,
+J.R. Patterson, A. Ryd, E. Salvati, L. Skinnari, W. Sun, W.D. Teo, J. Thom, J. Thompson, J. Tucker,
+Y. Weng, L. Winstrom, P. Wittich
+Fairﬁeld University, Fairﬁeld, USA
+D. Winn
+Fermi National Accelerator Laboratory, Batavia, USA
+S. Abdullin, M. Albrow, J. Anderson, G. Apollinari, L.A.T. Bauerdick, A. Beretvas, J. Berryhill,
+P.C. Bhat, G. Bolla, K. Burkett, J.N. Butler, H.W.K. Cheung, F. Chlebana, S. Cihangir, V.D. Elvira,
+I. Fisk, J. Freeman, Y. Gao, E. Gottschalk, L. Gray, D. Green, S. Gr ¨unendahl, O. Gutsche,
+J. Hanlon, D. Hare, R.M. Harris, J. Hirschauer, B. Hooberman, S. Jindariani, M. Johnson,
+U. Joshi, K. Kaadze, B. Klima, B. Kreis, S. Kwan, J. Linacre, D. Lincoln, R. Lipton, T. Liu,
+J. Lykken, K. Maeshima, J.M. Marrafﬁno, V.I. Martinez Outschoorn, S. Maruyama, D. Mason,
+P. McBride, P. Merkel, K. Mishra, S. Mrenna, Y. Musienko30, S. Nahn, C. Newman-Holmes,
+V. O’Dell, O. Prokofyev, E. Sexton-Kennedy, S. Sharma, A. Soha, W.J. Spalding, L. Spiegel,
+L. Taylor, S. Tkaczyk, N.V. Tran, L. Uplegger, E.W. Vaandering, R. Vidal, A. Whitbeck,
+J. Whitmore, F. Yang
+University of Florida, Gainesville, USA
+D. Acosta, P. Avery, P. Bortignon, D. Bourilkov, M. Carver, T. Cheng, D. Curry, S. Das, M. De
+Gruttola, G.P. Di Giovanni, R.D. Field, M. Fisher, I.K. Furic, J. Hugon, J. Konigsberg, A. Korytov,
+T. Kypreos, J.F. Low, K. Matchev, P. Milenovic51, G. Mitselmakher, L. Muniz, A. Rinkevicius,
+L. Shchutska, M. Snowball, D. Sperka, J. Yelton, M. Zakaria
+Florida International University, Miami, USA
+S. Hewamanage, S. Linn, P. Markowitz, G. Martinez, J.L. Rodriguez
+Florida State University, Tallahassee, USA
+T. Adams, A. Askew, J. Bochenek, B. Diamond, J. Haas, S. Hagopian, V. Hagopian, K.F. Johnson,
+H. Prosper, V. Veeraraghavan, M. Weinberg
+Florida Institute of Technology, Melbourne, USA
+M.M. Baarmand, M. Hohlmann, H. Kalakhety, F. Yumiceva
+University of Illinois at Chicago (UIC), Chicago, USA
+M.R. Adams, L. Apanasevich, V.E. Bazterra, D. Berry, R.R. Betts, I. Bucinskaite, R. Cavanaugh,
+O. Evdokimov, L. Gauthier, C.E. Gerber, D.J. Hofman, S. Khalatyan, P. Kurt, D.H. Moon,
+C. O’Brien, C. Silkworth, P. Turner, N. Varelas
+The University of Iowa, Iowa City, USA
+E.A. Albayrak52, B. Bilki53, W. Clarida, K. Dilsiz, F. Duru, M. Haytmyradov, J.-P. Merlo,
+H. Mermerkaya54, A. Mestvirishvili, A. Moeller, J. Nachtman, H. Ogul, Y. Onel, F. Ozok52,
+A. Penzo, R. Rahmat, S. Sen, P. Tan, E. Tiras, J. Wetzel, T. Yetkin55, K. Yi
+
+32
+
+A The CMS Collaboration
+
+Johns Hopkins University, Baltimore, USA
+B.A. Barnett, B. Blumenfeld, S. Bolognesi, D. Fehling, A.V. Gritsan, P. Maksimovic, C. Martin,
+M. Swartz
+The University of Kansas, Lawrence, USA
+P. Baringer, A. Bean, G. Benelli, C. Bruner, R.P. Kenny III, M. Malek, M. Murray, D. Noonan,
+S. Sanders, J. Sekaric, R. Stringer, Q. Wang, J.S. Wood
+Kansas State University, Manhattan, USA
+A.F. Barfuss, I. Chakaberia, A. Ivanov, S. Khalil, M. Makouski, Y. Maravin, L.K. Saini,
+S. Shrestha, N. Skhirtladze, I. Svintradze
+Lawrence Livermore National Laboratory, Livermore, USA
+J. Gronberg, D. Lange, F. Rebassoo, D. Wright
+University of Maryland, College Park, USA
+A. Baden, A. Belloni, B. Calvert, S.C. Eno, J.A. Gomez, N.J. Hadley, R.G. Kellogg, T. Kolberg,
+Y. Lu, M. Marionneau, A.C. Mignerey, K. Pedro, A. Skuja, M.B. Tonjes, S.C. Tonwar
+Massachusetts Institute of Technology, Cambridge, USA
+A. Apyan, R. Barbieri, G. Bauer, W. Busza, I.A. Cali, M. Chan, L. Di Matteo, V. Dutta, G. Gomez
+Ceballos, M. Goncharov, D. Gulhan, M. Klute, Y.S. Lai, Y.-J. Lee, A. Levin, P.D. Luckey, T. Ma,
+C. Paus, D. Ralph, C. Roland, G. Roland, G.S.F. Stephans, F. St¨ockli, K. Sumorok, D. Velicanu,
+J. Veverka, B. Wyslouch, M. Yang, M. Zanetti, V. Zhukova
+University of Minnesota, Minneapolis, USA
+B. Dahmes, A. Gude, S.C. Kao, K. Klapoetke, Y. Kubota, J. Mans, N. Pastika, R. Rusack,
+A. Singovsky, N. Tambe, J. Turkewitz
+University of Mississippi, Oxford, USA
+J.G. Acosta, S. Oliveros
+University of Nebraska-Lincoln, Lincoln, USA
+E. Avdeeva, K. Bloom, S. Bose, D.R. Claes, A. Dominguez, R. Gonzalez Suarez, J. Keller,
+D. Knowlton, I. Kravchenko, J. Lazo-Flores, S. Malik, F. Meier, G.R. Snow, M. Zvada
+State University of New York at Buffalo, Buffalo, USA
+J. Dolen, A. Godshalk, I. Iashvili, A. Kharchilava, A. Kumar, S. Rappoccio
+Northeastern University, Boston, USA
+G. Alverson, E. Barberis, D. Baumgartel, M. Chasco, J. Haley, A. Massironi, D.M. Morse,
+D. Nash, T. Orimoto, D. Trocino, R.-J. Wang, D. Wood, J. Zhang
+Northwestern University, Evanston, USA
+K.A. Hahn, A. Kubik, N. Mucia, N. Odell, B. Pollack, A. Pozdnyakov, M. Schmitt, S. Stoynev,
+K. Sung, M. Velasco, S. Won
+University of Notre Dame, Notre Dame, USA
+A. Brinkerhoff, K.M. Chan, A. Drozdetskiy, M. Hildreth, C. Jessop, D.J. Karmgard, N. Kellams,
+K. Lannon, W. Luo, S. Lynch, N. Marinelli, T. Pearson, M. Planer, R. Ruchti, N. Valls, M. Wayne,
+M. Wolf, A. Woodard
+The Ohio State University, Columbus, USA
+L. Antonelli, J. Brinson, B. Bylsma, L.S. Durkin, S. Flowers, C. Hill, R. Hughes, K. Kotov,
+T.Y. Ling, D. Puigh, M. Rodenburg, G. Smith, B.L. Winer, H. Wolfe, H.W. Wulsin
+
+33
+
+Princeton University, Princeton, USA
+O. Driga, P. Elmer, P. Hebda, A. Hunt, S.A. Koay, P. Lujan, D. Marlow, T. Medvedeva,
+M. Mooney, J. Olsen, P. Pirou´e, X. Quan, H. Saka, D. Stickland2, C. Tully, J.S. Werner,
+A. Zuranski
+University of Puerto Rico, Mayaguez, USA
+E. Brownson, H. Mendez, J.E. Ramirez Vargas
+Purdue University, West Lafayette, USA
+V.E. Barnes, D. Benedetti, D. Bortoletto, M. De Mattia, L. Gutay, Z. Hu, M.K. Jha, M. Jones,
+K. Jung, M. Kress, N. Leonardo, D. Lopes Pegna, V. Maroussov, D.H. Miller, N. Neumeister,
+B.C. Radburn-Smith, X. Shi, I. Shipsey, D. Silvers, A. Svyatkovskiy, F. Wang, W. Xie, L. Xu,
+H.D. Yoo, J. Zablocki, Y. Zheng
+Purdue University Calumet, Hammond, USA
+N. Parashar, J. Stupak
+Rice University, Houston, USA
+A. Adair, B. Akgun, K.M. Ecklund, F.J.M. Geurts, W. Li, B. Michlin, B.P. Padley, R. Redjimi,
+J. Roberts, J. Zabel
+University of Rochester, Rochester, USA
+B. Betchart, A. Bodek, R. Covarelli, P. de Barbaro, R. Demina, Y. Eshaq, T. Ferbel, A. Garcia-
+Bellido, P. Goldenzweig, J. Han, A. Harel, A. Khukhunaishvili, G. Petrillo, D. Vishnevskiy
+The Rockefeller University, New York, USA
+R. Ciesielski, L. Demortier, K. Goulianos, G. Lungu, C. Mesropian
+Rutgers, The State University of New Jersey, Piscataway, USA
+S. Arora, A. Barker, J.P. Chou, C. Contreras-Campana, E. Contreras-Campana, D. Duggan,
+D. Ferencek, Y. Gershtein, R. Gray, E. Halkiadakis, D. Hidas, S. Kaplan, A. Lath, S. Panwalkar,
+M. Park, R. Patel, S. Salur, S. Schnetzer, S. Somalwar, R. Stone, S. Thomas, P. Thomassen,
+M. Walker
+University of Tennessee, Knoxville, USA
+K. Rose, S. Spanier, A. York
+Texas A&M University, College Station, USA
+O. Bouhali56, A. Castaneda Hernandez, R. Eusebi, W. Flanagan, J. Gilmore, T. Kamon57,
+V. Khotilovich, V. Krutelyov, R. Montalvo, I. Osipenkov, Y. Pakhotin, A. Perloff, J. Roe, A. Rose,
+A. Safonov, T. Sakuma, I. Suarez, A. Tatarinov
+Texas Tech University, Lubbock, USA
+N. Akchurin, C. Cowden, J. Damgov, C. Dragoiu, P.R. Dudero, J. Faulkner, K. Kovitanggoon,
+S. Kunori, S.W. Lee, T. Libeiro, I. Volobouev
+Vanderbilt University, Nashville, USA
+E. Appelt, A.G. Delannoy, S. Greene, A. Gurrola, W. Johns, C. Maguire, Y. Mao, A. Melo,
+M. Sharma, P. Sheldon, B. Snook, S. Tuo, J. Velkovska
+University of Virginia, Charlottesville, USA
+M.W. Arenton, S. Boutle, B. Cox, B. Francis, J. Goodell, R. Hirosky, A. Ledovskoy, H. Li, C. Lin,
+C. Neu, J. Wood
+Wayne State University, Detroit, USA
+C. Clarke, R. Harr, P.E. Karchin, C. Kottachchi Kankanamge Don, P. Lamichhane, J. Sturdy
+
+34
+
+A The CMS Collaboration
+
+University of Wisconsin, Madison, USA
+D.A. Belknap, D. Carlsmith, M. Cepeda, S. Dasu, L. Dodd, S. Duric, E. Friis, R. Hall-
+Wilton, M. Herndon, A. Herv´e, P. Klabbers, A. Lanaro, C. Lazaridis, A. Levine, R. Loveless,
+A. Mohapatra, I. Ojalvo, T. Perry, G.A. Pierro, G. Polese, I. Ross, T. Sarangi, A. Savin,
+W.H. Smith, D. Taylor, P. Verwilligen, C. Vuosalo, N. Woods
+†: Deceased
+1: Also at Vienna University of Technology, Vienna, Austria
+2: Also at CERN, European Organization for Nuclear Research, Geneva, Switzerland
+3: Also at Institut Pluridisciplinaire Hubert Curien, Universit´e de Strasbourg, Universit´e de
+Haute Alsace Mulhouse, CNRS/IN2P3, Strasbourg, France
+4: Also at National Institute of Chemical Physics and Biophysics, Tallinn, Estonia
+5: Also at Skobeltsyn Institute of Nuclear Physics, Lomonosov Moscow State University,
+Moscow, Russia
+6: Also at Universidade Estadual de Campinas, Campinas, Brazil
+7: Also at Laboratoire Leprince-Ringuet, Ecole Polytechnique, IN2P3-CNRS, Palaiseau, France
+8: Also at Joint Institute for Nuclear Research, Dubna, Russia
+9: Also at Suez University, Suez, Egypt
+10: Also at Cairo University, Cairo, Egypt
+11: Also at Fayoum University, El-Fayoum, Egypt
+12: Also at British University in Egypt, Cairo, Egypt
+13: Now at Sultan Qaboos University, Muscat, Oman
+14: Also at Universit´e de Haute Alsace, Mulhouse, France
+15: Also at Ilia State University, Tbilisi, Georgia
+16: Also at Brandenburg University of Technology, Cottbus, Germany
+17: Also at Institute of Nuclear Research ATOMKI, Debrecen, Hungary
+18: Also at E¨otv¨os Lor´and University, Budapest, Hungary
+19: Also at University of Debrecen, Debrecen, Hungary
+20: Also at University of Visva-Bharati, Santiniketan, India
+21: Now at King Abdulaziz University, Jeddah, Saudi Arabia
+22: Also at University of Ruhuna, Matara, Sri Lanka
+23: Also at Isfahan University of Technology, Isfahan, Iran
+24: Also at Sharif University of Technology, Tehran, Iran
+25: Also at Plasma Physics Research Center, Science and Research Branch, Islamic Azad
+University, Tehran, Iran
+26: Also at Universit`a degli Studi di Siena, Siena, Italy
+27: Also at Centre National de la Recherche Scientiﬁque (CNRS) - IN2P3, Paris, France
+28: Also at Purdue University, West Lafayette, USA
+29: Also at Universidad Michoacana de San Nicolas de Hidalgo, Morelia, Mexico
+30: Also at Institute for Nuclear Research, Moscow, Russia
+31: Also at St. Petersburg State Polytechnical University, St. Petersburg, Russia
+32: Also at California Institute of Technology, Pasadena, USA
+33: Also at Faculty of Physics, University of Belgrade, Belgrade, Serbia
+34: Also at Facolt`a Ingegneria, Universit`a di Roma, Roma, Italy
+35: Also at Scuola Normale e Sezione dell’INFN, Pisa, Italy
+36: Also at University of Athens, Athens, Greece
+37: Also at Paul Scherrer Institut, Villigen, Switzerland
+38: Also at Institute for Theoretical and Experimental Physics, Moscow, Russia
+39: Also at Albert Einstein Center for Fundamental Physics, Bern, Switzerland
+40: Also at Gaziosmanpasa University, Tokat, Turkey
+
+35
+
+41: Also at Adiyaman University, Adiyaman, Turkey
+42: Also at Cag University, Mersin, Turkey
+43: Also at Anadolu University, Eskisehir, Turkey
+44: Also at Izmir Institute of Technology, Izmir, Turkey
+45: Also at Necmettin Erbakan University, Konya, Turkey
+46: Also at Ozyegin University, Istanbul, Turkey
+47: Also at Marmara University, Istanbul, Turkey
+48: Also at Kafkas University, Kars, Turkey
+49: Also at Rutherford Appleton Laboratory, Didcot, United Kingdom
+50: Also at School of Physics and Astronomy, University of Southampton, Southampton,
+United Kingdom
+51: Also at University of Belgrade, Faculty of Physics and Vinca Institute of Nuclear Sciences,
+Belgrade, Serbia
+52: Also at Mimar Sinan University, Istanbul, Istanbul, Turkey
+53: Also at Argonne National Laboratory, Argonne, USA
+54: Also at Erzincan University, Erzincan, Turkey
+55: Also at Yildiz Technical University, Istanbul, Turkey
+56: Also at Texas A&M University at Qatar, Doha, Qatar
+57: Also at Kyungpook National University, Daegu, Korea
+
+

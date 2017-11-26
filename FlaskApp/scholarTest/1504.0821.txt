@@ -1,0 +1,2457 @@
+5
+1
+0
+2
+
+ 
+
+y
+a
+M
+ 
+9
+1
+
+ 
+ 
+]
+
+.
+
+M
+B
+o
+i
+b
+-
+q
+[
+ 
+ 
+
+3
+v
+1
+2
+8
+0
+0
+
+.
+
+4
+0
+5
+1
+:
+v
+i
+X
+r
+a
+
+Introducing Improved Structural Properties and Salt Dependence into a
+Coarse-Grained Model of DNA
+
+Benedict E. K. Snodin,1, a) Ferdinando Randisi,2, 3 Majid Mosayebi,1 Petr ˇSulc,4 John S. Schreck,1 Flavio
+Romano,1 Thomas E. Ouldridge,5 Roman Tsukanov,6 Eyal Nir,6 Ard A. Louis,3 and Jonathan P. K. Doye1, b)
+1)Physical and Theoretical Chemistry Laboratory, Department of Chemistry, University of Oxford, South Parks Road,
+Oxford, OX1 3QZ, United Kingdom
+2)Life Sciences Interface Doctoral Training Center, South Parks Road, Oxford, OX1 3QU,
+United Kingdom
+3)Rudolf Peierls Centre for Theoretical Physics, 1 Keble Road, Oxford OX1 3NP,
+United Kingdom
+4)Center for Studies in Physics and Biology, The Rockefeller University, 1230 York Avenue, New York, NY 10065,
+USA
+5)Department of Mathematics, Imperial College, 180 Queen’s Gate, London SW7 2AZ,
+United Kingdom
+6)Department of Chemistry and the Ilse Katz Institute for Nanoscale Science and Technology,
+Ben-Gurion University of the Negev, Beer Sheva, Israel
+
+We introduce an extended version of oxDNA, a coarse-grained model of DNA designed to capture the ther-
+modynamic, structural and mechanical properties of single- and double-stranded DNA. By including explicit
+major and minor grooves, and by slightly modifying the coaxial stacking and backbone-backbone interactions,
+we improve the ability of the model to treat large (kilobase-pair) structures such as DNA origami which are
+sensitive to these geometric features. Further, we extend the model, which was previously parameterised to
+just one salt concentration ([Na+] = 0.5 M), so that it can be used for a range of salt concentrations including
+those corresponding to physiological conditions. Finally, we use new experimental data to parameterise the
+oxDNA potential so that consecutive adenine bases stack with a diﬀerent strength to consecutive thymine
+bases, a feature which allows a more accurate treatment of systems where the ﬂexibility of single-stranded
+regions is important. We illustrate the new possibilities opened up by the updated model, oxDNA2, by pre-
+senting results from simulations of the structure of large DNA objects and by using the model to investigate
+some salt-dependent properties of DNA.
+
+I.
+
+INTRODUCTION
+
+Deoxyribonucleic acid (DNA) performs the crucial
+function of storing genetic information in living organ-
+isms. It is made up of repeating units called nucleotides,
+each of which consists of a sugar and phosphate backbone
+plus a base (either Adenine (A), Guanine (G), Thymine
+(T), or Cytosine (C)) attached to the sugar. Watson-
+Crick base-pairing, A with T and G with C, along with
+planar stacking interactions between bases and the con-
+straints of the backbone, leads to the formation of the
+well-known double-helical structure of DNA.
+
+The Watson-Crick complementarity of DNA also per-
+mits the rational design of DNA objects for which the
+intended structure is the global free-energy minimum, a
+property which has been exploited to create a wide vari-
+ety of 2D and 3D nanostructures.1–3 Further, these DNA
+objects can be functionalised,4–7 with potential applica-
+tions ranging from nanomedicine to nanoelectronics.8
+
+Theoretical and computational approaches to mod-
+elling DNA have been widely exploited to probe the
+behaviour of the molecule in both a biological and a
+nanotechnological context. At the ﬁnest level of de-
+tail, quantum chemistry calculations have been used to
+
+a)Electronic mail: benedict.snodin@chem.ox.ac.uk
+b)Electronic mail: jonathan.doye@chem.ox.ac.uk
+
+study the interactions between nucleotides,9–11 although
+the high computational cost of such an approach limits
+these methods to interactions between nearest-neighbour
+base pairs in vacuum. Classical all-atom approaches,
+where every atom of DNA and the surrounding solvent
+is modelled as a point particle with eﬀective interac-
+tions, have been widely employed to study small DNA
+motifs,12,13 and have recently been applied to larger DNA
+systems.14–16 However, simulating rare-event processes
+such as the breaking or formation of base pairs remains
+a challenge with these models, with µs time scales being
+the limit of what is currently accessible.16 At the other
+end of the scale, theoretical approaches have been de-
+veloped to understand certain large-scale properties of
+DNA. These include the wormlike-chain model, which
+treats DNA as a continuously ﬂexible polymer.17 While
+such models can provide useful insights into the physi-
+cal properties of DNA, they are not detailed enough, by
+design, to address processes such as duplex formation.
+
+The middle ground between analytical and all-atom
+approaches is occupied by coarse-grained DNA models.
+Such models integrate out many of the degrees of free-
+dom of the DNA nucleotide, and often neglect the solvent
+molecules; these approximations inevitably imply a com-
+promise between accuracy, generality and computational
+eﬃciency, so that care must be taken in applying these
+models to a given problem. However, the simpliﬁed pic-
+ture presented by such an approach can be a strength, as,
+
+in addition to greatly increasing the time scale and num-
+ber of nucleotides that can be studied, it can allow one
+to understand the generic physics governing the system
+more easily.
+
+Many coarse-grained DNA models have been devel-
+oped in recent years;18–26 in this work we improve
+the model due to Ouldridge et al., oxDNA.27,28 This
+nucleotide-level model is designed with a heuristic, “top-
+down” approach, with a focus on reproducing well-known
+properties of DNA (such as the helical structure of the
+B-DNA duplex) and experimental results (such as du-
+plex melting temperatures), rather than, for example,
+building the model up by integrating out details from
+an all-atom representation. In the oxDNA model, each
+nucleotide is a rigid body with three interaction sites
+that have mutual, highly anisotropic interactions. This
+treatment is suﬃcient to obtain good agreement with ex-
+perimental data on the structural, mechanical and es-
+pecially the thermodynamic properties of single- and
+double-stranded DNA. Consequently, the model has pro-
+vided key insights into many diﬀerent processes rele-
+vant to DNA nanotechnology29–37 and biophysics,38–42
+and importantly, has also been shown to provide direct
+agreement with experimentally measured properties on
+a range of systems including DNA overstretching,42 a
+two-footed DNA walker,32 and toehold-mediated strand
+displacement.36,43
+
+Despite these achievements, there are some areas
+where oxDNA can be improved. The model was pa-
+rameterised to [Na+] = 0.5 M, a high salt concentra-
+tion similar to that used for many applications in DNA
+nanotechnology. However, the ability to study DNA be-
+haviour as a function of salt would allow quantitative
+comparison with a greatly expanded set of experiments,
+and, in particular, if we wish to apply oxDNA to biolog-
+ical systems we would like to work at physiological salt
+([Na+] ≈ 0.15 M). At the same time, the wealth of ex-
+perimental data for the thermodynamic and mechanical
+properties of DNA as a function of salt concentration44–47
+makes ﬁtting the salt-dependent properties of an ex-
+tended model possible.
+
+While the detailed eﬀect of salt on DNA electrostatics
+can be highly complex,48,49 here we use a simple Debye-
+H¨uckel interaction term, as ﬁrst implemented for oxDNA
+by Wang and Pettitt in Ref. 39, to model how salt screens
+repulsive interactions. The more coarse-grained descrip-
+tion is commensurate with the level of approximation
+used more generally in the oxDNA framework. We care-
+fully parameterise the model to an extended set of exper-
+imental data for melting temperatures and persistence
+lengths, including the behaviour of single strands.
+
+A second area that merits attention is the perfor-
+mance of the model in simulating the structure of large
+(kilobase-pair) DNA objects. The model value of the
+B-DNA pitch did not come under too much scrutiny
+in the original parameterisation as there is some dis-
+agreement in the literature about the precise value of
+the average pitch.47,50–54 However, improved experimen-
+
+2
+
+tal techniques in fabrication and imaging of large DNA
+objects1,55,56 have presented an opportunity to ﬁnely
+tune this value, because small adjustments to the duplex
+pitch can result in signiﬁcant changes to the global twist
+of a large-scale DNA nanostructure. In addition, simu-
+lating these large-scale structures has illustrated the po-
+tential importance of nicks and junctions for the eﬀective
+duplex pitch, so that improving the model’s description
+of these eﬀects has become a priority. Finally, the origi-
+nal model duplex had grooves with equal widths, whereas
+B-DNA is known to have a larger major groove and a
+smaller minor groove. This implies that the positions of
+the backbone sites in the model, which are directly re-
+lated to the groove widths, could be more realistic. This
+detail could be relevant, for example, in origami struc-
+ture, where the precise backbone positions are known to
+be important for junction placement.1
+
+The oxDNA model was previously given sequence-
+dependent hydrogen-bonding and stacking strengths57 by
+ﬁtting to the duplex thermodynamics of the SantaLu-
+cia model.46 As the SantaLucia model gives results at
+the base-pair step level, one can only extract the aver-
+age stacking strength for the two stacking interactions
+present in a given base-pair step.
+In particular, this
+means that in oxDNA the AA and TT stacking interac-
+tions are the same, whereas it is well known that the AA
+stacking interaction is signiﬁcantly stronger than the TT
+interaction, an important property for DNA nanotechnol-
+ogy, for example, where poly-T single-stranded regions
+are often used as ﬂexible linkers.58,59 To remedy this we
+use new experimental data to reparameterise the AA and
+TT stacking interactions in the model.
+
+In the following sections, after brieﬂy introducing the
+original oxDNA model, we consider each change to the
+model in turn, and then we highlight some important
+aspects of the behaviour of the new model.
+
+II. THE ORIGINAL OXDNA MODEL
+
+In the oxDNA model introduced by Ouldridge et al.27
+strands of DNA are represented by a chain of rigid bod-
+ies, with each rigid body representing a nucleotide. The
+coarse-grained, pairwise potential for the model can be
+written as a sum of interaction terms
+
+(Vbackbone + Vstack + V (cid:48)
+
+exc) +
+
+V = (cid:88)nearest neighbours
+(cid:88)other pairs
+
+(VHB + Vcross stack + Vexc + Vcoax stack).
+
+(1)
+
+The nearest neighbours (adjacent nucleotides on a
+DNA strand) interact via Vbackbone, Vstack, and V (cid:48)
+exc,
+which represent the connectivity between neighbouring
+backbones, the favourable stacking interactions between
+neighbouring bases, and excluded volume terms, respec-
+tively. All other nucleotide pairs interact with VHB,
+
+(a)
+
+(b)
+
+γ
+
+FIG. 1. Schematics contrasting the original oxDNA model
+(left), with equal groove widths, with oxDNA2 (right), which
+has diﬀerentiated major and minor grooves. (a) A cross sec-
+tion of a duplex with one base pair displayed. The large
+dashed circle shows the helix radius, and each nucleotide is
+represented by three circles joined by a line; the large solid cir-
+cles represent the backbone sites, while the small solid circles
+represent the stacking (closer to the backbone) and hydrogen-
+bonding (at the end of the nucleotide) sites. For oxDNA2, a
+value of 20◦ was chosen for the angle γ. (b) A representation
+of a DNA duplex for each model.
+
+Vcross stack, Vexc and Vcoax stack, corresponding to hy-
+drogen bonding between complementary bases, cross-
+stacking, excluded volume, and coaxial stacking between
+non-nearest neighbours, respectively. We now highlight
+aspects of the original model that are relevant to the im-
+provements made in this paper.
+
+Firstly, in its original formulation, the model was pa-
+rameterised for a sodium ion concentration of 0.5 M,
+chosen to reﬂect the high salt concentrations commonly
+used in DNA nanotechnology. The electrostatic interac-
+tions between the negatively charged phosphate groups
+on the DNA backbone were incorporated into the back-
+bone site’s excluded volume, an approximation which can
+be justiﬁed by the very short Debye screening length at
+that relatively high ion concentration.
+
+Secondly, the original oxDNA model27 represented
+each nucleotide as a linear rigid body (Fig. 1). The
+optimal conﬁguration for base-pairing occurs when the
+two nucleotides point directly at each other. As a conse-
+quence, the DNA double helix was symmetric, with the
+two grooves having equal widths.
+
+Thirdly, in the original oxDNA model introduced in
+Ref. 27, all four types of base were treated equally ex-
+cept that only A-T and G-C base pairs could be formed.
+Later ˇSulc et al.57 introduced sequence-dependent ther-
+
+3
+
+modynamics into the model by making the strengths
+of the hydrogen-bonding and stacking terms depend on
+the identities of the interacting nucleotides. The nearest
+neighbour DNA model of SantaLucia,46 to which oxDNA
+was parameterised, does not resolve the diﬀerence be-
+tween AA and TT stacking as it works on the base-pair
+step level – therefore AA and TT stacking strengths were
+set to be the same in Ref. 57.
+
+In this work we mostly work from the original,
+sequence-averaged parameterisation of the model rather
+than the sequence-dependent one, as it is more eﬃ-
+cient to ﬁt the thermodynamic parameters to sequence-
+averaged duplex melting temperatures as given by the
+SantaLucia model. The exception is the parameterisa-
+tion of the AA and TT stacking strengths, which did
+use the sequence-dependent parameters from Ref. 57 as
+a starting point, to allow the best possible comparison
+between the model and the experimental results that
+were used for the ﬁtting. After the parameters for
+oxDNA2 had been obtained, including new values for
+the sequence-averaged hydrogen bonding and stacking
+strengths, we then rescaled the sequence-dependent in-
+teraction strengths from Ref. 57 accordingly for use with
+the new model.
+
+INTRODUCING DIFFERENT WIDTHS FOR MAJOR
+
+III.
+AND MINOR DNA GROOVES
+
+B-DNA in the original oxDNA model has equal groove
+widths, while in reality DNA has a larger major groove
+and a smaller minor groove. Having realistic widths for
+the major and minor grooves is equivalent to having ap-
+propriately positioned backbone sites in the model, an
+important feature for the physical properties of many
+DNA motifs. For example, in DNA origami antiparal-
+lel double helices are joined by crossovers, for which the
+position of the backbone has been shown to be crucial for
+origami structure.1,60 Another example is anisotropic du-
+plex bending: the duplex can be expected to bend more
+easily into the major groove than into the minor, if the
+groove widths are unequal.
+
+The oxDNA nucleotide is composed of three interac-
+tion sites: the hydrogen-bonding, stacking and backbone
+sites. We introduce diﬀerent groove widths by changing
+the position of the backbone site while keeping the duplex
+radius unchanged (Fig. 1), such that, rather than lying on
+a straight line, the three interaction sites lie in a plane.
+The new nucleotide shape introduces an additional pa-
+rameter into the model, the angle γ between the line
+from the duplex centre to the backbone site and the line
+from the duplex centre to the stacking site (Fig. 1(a)).
+Given the coarse graining of the 18 atoms of the sugar-
+phosphate DNA backbone into a single interaction site,
+there is no deﬁnitive choice for the precise position of the
+backbone site and thus the value of the model parame-
+ter γ (Fig. 1(a)). We set γ = 20◦, a value which maps
+onto a full-atom representation of a DNA duplex well by
+
+visual inspection, although values of γ between 15◦ and
+25◦ would give an equally satisfying visual match.
+
+The backbone site is moved such that the duplex ra-
+dius is unchanged, and we note that the modiﬁcation has
+a negligible added computational cost when simulating
+the model. However, the thermodynamic and mechan-
+ical properties are slightly aﬀected. For the thermody-
+namics, we found a change of 1-2 K in the duplex melt-
+ing temperatures, and we modiﬁed the hydrogen-bonding
+and stacking strengths using the histogram reweighting
+method described in Section II C 2 of Ref. 61, so that
+the agreement with experimental melting temperatures
+was as good as for the original model. The mechanical
+properties of DNA are less well constrained experimen-
+tally and so were not reﬁtted. The mechanical properties
+for the new model can be found in Section VIII.
+
+One illustration of the importance of the groove widths
+in oxDNA for the structural properties of DNA assem-
+blies is provided by systems of 3-arm star tiles that are
+designed to form triangular prismatic polyhedra. We ﬁnd
+that modifying the groove widths qualitatively changes
+the structure of trimers of these tiles (Fig. 2). Specif-
+ically, the body of the trimer deﬁnes a plane with two
+distinct faces. Zhang et al.62 found that one of two possi-
+ble isomers of the polyhedron preferentially formed, im-
+plying that the free arms of the trimer systematically
+pointed in the direction of one of these two faces. We
+ﬁnd a consistent result when the groove widths speciﬁed
+by oxDNA2 are used. When equal-sized grooves are used
+(as in the original oxDNA model) the trimer arms point
+in the opposite direction.
+
+IV. EFFECTIVE ELECTROSTATIC INTERACTIONS
+
+One major improvement presented in this paper is the
+introduction of a salt-dependent interaction term in the
+oxDNA model. Since the original goal of the oxDNA
+model was to simulate nanotechnology experiments, the
+thermodynamic and structural parameterisation was car-
+ried out at high salt. The very short electrostatic screen-
+ing length at these conditions allows one to incorporate
+the electrostatics into a soft excluded volume, somewhat
+circumventing the necessity of a proper treatment. The
+original parameterisation of the thermodynamics was
+carried out at 0.5 M [Na+], a high enough value that
+further increasing it does not signiﬁcantly change the
+physics at our level of coarse-graining.
+
+The problem of treating electrostatics properly for
+DNA in solution is a complicated one. Perhaps the most
+evident issue is that the typical dimensions of nucleotides
+are comparable to the Debye length of the solution, ren-
+dering a mean-ﬁeld treatment hard to justify. Also, in
+some cases the presence of salt ions aﬀects the local
+structure of nucleic acids, by stabilizing some arrange-
+ments or destabilizing others. Ion condensation may also
+lead to stronger screening of the electrostatic interactions
+than otherwise expected – this has been incorporated
+
+4
+
+into coarse-grained DNA models through partial eﬀective
+charges.63,64 Thus, in principle, many non-trivial eﬀects
+must be taken into account when modelling the electro-
+static interactions, and the debate on the best way to do
+so implicitly is still unresolved.48,49
+
+Here, we choose a very simple treatment, based on the
+Debye-H¨uckel model for screened electrostatics. This ap-
+proach has been used previously for other coarse-grained
+models,23,63 and was ﬁrst introduced into oxDNA by
+Wang and Pettitt.39 We note that this treatment is con-
+sistent with the coarse-grained nature of the model, and
+we use the same top-down strategy that was used in
+the original parameterisation to design the eﬀective elec-
+trostatic interactions: our goal is to introduce a term
+in the potential that will reproduce the thermodynamic
+and mechanical eﬀects of salt concentration on DNA, and
+thus should be regarded as an eﬀective interaction rather
+than an attempt to rigorously model the local eﬀects of
+charges. This should be kept in mind when interpreting
+the results obtained with oxDNA, in particular at low
+salt concentration.
+
+Since the modelling of electrostatics is rather crude,
+we restrict our parameterisation to salt concentrations of
+0.1 M of monovalent salt or greater. This restriction is
+also due to the fact that we parameterise our thermody-
+namics to the model of SantaLucia,46 which was ﬁtted in
+a similar salt regime. Importantly, physiological condi-
+tions fall within this range, which will allow quantitative
+comparison between simulations of DNA systems with
+our model and experiments at physiological conditions.
+The detailed Debye-H¨uckel form which is added to the
+non-bonded interactions in the potential of Eq. 1 takes
+the following form:
+
+VDH(T, I) =(cid:88)ij
+
+(qeﬀ e)2
+4π0r
+
+exp(cid:8)−rb-b
+
+ij /λDH(T, I)(cid:9)
+
+rb-b
+ij
+
+,
+
+(2)
+
+where qeﬀ is the eﬀective charge situated at the backbone
+site of each of the nucleotides, rb-b
+is the magnitude of
+ij
+the distance between the backbone sites of nucleotides
+i and j, 0 is the permittivity of the vacuum, r is the
+relative permittivity of water, e is the elementary charge
+and qeﬀ is a dimensionless eﬀective charge. In principle,
+r depends on rij,65 and weakly depends on temperature
+and salt concentration. However, for oxDNA2 we set
+r to be a constant value, in keeping with the coarse-
+grained approach taken for the rest of the model.
+In
+particular, we choose r = 80, the standard value for
+water.
+In Eq. 2 we have stressed that the interaction
+depends on the temperature T and on the (monovalent)
+salt concentration I through the Debye length λDH(T, I):
+
+λDH(T, I) =(cid:114) 0rkBT
+
+2NAe2I
+
+,
+
+(3)
+
+where NA is Avogadro’s number and kB is Boltzmann’s
+constant.
+
+To ensure the computational eﬃciency of simulating
+the model, we set the interaction to zero at a ﬁnite dis-
+tance; and to allow simulation with molecular dynamics,
+
+(b)
+
+(c)
+
+5
+
+(a)
+
+θ
+
+FIG. 2. In oxDNA, the structure of the DNA trimer due to Zhang et al.62 is found to qualitatively change as a function of
+duplex groove angle γ. A representative trimer conﬁguration with γ = 20◦ is shown in (a) from the side and with θ, the angle
+between each arm and the plane of the main, triangular trimer section, displayed and in (b) from the top. (c) Shows the average
+value of θ as a function of γ, with γ = 0◦ corresponding to equal groove widths as for the original oxDNA model, and γ = 20◦
+being chosen for oxDNA2.
+
+we introduce a quadratic smoothing potential so that the
+interaction goes to zero smoothly. The quadratic smooth-
+ing, the details of which are reported in Appendix A 1,
+is introduced after a cutoﬀ rsmooth, which we choose to
+be 3λDH. This cutoﬀ allows us to use all the standard
+techniques to improve the simulation eﬃciency via the
+use of Verlet lists and/or cells.66 We have checked that
+introducing our chosen cutoﬀ, rsmooth = 3λDH, has a neg-
+ligible eﬀect on the duplex thermodynamics results used
+to parameterise the interaction (Fig. 3(a)).
+
+Our representation of DNA uses a single rigid body
+per nucleotide, and the best choice of where to put the
+charge is not obvious. All the atoms of the sugar and
+phosphate groups of the backbone are represented in a
+single interaction site, and it is thus natural to put the
+charge, which in real DNA is located on the phosphate,
+on that interaction site. Importantly, the backbone site
+of a nucleotide is placed almost in between the phosphate
+of that nucleotide and the phosphate of the neighbouring
+one, which could potentially lead to some unphysical ef-
+fects. Also, we should stress that having a charge at each
+backbone site means that the DNA has as many charges
+as nucleotides, which is not always true in real systems:
+very often, the terminal phosphate at the 3(cid:48) end is cut oﬀ,
+removing a charge. The absence of this charge can cause
+measurable eﬀects on the thermodynamics, and indeed
+the SantaLucia model46 requires the presence or absence
+of the terminal phosphates as an input parameter.
+In
+keeping with our coarse-graining approach, we put a half
+eﬀective charge on each of the terminal nucleotides to in-
+corporate the fact that each charge should be halfway in
+between our backbone sites, emulating a system with the
+terminal charge removed, and parameterise to the San-
+taLucia model in a way consistent with this approach.
+
+The parameter that we have tuned to reproduce the
+thermodynamics predicted by the model of SantaLucia
+is the eﬀective charge qeﬀ . To do this, we used thermo-
+dynamic integration67 to compute the melting tempera-
+tures of duplexes of length 5, 6, 7, 8, 10, 12 and 15 as a
+
+function of qeﬀ at several salt concentrations, and chose
+the value that best reproduced the melting temperatures
+predicted by SantaLucia’s model.
+
+The melting temperature of a duplex is deﬁned as the
+temperature at which half of the strands in a stoichio-
+metric bulk solution are in the duplex state. We cannot
+simulate the bulk system with oxDNA. However, at the
+bulk melting temperature for a given concentration of
+strands, the bound and unbound free energies obtained
+for a system of two strands at the same concentration,
+Fb and Fub, are related by:68
+
+Fb(Tm, qeﬀ ) = Fub(Tm, qeﬀ ) − kBTm ln(2) ,
+
+(4)
+
+where we have made explicit the dependence of F on
+the eﬀective charge qeﬀ . The constant on the right hand
+side of Eq. 4 accounts for concentration ﬂuctuations that
+are present in bulk but not for two strands in a periodic
+box.68 The equation is exact in the dilute limit, which is
+indeed where the thermodynamics of duplex formation
+are usually studied and is the relevant limit for oxDNA.
+We can take advantage of the relation of the free en-
+ergies given by Eq. 4 for the thermodynamic integration.
+For small changes in T and qeﬀ , it is possible to write
+
+F (Tm + dT, qeﬀ + dqeﬀ ) =
+∂F
+∂qeﬀ
+
+F (Tm, qeﬀ ) +
+
+∂F
+∂T
+
+dT +
+
+dqeﬀ =
+
+F (Tm, qeﬀ ) +(cid:18) F − (cid:104)V (cid:105)
+
+Tm
+
++(cid:28) ∂V
+
+∂T(cid:29)(cid:19) dT + 2(cid:104)VDH(cid:105)
+
+qeﬀ
+
+dqeﬀ .
+
+(5)
+
+The last step includes the unusual term (cid:104)∂V /∂T(cid:105). This is
+because our potential, like many coarse-grained models,
+depends explicitly on T through Vstack and VDH.
+
+To compute the change in Tm introduced by a small
+change in qeﬀ , one can impose the condition in Eq. 4 at
+
+(a)
+
+(b)
+
+FIG. 3.
+(a) Melting temperature of duplex DNA of diﬀer-
+ent lengths l at [Na+]=0.2 M as a function of the eﬀective
+charge qeﬀ obtained with thermodynamic integration.
+(b)
+Average melting temperature diﬀerence between our model
+and the SantaLucia model46 for diﬀerent values of l as a
+function of qeﬀ . Each point corresponds to the average over
+[Na+]=0.1, 0.2, 0.3, 0.4, 0.5 M of the magnitude of the dif-
+ference in melting temperature between our model and the
+SantaLucia model. The plot suggests an optimal value for
+qeﬀ of 0.815, indicated by the vertical dashed line.
+
+the new Tm
+
+Fb(Tm + dT, qeﬀ + dqeﬀ ) =
+Fub(Tm + dT, qeﬀ + dqeﬀ ) − kB(Tm + dT ) ln(2) ,
+
+(6)
+
+and, by using Eqs. 4, 5 and 6, one obtains
+
+dTm
+dqeﬀ
+
+=
+
+(2/qeﬀ )((cid:104)VDH(cid:105)ub − (cid:104)VDH(cid:105)b)
+
+((cid:104)Vub(cid:105) − (cid:104)Vb(cid:105))/Tm − ((cid:104)∂Vub/∂T(cid:105) − (cid:104)∂Vb/∂T(cid:105))
+(7)
+
+.
+
+6
+
+for the thermodynamic integration we use the melting
+temperatures from SantaLucia, which our original model
+(equivalent to the current model at qeﬀ = 0) reproduces
+within tenths of a Kelvin. Since both Vstack and VDH only
+weakly depend on temperature, we used Eq. 7 assuming
+(cid:104)∂Vub/∂T(cid:105) − (cid:104)∂Vb/∂T(cid:105) = 0 to obtain an optimal value
+for qeﬀ , and checked a posteriori the results of thermo-
+dynamic integration with melting simulations. We have
+found that the melting temperature diﬀerences computed
+with Eq. 7 are accurate to within 0.2 K.
+
+For a range of salt concentrations and duplex lengths,
+we performed thermodynamic integration to ﬁnd the
+melting temperature as a function of qeﬀ . Some of the
+results are depicted in Fig. 3. The melting temperature
+of the duplex decreases with increasing eﬀective charge
+qeﬀ , but not dramatically so (Fig. 3(a)). This is be-
+cause the increased interchain repulsion in the duplex
+state is partially balanced by the lower entropy of the
+single-stranded state (due to it adopting a slightly more
+extended state to reduce intrachain repulsion). The data
+in Fig. 3(b) show that the qeﬀ at which the diﬀerence in
+melting temperature between oxDNA and SantaLucia is
+minimised depends on the duplex length and lies in the
+range 0.75 < qeﬀ < 0.95. The best overall predictions are
+obtained for an eﬀective charge qeﬀ = 0.815. It is reassur-
+ing that this value does not deviate signiﬁcantly from 1
+(corresponding to the value given by Debye-H¨uckel the-
+ory), and that the best value for qeﬀ varies little with
+duplex length. In addition, it is not uncommon to use
+a value of qeﬀ < 1 for coarse-grained DNA models.63,64
+One argument is that ion condensation, which is known
+to occur for DNA, will screen the phosphate charges more
+strongly than expected from Debye-H¨uckel theory. This
+will lead to a lower eﬀective charge when ﬁtting a model
+using a Debye-H¨uckel treatment to experimental results,
+although such arguments should be applied with caution
+to a crude mean-ﬁeld approach such as this one.
+
+We note that introducing this explicit electrostatic
+term in our model potential will raise the computational
+expense of each simulation step compared to the original
+oxDNA model, as the electrostatic term will generally re-
+sult in oxDNA2 having a larger interaction range than the
+original model has. This eﬀect increases at lower salt, as
+the Debye-H¨uckel term becomes more long-ranged. For
+example, we ﬁnd that simulating a 10-bp duplex with
+MD for a given number of steps takes 1.4× as long with
+oxDNA2 at [Na+]=0.5 M and 1.7× as long with oxDNA2
+at [Na+]=0.1 M as it did for the original oxDNA.
+
+Eq. 7 is a diﬀerential equation that allows us to follow
+the change in melting temperature as qeﬀ is changed.
+We note that Eq. 7 is an extended Clausius-Clapeyron
+relation,67 and the quantities on the right-hand side are
+readily accessible with separate simulations of the bound
+and unbound states. Since we are dealing with small sys-
+tems, all these simulations are very quick and it is thus
+easy to achieve very accurate results. As a starting point
+
+IMPROVING STRUCTURE PREDICTION FOR
+
+V.
+LARGE-SCALE DNA OBJECTS
+
+The model was originally parameterised for small
+single- and double-stranded DNA structures. If we wish
+to study large-scale structures, we need to ensure that we
+can reproduce the existing experimental data for these
+larger constructs. A good test case is provided by the
+
+0.00.20.40.60.81.01.2qeff320330340Tm/Kl=8l=10l=12l=150.30.40.50.60.70.80.91.01.1qeff1234∆Tm/Kl=5l=6l=8l=10l=12l=157
+
+site the nick, the non-nicked strand prefers a larger twist
+than for duplex DNA (just as stacked single strands do
+in the model), and the nicked backbones lack the FENE
+spring that would usually oppose this tendency. A simi-
+lar argument applies for strands with junctions.
+
+Although there is no direct evidence available to show
+whether this overtwist is physically realistic, there are
+multiple lines of experimental evidence that suggest that
+the pitch of duplex DNA is close to 10.5 bp/turn.47,50
+Given the evidence from Dietz et al.1 that the eﬀective
+pitch in DNA origami structures is also close to 10.5
+bp/turn, we decided to reduce the overtwisting in oxDNA
+as much as is possible. To achieve this, we modify the
+coaxial stacking term of the potential, Vcoax stack, so that
+the overtwist is 0◦ for a junction and 1.3◦ for a nick (see
+Appendix A 3 for details of the changes to the potential).
+We have veriﬁed that this change has very little eﬀect on
+the other features of the model.
+
+Even when the overtwist at nicks and junctions has
+largely been removed, we require an intrinsic duplex pitch
+of 10.55 bp/turn in order for the oxDNA N-type helix
+bundle to have zero global twist, and we set the pitch
+to this value (at [Na+]=0.5 M) for oxDNA2 by modify-
+ing Vbackbone. We found that this modiﬁcation to the
+backbone potential changed the duplex melting temper-
+atures by around 2 K, and we reﬁtted the model’s hydro-
+gen bonding and stacking strengths to correct for this us-
+ing the same method as was used for the thermodynam-
+ics reﬁtting when implementing unequal helical groove
+widths. The requirement for a pitch of 10.55 bp/turn,
+rather than the 10.5 bp/turn that one might expect, is
+due to a few subtle eﬀects that are currently being inves-
+tigated further.
+
+The global twist measured for the helix bundles with
+the new oxDNA2 model (Appendix B 1 describes how
+the global twist was measured from simulations) is com-
+pared to the experimental results in Table I, while typi-
+cal simulation snapshots are shown in Fig. 4. The slight
+modiﬁcations to Vbackbone used to set the model pitch are
+given in Appendix A 2. We note that the modiﬁcations
+to Vbackbone changed the duplex melting temperatures in
+the model by 1-2 K, which were then reﬁtted using his-
+togram reweighting (as described in Section II C 2 of
+Ref. 61) to give an agreement with experimental melting
+temperatures that was as good as for the original model.
+
+VI. AA/TT SEQUENCE DEPENDENCE
+
+As a further improvement, the oxDNA2 model
+
+in-
+corporates a more realistic sequence-dependent stack-
+ing interaction, which is achieved by diﬀerentiating be-
+tween the AA and TT stacking interaction strengths.
+In the previous parameterisation of oxDNA,57
+the
+sequence-dependent base-pairing and stacking interac-
+tion strengths were obtained by ﬁtting the oxDNA du-
+plex melting temperatures to the SantaLucia model, a
+nearest-neighbor model that is able to predict experimen-
+
+FIG. 4. Simulation snapshots for the L- (left), N- (middle),
+and R- (right) type helix bundles, each composed of roughly
+15,000 nucleotides. The designs are taken from Dietz et al.1 In
+experiment and in oxDNA2, the N-type helix bundle exhibits
+close to zero global twist.
+
+Global Twist/◦
+
+Helix Bundle Type oxDNA2 experiment
+
+N
+L
+R
+
+0.2
+-22.2
+26.9
+
+0
+
+-31 +/- 5
+26 +/- 5
+
+TABLE I. Global twist in the DNA helix bundles of Dietz
+et al.1 for simulations using oxDNA2 and experiment. The
+oxDNA2 simulations were run with [Na+]=0.5 M for 1.8× 109
+molecular dynamics (MD) steps for each design.
+
+work of Dietz et al.,1 who measured the global twist of
+three diﬀerent DNA origami structures, described as 10-
+by-6 helix bundles (Fig. 4). We denote the three origami
+structures as L-, N- and R-type.
+In the experiment,
+they were designed to impose a pitch of 10, 10.5, and 11
+base pairs per turn (bp/turn) on the constituent DNA
+double helices and these diﬀerent designs exhibited left-
+handed, no, and right-handed global twist, respectively,
+when multimerised to form ribbons and visualised with
+transmission electron microscopy. One might think that
+this result implies that DNA has a natural pitch of 10.5
+bp/turn, since the design with that inherent periodicity
+did not result in a globally twisted system. However, it
+is not that straightforward.
+
+Unsurprisingly, when simulated with the original ver-
+sion of oxDNA, the N-type origami still showed a signiﬁ-
+cant right-handed global twist, chieﬂy because the duplex
+pitch for the model was 10.36 bp/turn. However, even
+when simulated with a version of oxDNA modiﬁed so
+that the model duplex pitch was 10.5 bp/turn, the N-type
+origami displayed a right-handed twist. One reason for
+this is the following: in oxDNA, the helical twist across
+nicks and junctions is larger by about 3.9◦ and 2.5◦ de-
+grees respectively than for a normal duplex step (we call
+this an overtwist), so that fractionally fewer base pairs
+are required for a helix turn than would otherwise be ex-
+pected. Although these diﬀerences are small, they add
+up constructively to create a global twist on a structure
+that would otherwise have no such twist. For a nicked
+duplex in oxDNA, the overtwist occurs because, oppo-
+
+tal duplex melting temperatures very well.46 The San-
+taLucia model is designed at the level of base-pair steps,
+where each base-pair step consists of four bases, with a
+free-energy diﬀerence between its single-stranded state
+and its duplex state. In total there are 10 unique base-
+pair steps in the SantaLucia model: AA/TT, AT/AT,
+TA/TA, GC/GC, CG/CG, GG/CC, GA/TC, AG/CT,
+TG/CA, GT/AC (for example, AG/CT refers to a base-
+pair step with complementary bases AG on one strand
+and CT on the other, both speciﬁed in the 3(cid:48) to 5(cid:48) di-
+rection). Therefore, ﬁtting oxDNA to the SantaLucia
+model only allows one to ﬁnd the sum of the strengths
+of the two stacking interactions between the nucleotides
+that are within a base-pair step. For example, it is only
+possible to ﬁnd the average of the AA and TT stacking
+strengths from the SantaLucia model.
+
+evidence
+
+However,
+
+experimental
+
+from sequence-
+dependent measurements of the mechanical properties of
+single-stranded DNA,44,69 as well as hairpin stabilities
+and closing rates,70,71 have revealed that sequences of A
+bases are much stiﬀer than equal length sequences of T
+bases. It has been argued that this is evidence that con-
+secutive AA bases stack much more strongly than TT
+bases do. Here we use original experimental data on the
+stabilities of hairpins with either a poly-A or a poly-T
+loop, to diﬀerentiate between the AA and TT stacking
+strengths. All hairpins have 6-bp stems and loops of ei-
+ther 21 or 31 bases. Details of the experimental systems
+and the sequences are given in Appendix C.
+
+To parameterise our model to reproduce the experi-
+mental data, our procedure is to vary the AA stacking
+interaction strength, AA, while ﬁxing the sum of the AA
+and TT stacking interaction strengths to the value that
+is obtained by ﬁtting oxDNA’s duplex melting tempera-
+tures to the SantaLucia model, i.e.
+
+AA + TT = 2avg,
+
+(8)
+
+where TT is the TT stacking strength, avg is the
+strength for both AA and TT obtained from ﬁt-
+ting oxDNA to the SantaLucia model. We vary
+the AA stacking interaction strength to match the
+experimental diﬀerences of the thermal stabilities of
+the poly-A-loop and poly-T-loop hairpins, speciﬁcally
+δ∆F = ∆F(A−loop) − ∆F(T−loop), where ∆F(X−loop) =
+Fb,(X−loop) − Fub,(X−loop) is the diﬀerence in free en-
+ergy between the bound (hairpin) state and the unbound
+(open) state for a hairpin with a poly-X loop.
+
+We obtain the bound and unbound free energies Fα,
+where α ∈ {b, ub}, by using thermodynamic integration.
+We start by calculating F (0)
+α , the free energy of a refer-
+ence state for which the eﬀective charge on the backbone
+site, qeﬀ , is set to 0, and AA = TT = avg. Fα(I, x, qeﬀ ),
+the free energy of the state with salt concentration I,
+stacking strengths AA and TT, and eﬀective backbone
+charge qeﬀ , is then obtained by solving the following in-
+
+tegrals
+
+Fα(I, x, qeﬀ ) = F (0)
+
+eﬀ )
+
+α +(cid:90) qeff
++(cid:90) x
+
+0
+
+0
+
+eﬀ
+
+∂Fα(I, 0, q(cid:48)
+dq(cid:48)
+dx(cid:48) ∂Fα(I, x(cid:48), qeﬀ )
+
+∂q(cid:48)
+
+eﬀ
+
+∂x(cid:48)
+
+8
+
+(9)
+
+where x measures the deviation of the AA and TT
+strengths from avg, such that Eq. 8 is satisﬁed, i.e.
+
+AA = (1 + x)avg,
+
+TT = (1 − x)avg .
+
+(10)
+
+Taking the derivatives of the free energy in Eq. 9 we
+obtain,
+
+Fα(I, x, qeﬀ ) =F (0)
+
+0
+
+eﬀ
+
+q(cid:48)
+
+eﬀ )(cid:105)α
+
+2(cid:104)VDH(I, 0, q(cid:48)
+
+dq(cid:48)
+1 + x(cid:48)(cid:104)Vstack(I, x(cid:48), qeﬀ )(cid:105)AA
+
+α +(cid:90) qeff
+dx(cid:48)(cid:20)
++(cid:90) x
+α (cid:21) ,
+1 − x(cid:48)(cid:104)Vstack(I, x(cid:48), qeﬀ )(cid:105)TT
+
+−
+
+eﬀ
+
+1
+
+1
+
+α
+
+0
+
+(11)
+
+α
+
+where (cid:104)Vstack(I, x, qeﬀ )(cid:105)AA(TT)
+is the average stacking en-
+ergy of all AA(TT) nucleotides in a strand in state α with
+salt concentration I, x deﬁned as in Eq. 10, and back-
+bone charge qeﬀ . The terms appearing in the integrands
+of Eq. 11 can be obtained by running short simulations of
+bound and unbound states separately and therefore the
+free energies can be calculated in an eﬃcient manner.
+The results for the diﬀerence in δ∆F between oxDNA
+and experiment as a function of AA for the hairpins
+with 21- and 31-base loops are shown in Fig. 5; the value
+for the AA stacking strength that minimises this diﬀer-
+ence is found to be AA ≈ 1.075avg (corresponding to
+TT ≈ 0.925avg), which is not too dissimilar to the pre-
+liminary value suggested in Ref. 57. We note that this
+value gives satisfactory predictions for δ∆F for a wide
+range of salt concentrations down to 0.05 M.
+
+VII. THE OXDNA2 MODEL
+
+In summary, the oxDNA2 potential can be written as
+
+VoxDNA2 = (cid:88)nearest neighbours
+(cid:88)other pairs
+
+(V ∗
+
+(V ∗
+
+backbone + V ∗
+
+stack + V (cid:48)
+
+exc) +
+
+HB + Vcross stack + Vexc + V ∗
+
+coax stack + V ∗
+
+DH),
+
+(12)
+
+where a V ∗
+x indicates that the term is either modiﬁed
+for oxDNA2, or, in the case of V ∗
+DH, new in oxDNA2.
+The modiﬁed parameters for oxDNA2 are compared with
+those for oxDNA in Table A1, and a full account of the
+changes is given in Appendix A. All other parameters
+remain the same as in the original model.
+
+(a)
+
+(b)
+
+9
+
+FIG. 5. Deviation of oxDNA’s value for δ∆F from experiment
+at 295.6K, as a function of AA/avg. The grey region contains
+the zero-deviation points for every curve. The experimental
+results are shown in Fig. A5, and details of the experimental
+setup can be found in Appendix C.
+
+FIG. 6. (a) Rise and (b) pitch of a 60-bp duplex as a function
+of salt concentration in oxDNA2. For each salt concentration
+the duplex was simulated for at least 3 × 109 MD steps. The
+error bars, which are narrower than the plot markers, show
+the standard error on the mean given by averaging over 10
+independent estimates for each data point.
+
+We emphasise that, after all the relevant changes to
+the potential were made, the hydrogen bonding and
+stacking parameters were modiﬁed to ensure that the
+close agreement to experimental duplex melting temper-
+atures achieved for the original model was retained with
+oxDNA2 (this was done immediately after the changes to
+Vbackbone, as described at the end of Section V).
+
+VIII. PHYSICAL PROPERTIES OF OXDNA2
+
+The structural, mechanical and thermodynamic prop-
+erties of DNA for the new version of oxDNA presented
+in this paper, which we call oxDNA2, are slightly diﬀer-
+ent from the properties for the original oxDNA model.
+We brieﬂy highlight the most important of these changes
+here; in addition these properties are given as a func-
+tion of salt concentration as this is now possible with the
+new model. We note that all of the results described
+in this section were computed using the ﬁnal version of
+the oxDNA2 model as summarized in Section VII. The
+details of the simulations used to compute these results
+are given brieﬂy in the ﬁgure captions and in detail in
+Appendix B 3 and Table A3.
+
+The structural properties of the new model, specif-
+ically the pitch and rise of double-stranded DNA, are
+presented in Fig. 6. As might be expected, the rise in-
+creases with decreasing salt concentration, due to the
+greater repulsion between backbone sites. The pitch also
+increases with decreasing salt, consistent with the mea-
+sured increase in rise and slight decrease in neighbouring
+backbone-backbone distance measured as salt concentra-
+tion is decreased (the duplex radius remains approxi-
+mately constant). Although there is not much experi-
+mental evidence to compare this with, there is some indi-
+cation that the pitch is roughly constant for low salt con-
+
+centrations (0.162 M and below).47 As mentioned earlier,
+the pitch is chosen (by modifying the bonded neighbour
+backbone-backbone interaction) so that the global twist
+of origami structures agrees with experimental measure-
+ments. Speciﬁcally, we set the backbone-backbone inter-
+action so that the helix bundle designed to have no global
+twist has no global twist in the model at [Na+]=0.5 M.
+This results in a pitch of roughly 10.55 bp/turn at this
+salt concentration, compared to 10.36 bp/turn in the
+original model, and experimental values of around 10.45
+suggested by cyclisation experiments,47,50 albeit in the
+presence of some divalent salt.
+
+The thermodynamics of duplex formation are shown in
+Fig. 7. The transition width for the yield curve of a 10-bp
+duplex at 0.5 M [Na+] in oxDNA2 is largely unchanged
+from the original oxDNA, and the transition widths de-
+pend weakly if at all on salt in oxDNA2. The free-energy
+proﬁles for duplex formation in oxDNA2 show that the
+free-energy cost of forming the ﬁrst base pair decreases
+with increasing salt, presumably due to the reduced ener-
+getic cost of bringing the two single strands close together
+as the electrostatic repulsion between backbone sites be-
+comes more short-ranged. The slope of the bound region
+of the free-energy proﬁle also decreases with increasing
+salt, indicating a reduced free-energy cost of forming sub-
+sequent base pairs.
+
+In Fig. 8, the duplex melting temperatures as a func-
+tion of salt and for diﬀerent duplex lengths in oxDNA2
+are compared to the results from the SantaLucia model,
+to which oxDNA2 was parameterised. As expected, we
+ﬁnd good agreement.
+
+The mechanical properties of the model double-
+stranded DNA as a function of salt, speciﬁcally the per-
+sistence length and torsional stiﬀness, are shown in Fig. 9.
+The persistence length was calculated by computing the
+
+1.021.041.061.081.101.12AA/avg−3−2−1012(δ∆FoxDNA−δ∆Fexp)/(kBT)21-loop,I=0.05M21-loop,I=0.075M31-loop,I=0.15M31-loop,I=0.2M31-loop,I=0.3M0.11.0[Na+]/M0.3460.3470.3480.349Rise/nm0.11.0[Na+]/M10.5010.5510.60Pitch/(bp/turn)(a)
+
+(b)
+
+(c)
+
+FIG. 7. The thermodynamics of formation of a 10-bp du-
+plex with oxDNA2. (a) Duplex yield for oxDNA2 at diﬀerent
+salt concentrations. (b) Comparison of duplex yield proﬁles
+at [Na+]=0.5 M as predicted by oxDNA2, the original oxDNA
+model and the SantaLucia model.46 (c) The free-energy proﬁle
+for duplex formation at diﬀerent salt concentrations, at the
+melting temperature of a 10-bp duplex at [Na+]=0.25 M. The
+duplex was simulated for at least 3× 1010 virtual move Monte
+Carlo72 (VMMC) steps at each salt concentration using um-
+brella sampling at a monomer concentration of 3.3 × 10−4 M.
+
+correlation of the helix axis as described in Ref. 27. The
+eﬀective torsional stiﬀness, Ceﬀ , was computed from the
+linear regime of the torque response curve of a 60-bp du-
+plex under tension (see Appendix B 2 for details). The
+simulations were carried out under a linear force of 30 pN,
+a high force regime where we expect that Ceﬀ approxi-
+mates the true torsional stiﬀness C0.40,74 The persistence
+length at [Na+]=0.5 M, about 123 bp,
+is very slightly
+lower than for the original model, 125 bp, and the per-
+sistence length at diﬀerent salt concentrations is consis-
+tent with the rather broad range of values suggested by
+experiment.75,76 The decrease in persistence length with
+increasing salt is expected due to the decrease in repul-
+sion between the duplex’s backbone sites, which makes
+the duplex less stiﬀ, in agreement with experiment.75 The
+slight decrease in torsional stiﬀness with increasing salt
+can be rationalised in the same way. Regardless of the
+
+10
+
+15-bp duplex
+
+10-bp duplex
+
+8-bp duplex
+
+6-bp duplex
+
+FIG. 8. The melting temperature as a function of salt con-
+centration for duplexes of diﬀerent lengths simulated with
+oxDNA2 (crosses with solid lines) and as predicted by the San-
+taLucia model (crosses with dotted lines) for a DNA strand
+concentration of 3.3 × 10−4 M. Each duplex was simulated
+for roughly 4 × 109 VMMC steps at a salt concentration of
+0.25 M, and the melting temperatures at 0.15 M and 0.5 M
+were computed by single histogram reweighting.73
+
+salt concentration, the torsional stiﬀness measured for
+oxDNA2 (Ceﬀ ≈ 380−400 fJfm) is lower than for the orig-
+inal model40 (C0 ≈ 473 fJfm). Single-molecule twisting
+experiments give a value of Ceﬀ ≈ 410 fJfm for a pulling
+force of 3.5 pN77 and a pulling force of 45 pN,78 at around
+[Na+]=0.1 M. There is limited experimental data on the
+salt dependence of torsional stiﬀness in DNA; however
+the torsional stiﬀness has been reported to be roughly
+constant in the range [Na+]=0-0.162 M.47
+
+The eﬀects of various motifs on duplex melting tem-
+peratures in oxDNA2 are compared to results from the
+original oxDNA and the SantaLucia model in Table II.
+These eﬀects are either barely changed in oxDNA2, or
+are now closer to the SantaLucia values than the original
+oxDNA values were.
+
+The melting temperatures of hairpins at 0.5 M [Na+]
+are shown in Fig. 10. The hairpin melting temperatures
+are lower than for the original oxDNA by about 2 K,
+which in turn had hairpin melting temperatures about
+3 K lower than those predicted by SantaLucia. The gap
+between the oxDNA2 hairpin melting temperatures and
+those given by the SantaLucia model widens somewhat
+as the salt concentration is lowered (Fig. 11), indicating
+a stronger salt dependence in oxDNA2, with a typical
+underestimate of around 7 K at a salt concentration of
+100 mM for a relatively short loop length of 6 bases. For
+longer loops, the diﬀerence in predicted melting temper-
+atures between oxDNA2 and SantaLucia widens further.
+This diﬀerence is unsurprising, as in oxDNA2 (and physi-
+cal DNA) ssDNA becomes stiﬀer at lower salt concentra-
+tions, making the formation of a hairpin less favorable,41
+whereas in the SantaLucia model the loops’ contribution
+to hairpin stability is salt-independent.46
+
+310330350T/K0.00.20.40.60.81.0Duplexyield(cid:2)Na+(cid:3)=0.15M(cid:2)Na+(cid:3)=0.25M(cid:2)Na+(cid:3)=0.50M320330340350T/KoxDNA2oxDNASantaLucia0246810Numberofnativebasepairs−2024681012∆G/(kBT)(cid:2)Na+(cid:3)=0.15M(cid:2)Na+(cid:3)=0.25M(cid:2)Na+(cid:3)=0.50M0.20.30.40.5(cid:2)Na+(cid:3)/M300310320330340350Tm/K(a)
+
+(b)
+
+11
+
+12-bp stem
+
+6-bp stem
+
+FIG. 9. (a) The persistence length and (b) the torsional stiﬀ-
+ness of duplex DNA in oxDNA2 as a function of salt con-
+centration. For the persistence length, a 60-bp duplex was
+simulated for at least 3 × 109 MD steps for each salt concen-
+tration. The method for computing the torsional stiﬀness is
+given in Appendix B 2. Error bars for the simulation results
+show the standard error on the mean given by averaging over
+either 10 independent estimates (for the persistence length) or
+5 independent estimates (for the torsional stiﬀness) for each
+data point.
+
+FIG. 11. The melting temperature as a function of salt
+concentration of hairpins with 6-base loops simulated with
+oxDNA2 (crosses with solid lines) and according to the San-
+taLucia model (crosses with dotted lines). For the oxDNA2
+results, the hairpins were simulated at each salt for at least
+1.5 × 1010 VMMC steps.
+
+12-bp stem
+
+6-bp stem
+
+FIG. 10. The melting temperature as a function of loop length
+for hairpins simulated with oxDNA2 (crosses with solid lines),
+the original oxDNA (crosses with dashed lines), and according
+to the SantaLucia model (crosses with dotted lines), at 0.5 M
+[Na+]. For the oxDNA2 results, the hairpins were simulated
+at each salt for at least 1.8 × 1010 VMMC steps.
+
+It seems plausible that oxDNA2’s performance is bet-
+ter than implied by the salt-independent loop contribu-
+tion in the SantaLucia model.
+In Fig. 12 we consider
+hairpins with a short 5-bp stem and a long 31-base loop,
+making the hairpin thermodynamics particularly sensi-
+tive to the change in loop stiﬀness with salt. The hair-
+pin stability (i.e. the free energy diﬀerence between the
+bound and unbound state) as predicted by oxDNA2 and
+the SantaLucia model is compared to experimental data
+
+determined using FRET (experimental details in Ap-
+pendix C). As expected we ﬁnd the hairpin stabilities for
+oxDNA2 have a much stronger salt dependence (steeper
+gradient) than those of SantaLucia (shallow gradient).
+At higher salt the oxDNA2 results show a similar slope
+to the experimental curve, but at lower salt (0.2 M and
+below) oxDNA2 shows a stronger destabilization of the
+hairpins with decreasing salt (a steeper gradient) than
+experiment. Thus, although oxDNA2 does a reasonable
+job of capturing these physical eﬀects, the comparison
+suggests that the single strands may be experiencing too
+much repulsion at low salt. We also note that the San-
+taLucia model is unable to predict the large diﬀerence in
+stability of the two hairpins due to their diﬀerent loop
+sequences, because the SantaLucia model is insensitive
+to the loop sequence except for the two bases adjacent to
+the stem.
+
+We examine the ﬂexibility of single strands as a func-
+tion of salt in oxDNA2 by measuring the radius of gy-
+ration, Rg, of a single strand of DNA at diﬀerent salt
+concentrations, sequences and strand lengths, and com-
+paring to experimental results (Fig. 13). The oxDNA2
+model reproduces the overall trend of increasing Rg with
+salt, and is in agreement with the somewhat noisy exper-
+imental data. We note that oxDNA2 is able to capture
+two important eﬀects: the greater stiﬀness (and hence
+larger Rg) of the more strongly-stacking poly-A strands;
+and the greater salt dependence of the poly-T strands’
+Rg compared to that of the poly-A strands, caused by
+the weaker stacking of the poly-T strands, which means
+that electrostatic repulsion makes a greater relative con-
+tribution to its stiﬀness.
+
+0.11.0(cid:2)Na+(cid:3)/M120125130135Persistencelength/bpsteps404142434445Persistencelength/nm0.11.0(cid:2)Na+(cid:3)/M380385390395Torsionalstiffness/fJfm681012Numberofbasesintheloop320330340350Tm/K0.10.5(cid:2)Na+(cid:3)/M320330340350Tm/KMotif
+
+Bulge (1-base bulge in 8-bp duplex)
+Bulge (2-base bulge in 8-bp duplex)
+
+oxDNA2 oxDNA SantaLucia
+−18.7 −17.98 −23.19
+−27.4 −23.92 −26.73
+Terminal mismatch (1-bp mismatch in 5-bp duplex) +6.5
++8.6
+Internal mismatch (2-bp mismatch in 8-bp duplex) −15.9 −15.77 −13.99
+
+12
+
+∆Tm/K
+
++6.71
+
+TABLE II. The eﬀect of introducing various motifs on the duplex melting temperature at a monomer concentration of 3.3 ×
+10−4 M. ∆Tm is the diﬀerence between the melting temperature of the structure with the motif and a duplex consisting of the
+same number of complementary base pairs as the motif structure. For bulges and internal mismatches, the motif was placed
+at the centre of the duplex. The simulations of the bulges, terminal mismatches and internal mismatches were run for at
+least 6 × 1010, 8.5 × 1010, and 5.6 × 1010 VMMC steps respectively. All oxDNA2 results were obtained from simulations at a
+concentration of 4.2 × 10−5 M which were extrapolated to a concentration of 3.3 × 10−4 M.
+
+(a)
+
+poly-A
+
+(b)
+
+poly-T
+
+FIG. 12. The free energy diﬀerence between the bound and
+unbound state for two hairpins as measured in experiment us-
+ing FRET (dashed lines), and as predicted by oxDNA2 (solid
+lines) and the SantaLucia model (dotted lines). Results for
+two diﬀerent hairpins are presented: the A31-VW (red, circu-
+lar markers) hairpin and the T31-VW hairpin (blue, square
+markers). The sequences for these hairpins are given in Ta-
+ble A4. The oxDNA2 simulations were run for 1010 VMMC
+steps for each hairpin, with qeﬀ = 0 and x = 0 (with x de-
+ﬁned in Eq. 10), and the results (computed for the standard
+oxDNA2 values for qeﬀ and x) were calculated using ther-
+modynamic integration as described in Section VI and Ap-
+pendix B 3.
+
+IX. CONCLUSION
+
+OxDNA has been applied to a wider variety of sys-
+tems than any other coarse-grained model of DNA. The
+modiﬁcations and extensions to oxDNA presented here
+open up a variety of new potential applications for
+the model. With the introduction of an explicit salt-
+dependent term in the potential, the model can be used to
+simulate systems under physiological conditions, and to
+investigate the salt-dependent behaviour of DNA. Also,
+the parametrization presented here allows a quantitative
+comparison to experiments run in a wide range of salt
+concentrations rather than just in the high-salt limit.
+
+FIG. 13. The radius of gyration (Rg) for ssDNA as a function
+of ssDNA length and for diﬀerent salt concentrations, for (a) a
+poly-A ssDNA and (b) a poly-T ssDNA, from oxDNA2 (solid
+lines with circles) and from experiments due to Sim et al.79
+(dashed lines with squares). The salt concentrations shown
+are 0.225 M (blue lines), 0.525 M (red lines), 1.025 M (green
+lines). For the oxDNA2 results, the strands were simulated
+for between 2× 109 and 5× 1010 VMMC steps at each strand
+length and salt concentration.
+
+The introduction of major-minor grooving adds detail to
+the model, and, combined with other small modiﬁcations,
+allows the use of oxDNA2 to accurately characterise the
+structural properties of large DNA nanostructures, such
+as DNA origami. In particular the helical pitch and the
+twist angles at nicks and junctions were ﬁne-tuned to
+obtain a correct global twist for a test-case 3D origami
+structure. In the absence of deﬁnitive experimental val-
+ues for these individual parameters we chose a combi-
+nation that we deemed physically reasonable and that
+produces equilibrium structures that compare well with
+experimental ones. Finally, the sequence dependence in
+the model has been extended by introducing diﬀerent in-
+teraction strengths for the AA and TT stacking. This
+change will be particularly useful for studying the ef-
+fects of stacking in single strands or single-stranded sec-
+tions (e.g. hairpin loops) as poly-A and poly-T sections
+
+0.10.5(cid:2)Na+(cid:3)/M−4−202468δF/(kBT)01020304050ssDNAlength/bases1015202530354045Rg/˚A020406080100ssDNAlength/bases10203040506070Rg/˚Aare often used as paradigmatic examples of strongly and
+weakly stacking sequences, respectively, and for mod-
+elling DNA nanostructures where poly-T loops are often
+used as ﬂexible linkers.
+
+There are some limitations associated with the new
+features of the model. The Debye-H¨uckel treatment of
+the electrostatics is perhaps an oversimpliﬁcation, and
+we should not expect it to capture all of the complexi-
+ties associated with the electrostatics for DNA, but it is
+not straightforward to think of a diﬀerent approach that
+would be consistent with our level of coarse graining. In
+particular, the fact that hairpin stability is reduced faster
+than in experiment suggests that single strands may ex-
+perience too much repulsion in oxDNA2 at low salt, and
+care should be taken in making predictions based on our
+models at low salt concentration if the system under in-
+vestigation depends crucially on the thermodynamics of
+long single-stranded sections.
+
+We are currently exploiting the improvements in the
+model’s structural prediction to carry out investigations
+on DNA origami structures as well as on structures com-
+posed of multi-arm tiles80. At the same time, we are
+studying the salt dependent thermodynamics of a diverse
+set of systems, which would not have been possible with-
+out the introduction of salt dependence into the poten-
+tial. The introduction of diﬀerent strengths for the AA
+and TT stacking in the model allows us to better cap-
+ture these eﬀects, and in addition gives us more accurate
+sequence-dependent hairpin thermodynamics and kinet-
+ics, which are currently being exploited to further study
+hairpins. We note that a simulation code implementing
+both the original oxDNA model and the new oxDNA2
+including an implementation using GPUs,81 is
+model,
+available for download from dna.physics.ox.ac.uk.
+
+X. ACKNOWLEDGEMENTS
+
+The authors are grateful to the Engineering and
+Physical Sciences Research Council for ﬁnancial sup-
+port. M. M. was supported by the Swiss National Sci-
+ence Foundation (Grant No.PBEZP2-145981). The au-
+thors thank Oxford’s Advanced Research Computing, E-
+infrastructure South and the PolyHub virtual organiza-
+tion for computer time.
+
+REFERENCES
+
+1H. Dietz, S. M. Douglas, and W. M. Shih, Science, 325, 725
+(2009).
+2D. Han, S. Pal, Y. Yang, S. Jiang, J. Nangreave, Y. Liu, and
+H. Yan, Science, 339, 1412 (2013).
+3Y. Ke, L. L. Ong, W. M. Shih, and P. Yin, Science, 338, 1177
+(2012).
+4A. S. Walsh, H. Yin, C. M. Erben, M. J. A. Wood, and A. J.
+Turberﬁeld, ACS Nano, 5, 5427 (2011).
+5S. M. Douglas, I. Bachelet, and G. M. Church, Science, 335, 831
+(2012).
+
+13
+
+6A. Kuzyk, R. Schreiber, Z. Fan, G. Pardatscher, E.-M. Roller,
+A. Hogele, F. C. Simmel, A. O. Govorov, and T. Liedl, Nature,
+483, 311 (2012).
+7R. M. Zadegan, M. D. E. Jepsen, K. E. Thomsen, A. H. Okholm,
+D. H. Schaﬀert, E. S. Andersen, V. Birkedal, and J. Kjems, ACS
+Nano, 6, 10050 (2012).
+8A. V. Pinheiro, D. Han, W. M. Shih, and H. Yan, Nat. Nano,
+6, 763 (2011).
+9D. Svozil, P. Hobza, and J. ˇSponer, J. Phys. Chem. B, 114, 1191
+(2010).
+
+10A. Mladek, M. Krepl, D. Svozil, P. Cech, M. Otyepka, P. Banas,
+M. Zgarbova, P. Jurecka, and J. ˇSponer, Phys. Chem. Chem.
+Phys., 15, 7295 (2013).
+
+11J. ˇSponer, J. E. ˇSponer, A. Mldek, P. Ban, P. Jureka,
+
+and
+
+M. Otyepka, Methods, 64, 3 (2013).
+
+12C. A. Laughton and S. A. Harris, Wiley Interdisc. Rev. Comput.
+
+Mol. Sc., 1, 590 (2011).
+
+13A. P´erez, F. J. Luque, and M. Orozco, Acc. Chem. Res., 45, 196
+
+(2012).
+
+14C. Maﬀeo, B. Luan, and A. Aksimentiev, Nucleic Acids Res.,
+
+40, 3812 (2012).
+
+15J. Yoo and A. Aksimentiev, Proc. Natl. Acad. Sci. USA, 110,
+
+20099 (2013).
+
+16C. Maﬀeo, J. Yoo, J. Comer, D. B. Wells, B. Luan, and A. Ak-
+simentiev, Journal of Physics: Condensed Matter, 26, 413101
+(2014).
+
+17C. Bustamante, J. F. Marko, E. D. Siggia, and S. Smith, Science,
+
+265, 1599 (1994).
+
+18D. M. Hinckley, G. S. Freeman, J. K. Whitmer,
+
+and J. J.
+
+de Pablo, J. Chem. Phys., 139, 144903 (2013).
+
+19A. Savelyev and G. A. Papoian, Proc. Natl. Acad. Sci. USA, 107,
+
+20340 (2010).
+
+20T. Cragnolini, P. Derreumaux, and S. Pasquali, J. Phys. Chem.
+
+B, 117, 8047 (2013).
+
+21Y. He, M. Maciejczyk, S. O(cid:32)ldziej, H. A. Scheraga, and A. Liwo,
+
+Phys. Rev. Lett., 110, 098101 (2013).
+
+22M. C. Linak, R. Tourdot, and K. D. Dorfman, J. Chem. Phys.,
+
+135, 205102 (2011).
+
+23A. Morriss-Andrews, J. Rottler, and S. S. Plotkin, J. Chem.
+
+Phys., 132, 035105 (2010).
+
+24J. C. Araque, A. Z. Panagiotopoulos,
+
+and M. A. Robert, J.
+
+Chem. Phys., 134, 165103 (2011).
+
+25N. Korolev, D. Luo, A. P. Lyubartsev, and L. Nordenski¨old,
+
+Polymers, 6, 1655 (2014).
+
+26C. Maﬀeo, T. T. M. Ngo, T. Ha, and A. Aksimentiev, J. Chem.
+
+Theory Comput., 10, 2891 (2014).
+
+27T. E. Ouldridge, A. A. Louis, and J. Doye, J. Chem. Phys., 134,
+
+085101 (2011).
+
+28T. E. Ouldridge, PhD Thesis, University of Oxford (2011).
+29T. E. Ouldridge, A. A. Louis, and J. P. K. Doye, Phys. Rev.
+
+Lett., 104, 178101 (2010).
+
+30P. ˇSulc, T. E. Ouldridge, F. Romano, J. P. K. Doye, and A. A.
+
+Louis, Natural Computing (2013).
+
+31T. E. Ouldridge, P. ˇSulc, F. Romano, J. P. K. Doye, and A. A.
+
+Louis, Nucleic Acids Res., 41, 8886 (2013).
+
+32T. E. Ouldridge, R. L. Hoare, A. A. Louis, J. P. K. Doye, J. Bath,
+
+and A. J. Turberﬁeld, ACS Nano, 7, 2479 (2013).
+
+33L. Rovigatti, F. Smallenburg, F. Romano, and F. Sciortino, ACS
+
+Nano, 8, 3567 (2014).
+
+34J. S. Schreck, T. E. Ouldridge, F. Romano, A. A. Louis, and
+
+J. P. K. Doye, ArXiv e-prints (2014), arXiv:1412.6309.
+
+35J. S. Schreck, T. E. Ouldridge, F. Romano, P. ˇSulc, L. Shaw,
+and J. P. K. Doye, ArXiv e-prints (2014),
+
+A. A. Louis,
+arXiv:1408.4401.
+
+36N. Srinivas, T. E. Ouldridge, P. ˇSulc, J. M. Schaeﬀer, B. Yurke,
+A. A. Louis, J. P. K. Doye, and E. Winfree, Nucleic Acids Res.,
+41, 10641 (2013).
+
+37M. Mosayebi, A. A. Louis, J. P. K. Doye, and T. E. Ouldridge,
+
+arXiv preprint arXiv:1502.03623 (2015).
+
+38C. Matek, T. E. Ouldridge, A. Levy, J. P. K. Doye, and A. A.
+
+Louis, J. Phys. Chem. B, 116, 11616 (2012).
+
+39Q. Wang and B. M. Pettitt, Biophys. J., 106, 1182 (2014).
+40C. Matek, T. E. Ouldridge, J. P. K. Doye, and A. A. Louis, Sci.
+
+Rep., 5, 7655 (2015).
+
+41M. Mosayebi, F. Romano, T. E. Ouldridge, A. A. Louis, and
+
+74J. D. Moroz and P. Nelson, 94, 14418 (1997).
+75A. Savelyev, Phys. Chem. Chem. Phys., 14, 2250 (2012).
+76E. Herrero-Galn, M. E. Fuentes-Perez, C. Carrasco, J. M.
+Valpuesta, J. L. Carrascosa, F. Moreno-Herrero, and J. R. Arias-
+Gonzalez, J. Am. Chem. Soc., 135, 122 (2013).
+
+77X. J. A. Janssen, J. Lipfert, T. Jager, R. Daudey, J. Beekman,
+
+J. P. K. Doye, J. Phys. Chem. B, 118, 14326 (2014).
+
+and N. H. Dekker, Nano Lett., 12, 3634 (2012).
+
+42F. Romano, D. Chakraborty, J. P. K. Doye, T. E. Ouldridge,
+
+78Z. Bryant, M. D. Stone, J. Gore, S. B. Smith, N. R. Cozzarelli,
+
+and A. A. Louis, J. Chem. Phys., 138, 085101 (2013).
+
+and C. Bustamante, Nature, 424, 338 (2003).
+
+43R. R. F. Machinek, T. E. Ouldridge, N. E. C. Haley, J. Bath,
+
+79A. Y. L. Sim, J. Lipfert, D. Herschlag, and S. Doniach, Phys.
+
+14
+
+Rev. E, 86, 021901 (2012).
+
+80C. Zhang, Y. He, M. Su, S. H. Ko, T. Ye, Y. Leng, X. Sun,
+A. E. Ribbe, W. Jiang, and C. Mao, Faraday Discuss., 143, 221
+(2009).
+
+81L. Rovigatti, P. ˇSulc, I. Z. Reguly, and F. Romano, J. Comput.
+
+Chem., 36, 1 (2015).
+
+82C. De Michele, L. Rovigatti, T. Bellini, and F. Sciortino, Soft
+
+Matter, 8, 8388 (2012).
+
+83P. Yakovchuk, E. Protozanova, and M. D. Frank-Kamenetskii,
+
+Nucleic Acids Res., 34, 564 (2006).
+
+84R. Tsukanov, T. E. Tomov, Y. Berger, M. Liber, and E. Nir, J.
+
+Phys. Chem. B, 117, 16105 (2013).
+
+85R. Tsukanov, T. E. Tomov, R. Masoud, H. Drory, N. Plavner,
+
+M. Liber, and E. Nir, J. Phys. Chem. B, 117, 11932 (2013).
+
+86E. Nir, X. Michalet, K. M. Hamadani, T. A. Laurence,
+and S. Weiss, J. Phys. Chem.
+
+D. Neuhauser, Y. Kovchegov,
+B, 110, 22103 (2006).
+
+and A. J. Turberﬁeld, Nat. Comm., 5, 5324 (2014).
+
+44A. Bosco, J. Camunas-Soler, and F. Ritort, Nucleic Acids Res.,
+
+42, 2064 (2013).
+
+45M. E. Polinkovsky, Y. Gambin, P. R. Banerjee, M. J. Erickstad,
+
+A. Groisman, and A. A. Deniz, Nat. Comm., 5, 5737 (2014).
+
+46J. SantaLucia, Jr. and D. Hicks, Annu. Rev. Biophys. Biomol.
+
+Struct., 33, 415 (2004).
+
+47W. H. Taylor and P. J. Hagerman, J. Mol. Biol., 212, 363 (1990).
+48F. Mocci and A. Laaksonen, Soft Matter, 8, 9268 (2012).
+49D. A. Potoyan, A. Savelyev, and G. A. Papoian, WIREs Comput.
+
+Mol. Sci, 3, 69 (2013).
+
+50D. Shore and R. L. Baldwin, J. Mol. Biol., 170, 983 (1983).
+51A. Dawid, F. Guillemot, C. Br`eme, V. Croquette, and F. Heslot,
+
+Phys. Rev. Lett., 96, 188102 (2006).
+
+52S. Ido, K. Kimura, N. Oyabu, K. Kobayashi, M. Tsukada,
+
+K. Matsushige, and H. Yamada, ACS Nano, 7, 1817 (2013).
+
+53Q. Du, C. Smith, N. Shiﬀeldrim, M. Vologodskaia, and A. Vol-
+
+ogodskii, Proc. Nat. Acad. Sci. USA, 102, 5397 (2005).
+54J. C. Wang, Proc. Nat. Acad. Sci. USA, 76, 200 (1979).
+55T. Kato, R. P. Goodman, C. M. Erben, A. J. Turberﬁeld, and
+
+K. Namba, Nano Lett., 9, 2747 (2009).
+
+56X.-C. Bai, T. G. Martin, S. H. W. Scheres, and H. Dietz, Proc.
+
+Nat. Acad. Sci. USA, 109, 20012 (2012).
+
+57P. ˇSulc, F. Romano, T. E. Ouldridge, L. Rovigatti, J. P. K. Doye,
+
+and A. A. Louis, J. Chem. Phys., 137, 135101 (2012).
+
+58F. F. Andersen, B. Knudsen, C. L. P. Oliveira, R. F. Frohlich,
+D. Kruger, J. Bungert, M. Agbandje-McKenna, R. McKenna,
+S. Juul, C. Veigaard, J. Koch, J. L. Rubinstein, B. Guldbrandt-
+sen, M. S. Hede, G. Karlsson, A. H. Andersen, J. S. Pedersen,
+and B. R. Knudsen, Nucleic Acids Res., 36, 1113 (2008).
+
+59C. Tian, C. Zhang, X. Li, C. Hao, S. Ye, and C. Mao, Langmuir,
+
+30, 5859 (2013).
+
+60S. M. Douglas, H. Dietz, T. Liedl, B. H¨ogberg, F. Graf, and
+
+W. M. Shih, Nature, 459, 414 (2009).
+
+61P. ˇSulc, F. Romano, T. E. Ouldridge, J. P. K. Doye, and A. A.
+
+Louis, J. Chem. Phys., 140, 235102 (2014).
+
+62C. Zhang, W. Wu, X. Li, C. Tian, H. Qian, G. Wang, W. Jiang,
+
+and C. Mao, Angew. Chem. Int. Edit., 51, 7999 (2012).
+
+63D. M. Hinckley, J. P. Lequieu, and J. J. de Pablo, J. Chem.
+
+Phys., 141, 035102 (2014).
+
+64C. Maﬀeo, R. Sch¨opﬂin, H. Brutzer, R. Stehr, A. Aksimentiev,
+G. Wedemann, and R. Seidel, Phys. Rev. Lett., 105, 158101
+(2010).
+
+65J. Mazur and R. L. Jernigan, Biopolymers, 31, 1615 (1991).
+66D. Frenkel and B. Smit, Understanding Molecular Simulation:
+
+From Algorithms to Applications (Academic Press, 1996).
+
+67C. Vega, E. Sanz, J. Abascal, and E. Noya, J. Phys.: Condens.
+
+Matter, 20, 153101 (2008).
+
+68T. E. Ouldridge, A. A. Louis,
+
+and J. P. K. Doye, J. Phys.:
+
+Condens. Matter, 22, 104102 (2010).
+
+69T. Uzawa, T. Isoshima, Y. Ito, K. Ishimori, D. E. Makarov, and
+
+K. W. Plaxco, Biophys. J., 104, 2485 (2013).
+
+70N. L. Goddard, G. Bonnet, O. Krichevsky, and A. Libchaber,
+
+Phys. Rev. Lett., 85, 2400 (2000).
+
+71G. Bonnet, O. Krichevsky, and A. Libchaber, Proc. Nat. Acad.
+
+Sci. USA, 95, 8602 (1998).
+
+72S. Whitelam, E. H. Feng, M. F. Hagan, and P. L. Geissler, Soft
+
+Matter, 5, 1251 (2009).
+
+73S. Kumar, J. M. Rosenberg, D. Bouzida, R. H. Swendsen, and
+
+P. A. Kollman, J. Comput. Chem., 13, 1011 (1992).
+
+Appendix A: Modiﬁcations to the oxDNA potential in oxDNA2
+
+1.
+
+Introducing an electrostatic term into the model potential
+
+We introduce an explicit electrostatic term into the model using Debye-H¨uckel theory. To aid computational
+eﬃciency when simulating the model, we ensure that the interaction goes to zero within a ﬁnite distance rcut,DH,
+and we introduce a quadratic smoothing function so that the interaction goes to zero smoothly. The form of the
+electrostatic term is then
+
+15
+
+Velectrostatic(rb-b, T, I) =
+
+VDH(rb-b, T, I)
+Vsmooth(rb-b, T, I)
+0
+
+if rsmooth,DH > rb-b,
+if rcut,DH > rb-b ≥ rsmooth,DH,
+otherwise,
+
+(A1)
+
+where T is the temperature, I is the salt concentration, and rsmooth,DH, the distance above which smoothing is
+introduced, is chosen to be equal to 3λDH (λDH is deﬁned below). The Debye-H¨uckel-like term, VDH(rb-b, T, I), is
+given by
+
+VDH(rb-b, T, I) =
+
+(qeﬀ e)2
+4π0r
+
+exp(cid:8)−rb-b/λDH(T, I)(cid:9)
+
+rb-b
+
+,
+
+(A2)
+
+where qeﬀ is the eﬀective charge (which is equal to 1 in Debye-H¨uckel theory but which we choose to be 0.815 after
+ﬁtting to experimental data), e is the charge of an electron, 0 is the permittivity of a vacuum, r is the relative
+permittivity of water (which we choose to be 80), and rb-b is the distance between the pair of interacting backbone
+sites. λDH is the Debye screening length, and is given by
+
+λDH(T, I) =(cid:114) 0rkBT
+
+2NAe2I
+
+,
+
+(A3)
+
+where kB is Boltzmann’s constant and NA is Avogadro’s number. The quadratic smoothing term, Vsmooth(rb-b, T, I),
+is given by
+
+Vsmooth(rb-b, T, I) = B(rb-b − rcut,DH)2,
+
+(A4)
+
+and B and rcut,DH are constants chosen such that Velectrostatic is smooth and diﬀerentiable. Note that the above
+deﬁnition implies that the cutoﬀ radius for the Debye-H¨uckel term, rcut,DH, depends on the salt concentration I and
+the temperature T .
+
+2. Modifying the average pitch of the model duplex
+
+The model duplex pitch can be controlled by modifying the position of the minimum in the FENE bonded back-
+bone potential, δr0
+backbone, which has a small eﬀect on the thermodynamics (which was reﬁtted using the histogram
+reweighting method described in Section II C 2 of Ref. 61) and little eﬀect on the other properties of the model DNA.
+For oxDNA2, δr0
+backbone was set to give a global twist of zero for the N-type helix bundle due to Dietz et al.;1 the new
+and old values for δr0
+
+backbone are given in Table A1.
+
+3. Modifying the average coaxial stacking term in the oxDNA potential
+
+We modiﬁed the coaxial stacking term in the oxDNA potential in order to change the twist angle across a nick
+and across an origami junction, while changing the thermodynamic properties of a nicked duplex and other motifs as
+little as possible. This was achieved by moving the position of the minimum with respect to the angle θ1 (shown in
+Fig. A1) of the coaxial stacking term, θ0
+coax,1, and by increasing the well depth, kcoax, to make the minimum more
+energetically favourable. Increasing the well depth was necessary because it is less favourable for a pair of coaxially
+stacking nucleotides in a nicked duplex to stack with this tighter angle; a stronger overall coaxial stacking interaction
+compensates for this eﬀect. The changes to the model are shown in Table A1.
+
+The altered optimal angle θ0
+
+coax,1 requires an alteration of the modulation function involving θ1 for coaxial stacking.
+In the original oxDNA, the θ1 modulation is given by f4(θ1) + f4(2π − θ1), where f4 is deﬁned in Ref. 28. The second
+
+θ1
+
+16
+
+FIG. A1. Schematic showing the angle θ1 between two nucleotides. Each nucleotide is represented by three circles joined by
+a line; the large solid circles represent the backbone sites, while the small solid circles represent the stacking (closer to the
+backbone) and hydrogen-bonding (at the end of the nucleotide) sites. In this paper we modify the term dependent on θ1 for
+the coaxial stacking interaction in the oxDNA model, in order to reduce the overtwist across nicks and junctions.
+
+Parameter
+γ/degrees
+
+qeﬀ
+r
+
+kcoax
+θ0
+coax,1
+Acoax,1
+Bcoax,1
+
+HB
+stack
+
+oxDNA
+
+0
+0
+-
+46
+
+π − 0.60
+
+-
+-
+
+1.077
+
+oxDNA2
+
+20
+
+0.815
+
+80
+58.5
+
+π − 0.25
+
+40
+
+π − 0.025
+1.0678
+
+1.3448 + 2.6568kBT 1.3523 + 2.6717kBT
+
+δr0
+
+backbone
+
+0.7525
+
+0.7564
+
+TABLE A1. Comparison of model parameters between oxDNA and oxDNA2. All other parameters are unchanged in oxDNA2.
+All angles except γ are given in radians, all lengths are deﬁned with respect to a reduced length scale (1 unit = 8.518˚A) and
+all energies are deﬁned with respect to a reduced temperature (kBT = 0.1 corresponding to 300K). γ is the angle between the
+line from the helix axis to the backbone site and the line from the helix axis to the stacking site (see Fig. 1), which deﬁnes
+the backbone site position in oxDNA2. qeﬀ is the eﬀective charge used for the Debye-H¨uckel treatment introduced in the new
+model for the electrostatic interactions due to the negatively-charged phosphate groups in the DNA backbone. r is the relative
+permittivity of water which is used for the Debye-H¨uckel treatment. kcoax determines the overall strength of the coaxial stacking
+interaction while θ0
+coax,1 speciﬁes the position of the minimum with respect to the angle θ1 of the coaxial stacking potential.
+The values for Acoax,1 and Bcoax,1 are chosen to ensure that the coaxial stacking potential is smooth and diﬀerentiable. HB and
+stack determine the well depths for the hydrogen bonding and stacking interactions respectively. δr0
+backbone gives the position
+of the minimum of the FENE bonded backbone potential.
+
+term was introduced to ensure that the potential is diﬀerentiable at θ1 = π, where the gradients of the two terms
+cancel. In oxDNA, this additional term had a very small eﬀect on the numerical value of the potential for θ1 < π.
+Using the same trick in oxDNA2, however, is problematic, because θ0
+coax,1 is much closer to π. The second term,
+f4(2π − θ1), would then be substantial for θ1 < π and would distort the modulating function in an undesired fashion.
+To avoid this, we replace the second term, f4(2π − θ1), with a new function f6(θ1):
+
+f6 (θ) =(cid:40) A
+
+2 (θ − B)2.
+
+0
+
+if θ ≥ B,
+otherwise.
+
+(A5)
+
+For oxDNA2, we made an additional
+
+The f4(θ1) + f4(2π − θ1) factor in the coaxial stacking term is then replaced by f4(θ1) + f6(θ1). The values for Acoax,1
+and Bcoax,1 are chosen to ensure that the coaxial stacking potential is smooth and diﬀerentiable; they are speciﬁed in
+Table A1.
+removed the
+f5(cos(φ3), acoax,3(cid:48), cos(φ3)∗
+coax) terms. These terms had allowed only right-
+handed blunt-ended stacking, disallowing left-handed blunt-ended stacking; however, since the development of the
+original oxDNA model, this constraint has been deemed unnecessary, as the blunt-ended coaxial stacking interaction
+was found to be likely to be too weak compared to experiment,82 and there is no experimental evidence indicating
+that left-handed blunt-ended coaxial stacking is not possible.
+
+to the
+coax) and f5(cos(φ4), acoax,4(cid:48), cos(φ4)∗
+
+change
+
+coaxial
+
+stacking potential:
+
+we
+
+17
+
+Measurement
+∆Gnick stack
+
+oxDNA oxDNA2 SantaLucia
+−4.3kBT −4.4kBT
+
+-
+
+∆Tm,hairpin stem,6mer +9.9K +10.6K +11.7K
++8.5K
+∆Tm,hairpin stem,7mer +7.7K +8.3K
+∆Tm,hairpin stem,8mer +6.3K +6.9K
++6.4K
+∆Gblunt ended stacking +4.9kBT +5.3kBT
+
+-
+
+TABLE A2. Comparison of some thermodynamic quantities that depend on the coaxial stacking interaction in oxDNA and
+oxDNA2. ∆Gnick stack = ∆Gstacked − ∆Gunstacked is the free-energy change upon stacking across a nick for a 20-bp duplex
+with a nick at the centre at 37◦ C. ∆Tm,hairpin stem,6mer = Tm,hairpin stem,6mer − Tm,6mer gives the diﬀerence in melting tem-
+perature at a concentration of 3.3 × 10−4 M between a 6-bp duplex adjacent to a hairpin and a 6-bp duplex (see Fig. A2),
+and ∆Tm,hairpin stem,7mer and ∆Tm,hairpin stem,8mer have analogous deﬁnitions. ∆Gblunt ended stacking is the free-energy change
+upon dimerisation of two 6-bp duplexes through blunt-ended coaxial stacking at a monomer concentration of 5.37 mM and at
+19.85◦ C. ∆Gnick stack was computed from a simulation of 1.9 × 1011 VMMC steps, each ∆Tm,hairpin stem,Xmer from simulations
+of 8 × 1010 VMMC steps, and ∆Gblunt ended stacking from a simulation of 2.4 × 1011 VMMC steps.
+
+FIG. A2. A schematic showing the transition important for the calculation of ∆Tm,hairpin stem,Xmer (see Table A2), which is
+given by ∆Tm,hairpin stem,Xmer = Tm,hairpin stem,Xmer − Tm,Xmer, where Tm,hairpin stem,Xmer is the melting temperature of a X-bp
+duplex adjacent to a hairpin (the schematic shows this system for the X = 4 case) and Tm,Xmer is the melting temperature of
+a X-bp duplex.
+
+Incorporating the changes described above, the ﬁnal form for the oxDNA2 coaxial stacking term is
+
+coax , δrc,high
+
+coax , δrlow
+
+coax, δrhigh
+
+coax)f4(θ4, acoax,4, θ0
+
+coax,4, ∆θ∗
+
+coax,4)
+
+Vcoax stack = f2(δrstack, kcoax, δr0
+× (f4(θ1, acoax,1, θ0
+× (f4(θ5, acoax,5, θ0
+× (f4(θ6, acoax,6, θ0
+
+coax, δc,low
+coax,1, ∆θ∗
+coax,5, ∆θ∗
+coax,6, ∆θ∗
+
+coax,1) + f6(θ1, Acoax,1, Bcoax,1))
+coax,5) + f4(π − θ5, acoax,5, θ0
+coax,6) + f4(π − θ6, acoax,6, θ0
+
+coax,5, ∆θ∗
+coax,6, ∆θ∗
+
+coax,5))
+coax,6)).
+
+(A6)
+
+Table A2 gives a comparison of the thermodynamic properties of the motifs relevant to the coaxial stacking term
+in oxDNA and oxDNA2. The free-energy change upon stacking across a nick, ∆Gnick stack, is slightly more negative
+in oxDNA2, indicating that a nicked duplex stacks slightly more strongly across the nick in oxDNA2 than in the
+original oxDNA. In both cases the stacking is stronger than is seen in experiment (−2.62kBT in Ref. 83 – a discussion
+comparing the value of ∆Gnick stack measured for the original oxDNA with experimental results is given in Ref. 28).
+The stabilising eﬀect of a hairpin stem on duplex hybridisation (see Fig. A2, ∆Tm,hairpin stem,Xmer, is found to be
+slightly stronger than for the original oxDNA, and is on average in better agreement with the stability predicted by
+the SantaLucia model. Finally, dimerisation of two duplexes through blunt-ended coaxial stacking is found to be less
+favourable in oxDNA2 than in oxDNA. This is despite the mitigating eﬀect of removing the f5 terms in the coaxial
+stacking interaction, which strengthens blunt-ended stacking. A previous study82 has shown that oxDNA already
+underestimated the stability of blunt-ended coaxial stacking.
+
+(cid:0)18
+
+4. Modifying the hydrogen bonding and stacking interaction strengths
+
+Model duplexes were found to fray slightly less often when diﬀerent widths for the major and minor duplex grooves
+were introduced compared to the equal-groove-width case, which led to a slight raising of the duplex melting temper-
+atures. In addition, the change to the position of the minimum in the FENE bonded backbone potential, δr0
+backbone,
+was found to destabilise the duplex state, slightly lowering the duplex melting temperatures. In the process of the
+reparameterisation of oxDNA to incorporate these two changes, the duplex melting temperatures were reset on the
+introduction of each change by making small modiﬁcations to the stacking and hydrogen bonding strengths using the
+histogram reweighting method described in Section II C 2 of Ref. 61, giving an agreement with experimental melting
+temperatures that was just as good as before. The new parameters are speciﬁed, and compared to the old parameters,
+in Table A1, while Fig. 7 gives a comparison of the duplex thermodynamics with the old and new versions of the
+model.
+
+Appendix B: Simulation methods
+
+1. Measuring the global twist of an origami
+
+We measure the global twist of the origami due to Dietz et al.1 in the following way: The origami (for example,
+the L-type, although this applies equally well to all three types) can be thought of as a set of antiparallel double
+helices on a hexagonal lattice joined together by crossovers. The overall shape of this structure is roughly that of a
+(possibly twisted) rectangular prism. To measure the twist, we consider the two faces of the rectangular prism which
+are opposite each other and approximately normal to the axes of the double helices. For each face, we deﬁne a vector
+along its long edge, and we superimpose these two vectors into a plane perpendicular to the average of the helix axes.
+We then deﬁne the global twist as the angle between these two vectors.
+
+To avoid end eﬀects, the top and bottom rows of helices (3 helices in the top row and 3 helices in the bottom row)
+
+were excluded for this analysis, as were approximately 22 base pairs from each end of every double helix.
+
+2. Measuring the torsional stiﬀness of a duplex in the oxDNA model
+
+The torsional stiﬀness of a duplex in oxDNA2 was measured according to the scheme outlined by Matek et al.40 In
+summary, this method involves pulling a duplex while also twisting it, and measuring the torque required to impose
+a given twist. In this case, a 60-bp duplex was pulled at a constant force of 30 pN and held with virtual traps which
+imposed a helical pitch diﬀerent from the equilibrium pitch. For each salt concentration, simulations were run with
+imposed pitches of 9.8, 10.1, 10.4, 10.7, 11.0, and 11.3 bp/turn, with each simulation run for at least 2.6 × 109 MD
+steps. The torque observed was plotted as a function of imposed twist (this is called a torque response curve), and
+the gradient of the linear region used to approximate the eﬀective torsional stiﬀness.
+
+The torsional stiﬀness Ceﬀ is computed as
+
+Ceﬀ =
+
+∆Γ
+∆σ
+
+a0
+θ0
+
+,
+
+(B1)
+
+where ∆Γ is the change in torque, and ∆σ the change in superhelical twist density, measured in the linear regime of
+the torque response curve, a0 is the double helical rise for a relaxed duplex and θ0 is the twist angle across a base-pair
+step for a relaxed duplex, measured in radians. According to Moroz and Nelson,74 the eﬀective torsional stiﬀness Ceﬀ
+measured by twisting a duplex under tension can be related to the true torsional stiﬀness C0 by
+
+Ceﬀ = C0(cid:40)1 −
+
+C0
+
+B0F(cid:41) ,
+4B0(cid:114) kBT
+
+where F is the linear force and B0 is the bending stiﬀness. Our simulations are in the high-force regime, where Ceﬀ
+should be a good approximation for C0.
+
+3. Details of the simulation protocols
+
+The simulation results presented in this paper were obtained using either a virtual move Monte Carlo (VMMC)
+algorithm or a molecular dynamics (MD) algorithm with a Brownian thermostat. Note that, where VMMC steps are
+
+(B2)
+
+Standard Bulge Nick stack. Hairpin stab. Blunt coax Hairpin δF Ctorsional
+VMMC VMMC VMMC
+
+VMMC
+
+MD
+
+VMMC
+
+VMMC
+
+Simulation description
+
+0.11
+0.22
+
+-
+1
+-
+-
+Tm
+
+0.1
+0.2
+-
+1
+-
+-
+Tm
+
+0.03
+0.15
+
+-
+1
+-
+-
+
+310.15K
+
+0.15
+0.15
+
+-
+1
+-
+-
+Tm
+
+0.22
+0.22
+12
+1
+-
+-
+
+0.11
+0.22
+
+-
+1
+-
+-
+
+-
+-
+-
+
+0.05
+0.005
+
+2.5
+
+19
+
+Helix bundle twist
+
+MD
+
+-
+-
+-
+
+0.05
+0.005
+
+2.5
+
+lp
+MD
+
+-
+-
+-
+0.1
+
+0.005
+
+2.5
+
+Parameter
+Algorithm
+
+δtrans
+δrot
+
+max. cluster size
+
+Verlet skin
+
+δtstep
+
+diﬀusion coeﬃcient
+
+T
+
+293K
+
+295.6K 296.15K 296.15K
+
+296.15K
+
+TABLE A3. The results in this paper were computed using simulations of oxDNA2 with these parameters. The “standard”
+parameters were used for the following calculations: ∆Tm for a terminal mismatch and ∆Tm for an internal mismatch (Table II);
+all hairpin Tm calculations (Fig. 10 and Fig. 11); and all duplex Tm calculations (Fig. 7). The “bulge” parameters were used for
+the ∆Tm calculations for a bulge motif (Table II), the “nicked stacking” parameters were used for the ∆Gnick stack calculation
+(Table A2), the “hairpin stem stab.” parameters were used for the ∆Tm,hairpin stem,Xmer calculations (Table A2), the “blunt
+coax” parameters were used for the calculation of ∆Gblunt ended stacking (Table A2), the “hairpin δF ” parameters were used
+for the initial free energy calculation for the thermodynamic integration to ﬁnd the relative stability of the hairpins shown in
+Fig. 12, and to ﬁnd the radius of gyration (Rg) of ssDNA (Fig. 13), the “Ctorsional” parameters were used for the calculation
+of the torsional stiﬀness (Fig. 9(b)), the “lp” parameters were used for the calculation of the persistence length (Fig. 9(a)) and
+the pitch and rise (Fig. 6), and the “helix bundle twist” parameters were used for the calculation of the global twist of the
+helix bundle origami structures (Table I). δtrans and δrot are the standard deviation of the normally distributed move size for
+the translational and rotational VMMC moves respectively, max. cluster size is the size of the biggest cluster that VMMC is
+permitted to choose for a trial move, Verlet skin is the thickness of the Verlet skin used for Verlet lists, δtstep is the size of
+the simulation time step in MD, diﬀusion coeﬃcient gives the diﬀusion coeﬃcient used for a single nucleotide, and T is the
+temperature of the heat bath (Tm indicates that simulations were run at or close to the melting temperature for that system).
+All numbers are given in oxDNA units (1 oxDNA length unit = 0.8518 nm, 1 oxDNA time unit = 3.03 ps), unless given explicitly
+(angles are quoted in radians).
+
+reported in the main text, they refer to the number of accepted moves during the simulation. Details of the simulation
+parameters used are given in Table A3.
+
+For the duplex free-energy proﬁles, yields and melting temperatures (Fig. 7 and Fig. 8) we used umbrella sampling
+with an order parameter deﬁned in terms of the number of native base pairs (0 to n where n is the number of base
+pairs in a fully formed duplex). A base pair was deﬁned as being formed if the potential’s hydrogen-bonding energy
+
+term for that pair was lower than −0.596 kcalmol−1. For the hairpin melting temperature calculations (Fig. 10, Fig. 11
+
+and Fig. 12) we used an analogous order parameter for the native base pairs in the hairpin stem.
+
+The oxDNA2 results reported in Fig. 12 were computed using thermodynamic integration as described in Section VI.
+For each oxDNA2 data point shown in the ﬁgure, ﬁrst an umbrella sampling simulation of each hairpin (sequences
+shown in Table A4) was carried out for a version of the model with x = 0, where x is given by Eq. 10, and qeﬀ = 0 in
+order to ﬁnd the reference free energy (F (0)
+α in Eq. 11). The simulations were run for 6 × 1011 VMMC steps and used
+the parameters speciﬁed in Table A3. The integrals in Eq. 11 were discretised into 15 gridpoints for the integral in
+q(cid:48)
+eﬀ and 10 gridpoints for the integral in x. Then simulations to compute these integrals were run for roughly 6 × 107
+VMMC steps for each grid point, so that each data point in the ﬁgure required 25 grid point simulations, with one
+umbrella sampling simulation per hairpin.
+
+Appendix C: Experimental Methods
+
+1. DNA Hairpin Design
+
+The hairpin constructs consist of a loop with diﬀerent lengths (21 or 31 nucleotides) and sequences (adenosine or
+
+thymine), and six base pairs in the stem, as shown in Table A4.
+
+A 35-bp long, double-stranded DNA was used to keep the hairpin section away from the coverslip and the origami
+surfaces. The hairpins were labeled with donor and acceptor ﬂuorophores (ATTO-550 and ATTO-647N, respectively),
+positioned such that the hairpin open state yielded low FRET values (E) and the closed state yielded high E values
+(Figure A3).
+
+Hairpin Sequence
+
+Name
+T21-W 5(cid:48)-TGGGTT-(T)21-AACCCA-3(cid:48)
+T31-VW 5(cid:48)-TGGATT-(T)31-AATCCA-3(cid:48)
+A21-W 5(cid:48)-TGGGTT-(A)21-AACCCA-3(cid:48)
+A31-VW 5(cid:48)-TGGATT-(A)31-AATCCA-3(cid:48)
+
+20
+
+TABLE A4. DNA hairpins used for oxDNA validation. Note that the experimental system included an additional dangling
+duplex attached to the hairpin (denoted “dsDNA part” in Fig. A3). For the oxDNA2 simulations, we used a truncated (13-bp)
+duplex in order to capture any eﬀects due to the duplex interfering with the hairpin while avoiding the larger computational
+cost of simulating the full duplex.
+
+FIG. A3. Design of the DNA hairpin constructs used to parameterise the oxDNA model. The hairpin sequences and labeling
+positions were designed to minimize possible interfering interactions between the ﬂuorophores when the hairpins were closed,
+and the TT spacer was introduced to minimize interactions between the stem and the duplex.
+
+2. Annealing Procedures and Experimental Setup
+
+The top and bottom strands were annealed at 94◦C (1.5 µM in 10 µL TE-NaCl buﬀer [10 mM Tris, pH 8.0, 1 mM
+
+EDTA], and 100 mM NaCl) and then gradually cooled (30 min) to room temperature (using PCR).
+
+The measurements were performed on a diﬀusion-based single-molecule FRET-ALEX setup, as described
+elsewhere.84 In brief, a green CW laser beam (532 nm, CL532-025-L, Crystal Laser, Reno, NV, USA) was
+aligned/misaligned into a single-mode ﬁber using an acousto-optic modulator (AOM; R23080-2-LTD, Neos Tech-
+nologies, Melbourne, FL, USA), alternating with a red diode laser (640 nm, 1069417, Coherent, Auburn, CA, USA)
+that was electronically switched on/oﬀ. The AOM and the red laser were computer controlled with a 12.4-µs on-time,
+a 12.6-µs oﬀ-time, and a phase shift of 12.5 µs. The intensity rise and fall times were less than 50 ns, and there was
+no time overlap between the lasers. The laser beams were combined by a dichroic mirror (Z532RDC, Chroma, Bel-
+lows Falls, VT, USA) and coupled into a single-mode ﬁber (P1-460A-FC-2, Thorlabs, Newton, NJ, USA). The laser
+intensities were tuned such that the doubly labeled species would yield a stoichiometry, S, of roughly 0.5 (90 µW for
+the green laser and 35 µW for the red laser, measured after the ﬁber while alternating). After collimation (objective
+PLCN10/0.25, Olympus America, Melville, NY, USA), the combined green and red beams were introduced into a
+commercial inverted microscope (IX71, Olympus America) and focused about 70 µm inside the sample solution with
+a water-immersion objective (NA 1.2, 60×, Olympus America). The emitted ﬂuorescence was separated from the
+excitation light by a dichroic mirror (ZT532/638RPC, Chroma), focused into a 100-µm pinhole (P100S, Thorlabs),
+re-collimated, split by a second dichroic mirror (FF650-Di01, Semrock, Lake Forest, IL, USA), passed through ﬁl-
+ters (band-pass ﬁlter, Semrock FF01-580/60, for the donor channel and a long-pass ﬁlter, Semrock BLP01-635R, for
+the acceptor channel), and focused into two single-photon avalanche photodiodes (SPAD; SPCM-AQRH-13, Perkin-
+Elmer Optoelectronics, Fremont, CA, USA). The TTL signals of the two SPADs were recorded as a function of time
+by a 12.5-ns resolution counting board (PCI-6602, National Instruments, Austin, TX, USA) and in-house prepared
+LabView acquisition software.
+
+3. Measurement Solution and Conditions
+
+Measurements were carried out on diluted samples (40 µL of 1 pM hairpins) that were placed on a coverslip and
+sealed with silicone and an upper coverslip. The bottom coverslip was KOH-treated to prevent sticking to the surface,
+sonicated for 15 min in 1 M KOH solution, thoroughly washed with distilled water, and dried in air. The measurement
+
+ATTO-550XXXXXA---TT--TTCTTCACAAACCAGTCCAAACTATCACAAACTTA-3'3'--AAGAAGTGTTGGTCAGGTTTGATAGTGTTTGAAT-5'TA/TStemATTO-647NYYYYYT---5'dsDNApartLoop21
+
+FIG. A4. Typical data for hairpin two-dimensional E/S-histogram and E- and S- one-dimensional histograms. The speciﬁc
+data refers to A31-VW measured in buﬀer containing 100 mM NaCl. Donor-only (green) and acceptor-only (red) populations
+are rejected by S-ratio. The populations with S ≈ 0.5 (inside black rectangle) were used to obtain the ﬁnal E-histogram.85
+
+buﬀer comprised 10 mM Tris pH 8.0, 1 mM EDTA, 10 µg/mL bovine serum albumin (BSA, Sigma-Aldrich) to reduce
+sample sticking, 2 mM Trolox (Sigma-Aldrich) to reduce photo-bleaching and photo-blinking of the dyes, and indicated
+NaCl concentrations. Data were collected for over 30 minutes, and temperature was maintained at 22.5◦ C.
+
+4. Data analysis
+
+Data analysis was performed with the in-house written LabView software as described elsewhere.85 The beginnings
+and endings of bursts were determined by the all-photons-burst-search (APBS, parameters: L = 200, M = 10, and
+T = 500 µs. For each burst, E and S were calculated according, respectively, binned (0.01 bin size), and plotted
+on one-dimensional E and S histograms and on a two-dimensional E/S histogram.85 Donor-only and acceptor-only
+populations were rejected by ALEX. The Obtained E-histogram showed two distinct peaks and was assumed to have
+quasi two-state dynamics85 (Figure A4).
+
+The opening and closing rates were extracted from the shape of the E-histogram using dynamic Probability Distri-
+
+bution Analysis.84,86
+
+5. Experimental Data
+
+The results of the hairpin kinetics experiments are shown in Fig. A5.
+
+07515000.51025050000.51ES22
+
+FIG. A5. The free energy diﬀerence between the bound and unbound state (δF ) experimentally determined for the four
+hairpins.
+
+101001000-4-3-2-101234T21-WA21-WT31-VWA31-VWdF/kTNaCl[mM]
