@@ -1,6 +1,8 @@
 #! /usr/bin/env python
 import urllib2, ntpath, re
 import sys
+import subprocess
+import scholar
 
 journal_database = {
                         
@@ -17,6 +19,7 @@ journal_database = {
                     'Journal of Molecular Biology' : ['J.Mol.Biol.'],
                     'Journal of the American Chemical Society' : ['J.Am.Chem.Soc.'],
                     'Journal of Computational Chemistry' : ['J.Comput.Chem.'],
+                    'Journal of Physical Chemistry B' : ['J.Phys.Chem.B'],
                     'Journal of Physical Chemistry' : ['J.Phys.Chem.'],
                     'Journal of Physics: Condensed Matter' : ['J.Phys.:Condens.Matter','JournalofPhysics:CondensedMatter'],
                     'The Journal of Chemical Physics' : ['J.Chem.Phys.'],
@@ -26,7 +29,7 @@ journal_database = {
                     'Natural Computing' : ['NaturalComputing'],
                     'Nature' : ['Nature'],
                     'Nature Communications' : ['Nat.Comm.'],
-                    'Nature Nano' : ['Nat.Nano'],
+                    'Nature Nanotechnology' : ['Nat.Nano'],
                     'Nucleic Acids Research' : ['NucleicAcidRes','NucleicAcidsRes.'],
                     'Physical Chemistry and Chemical Physics': ['Phys.Chem.Chem.Phys.'],
                     'Physical Review Letters' : ['Phys.Rev.Lett.'],
@@ -51,6 +54,9 @@ class Ref:
         inner_string = re.sub('\('+self.year+'\)\.','', inner_string)
         self.journal = Ref.get_journal(inner_string)
         self.set_authors_ids(inner_string)
+        self.num_citations = None
+        self.excerpt = None
+        self.url = None
     @staticmethod
     def get_journal(inner_string):
         for j in journal_database:
@@ -62,6 +68,8 @@ class Ref:
     def set_authors_ids(self,inner_string):
         self.ids = []
         inner_string = inner_string.replace(r'\ufb00','ff')
+        inner_string = inner_string.replace(r'\ufb01','fi')
+        inner_string = inner_string.replace(r'\u02c7','')
         authors = str(inner_string)
         if 'and' in authors:
 #            print 'starting with',authors
@@ -79,6 +87,30 @@ class Ref:
             if b.isdigit(): self.ids += [b]
         self.authors = authors
 #        print authors
+    def get_info_from_scholar(self,querier):
+        '''
+        Set all the nice goodies from google scholar
+        '''
+        query = scholar.SearchScholarQuery()
+        author_string = ' '.join([a.split(' ')[-1] for a in self.authors])
+        query.set_author(author_string)
+        query.set_timeframe(self.year, self.year)
+        query.set_pub(self.journal)
+        
+        querier.send_query(query)
+        articles = querier.articles
+        if len(articles) == 0:
+            print 'warning: article from string',self.string,'not found on google scholar'
+            print self.journal
+            print self.year
+            print author_string
+            return -1
+        if len(articles) > 1:
+            print 'warning: several articles from string',self.string,'found on google scholar'
+            return -2
+        self.num_citations = articles[0]['num_citations']
+        self.url = articles[0]['url']
+        self.excerpt = articles[0]['excerpt']
 
 
 
@@ -121,9 +153,6 @@ def extract_references(paper_txt):
     return refs
                 
 
-
-
-
 '''
 Citation project - given a pdf, look up the references and provide:
     1) link
@@ -141,12 +170,14 @@ if __name__ == '__main__':
     # pdfx paper_pdf -t > paper_txt
     # extract the references
     refs = extract_references(paper_txt)
-    for i in range(1,10):
-        print refs[i].authors, refs[i].ids, refs[i].string
-    
-    
-
     # for each reference, look it up on google scholar to get the citation
+    querier = scholar.ScholarQuerier()
+    settings = scholar.ScholarSettings()
+    querier.apply_settings(settings)
+    for i in range(1,10):
+        refs[i].get_info_from_scholar(querier)
+
+        
     # find where it's cited
     # pretty print it
 
